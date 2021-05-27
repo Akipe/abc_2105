@@ -1,4 +1,4 @@
-package moyenne;
+package average;
 
 import java.util.Scanner;
 
