@@ -18,9 +18,9 @@ public class App {
                 AFFICHER* "Veuillez rentrer le rayon de votre sphère :"
                 LIRE circle_radius
                 AFFICHER* "Voici l'air de la sphère :"
-                AFFICHERCALCUL* 4*Math.PI*circle_radius*2
+                AFFICHERCALCUL* 4*Math.PI*pow(circle_radius,2)
                 AFFICHER* "Voici le volume de la sphère :"
-                AFFICHERCALCUL* 4/3*Math.PI*circle_radius*3
+                AFFICHERCALCUL* (4*Math.PI*pow(circle_radius,3))/3
             FIN_ALGORITHME
          */
     
@@ -32,12 +32,12 @@ public class App {
 
         System.out.println("Voici l'air de la sphère :");
         System.out.println(
-            (4 * Math.PI * (float)circleRadius * 2)
+            (4 * Math.PI * Math.pow((float)circleRadius, 2))
         );
 
         System.out.println("Voici le volume de la sphère :");
         System.out.println(
-            (4 / 3 * Math.PI * circleRadius * 3)
+            ((4 * Math.PI * Math.pow((float)circleRadius, 3)) / 3)
         );
 
         scanner.close();
