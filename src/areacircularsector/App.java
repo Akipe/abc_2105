@@ -19,7 +19,7 @@ public class App {
             AFFICHER* "Veuillez entrer l'angle de votre secteur circulaire :"
             LIRE sector_angle
             AFFICHER* "Voici l'air du secteur circulaire :"
-            AFFICHERCALCUL Math.PI*sector_radius*2*sector_angle/360
+            AFFICHERCALCUL Math.PI*pow(sector_radius,2)*sector_angle/360
         FIN_ALGORITHME
          */
 
@@ -35,7 +35,7 @@ public class App {
 
         System.out.println("Voici l'air du secteur circulaire :");
         System.out.println(
-            (Math.PI * sectorRadius * 2 * sectorAngle / 360)
+            (Math.PI * Math.pow(sectorRadius, 2) * sectorAngle / 360)
         );
 
         scanner.close();
