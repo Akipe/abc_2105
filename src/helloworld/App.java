@@ -35,6 +35,9 @@ public class App { // C'est une classe ou un composant
         System.out.println("Veuillez ");
         variable_a = scanner.nextInt();
         variable_b = scanner.nextInt();
+
+        System.out.println("La variable variable_a vaut : " + variable_a + " et la variable_b vaut : " + variable_b);
+
         scanner.close(); // Ne PAS oublier de fermer le composant (risque de dépassement de mémoire)
     
     }
