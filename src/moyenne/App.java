@@ -25,7 +25,21 @@ public class App {
          *     AFFICHERCALCUL (premierNombre+deuxiemeNombre)/2
          * FIN_ALGORITHME
          * 
-         */
-        System.out.println("Veuillez saisir le premier nombre :");
+        */
+
+        int firstNumber = 0;
+        int secondNumber = 0;
+
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.println("Veuillez écrire votre premier nombre :");
+        firstNumber = scanner.nextInt();
+
+        System.out.println("Veuillez écrire votre deuxième nombre :");
+        secondNumber = scanner.nextInt();
+        
+        System.out.println("La moyenne des deux nombres est égale à : " + (((float)firstNumber + (float)secondNumber) / 2));
+
+        scanner.close();
     }
 }
