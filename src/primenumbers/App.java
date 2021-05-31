@@ -24,7 +24,7 @@ public class App {
                     SI (numberToTest%numberForCheckDivision==0) ALORS
                         DEBUT_SI
                         listValidDiviser PREND_LA_VALEUR listValidDiviser + " " + numberForCheckDivision
-                        isPrimeNumber PREND_LA_VALEUR 1
+                        isPrimeNumber PREND_LA_VALEUR 0
                         FIN_SI
                     numberForCheckDivision PREND_LA_VALEUR numberForCheckDivision-1
                     FIN_TANT_QUE
