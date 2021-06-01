@@ -7,7 +7,8 @@ public class App {
         /**
          * Algorithme
          * 
-         * Open the file "exo_2.1.1_conversion_kilometres_miles.eap" with Enterprise Architect 7.1
+         * Open the file exo_2.1.1_conversion_kilometres_miles.png
+         * or exo_2.1.1_conversion_kilometres_miles.eap with Enterprise Architect 7.1
          */
     }
 }
