@@ -16,27 +16,26 @@ public class App {
         
         double  kmToConvert             = 0,
                 distanceMiles           = 0;
-        boolean isUserCommandIsNumber   = false,
+        Boolean isUserCommandIsNumber   = false,
                 exitApp                 = false;
         String  userCommand             = new String("");
         Scanner scanner                 = new Scanner(System.in);
         
+        System.out.println("Cette Application vous permets de convertir des kilomètres en miles.");
+        System.out.println("Vous ne pouvez convertir que des distances comprises entre 0.01 et 1 000 000.)");
+        System.out.println("Une fois votre valeur convertie, vous pourrez convertir d'autres valeurs.");
+        System.out.println("Pour quitter, écrivez \"q\" pour votre commande.\n");
 
         do {
-            System.out.println("Veuillez entrer une distance en kilomètres à convertir en miles :");
-            System.out.println("(vous ne pouvez convertir que des distances comprises entre 0.01 et 1 000 000.)");
-            System.out.println("Une fois votre valeur convertie, vous pourrez convertir d'autres valeurs.");
-            System.out.println("Pour quitter, écrivez \"q\" pour votre commande.");
+            System.out.println("Veuillez entrer une distance (entre 0.01 et 1 000 000) ou \"q\" pour quitter :");
             userCommand = scanner.nextLine();
 
             // Check if command is a number
             try {
                 kmToConvert = Double.parseDouble(userCommand);
                 isUserCommandIsNumber = true;
-                System.out.println("This is a number");
             } catch(NumberFormatException e) {
-                isUserCommandIsNumber = false; 
-                System.out.println("This is not a number");
+                isUserCommandIsNumber = false;
             }
 
             // if command is a number, so we can try to convert it to miles
@@ -46,15 +45,14 @@ public class App {
                     distanceMiles = (1/1.609) * kmToConvert;
                     System.out.println("La distance " + kmToConvert + " km = " + distanceMiles + " miles");
                 } else {
-                    System.out.println("Votre distance dépasse la limite autorisé (entre 0.01 et 1 000 000).");
+                    System.out.println("Votre distance dépasse la limite autorisée (entre 0.01 et 1 000 000).");
                 }
             } else { // else if this is not a number, we check if this is a correct command
                 if (userCommand.equals("q")) {
-                    System.out.println("You want to quit");
+                    System.out.println("Merci d'avoir utiliser le logiciel, à bientôt !");
                     exitApp = true;
                 } else {
-                    System.out.println("Don't know what you want");
-                    System.out.println("Your command is : " + userCommand);
+                    System.out.println("Commande incorrecte :/ veuillez réessayer.");
                 }
             }
         } while (!exitApp);
