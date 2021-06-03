@@ -17,7 +17,7 @@ public class App {
         double  kmToConvert             = 0,
                 distanceMiles           = 0;
         Boolean isUserCommandIsNumber   = false,
-                exitApp                 = false;
+                isAppDoesntExit         = true;
         String  userCommand             = new String("");
         Scanner scanner                 = new Scanner(System.in);
         
@@ -50,12 +50,12 @@ public class App {
             } else { // else if this is not a number, we check if this is a correct command
                 if (userCommand.equals("q")) {
                     System.out.println("Merci d'avoir utiliser le logiciel, à bientôt !");
-                    exitApp = true;
+                    isAppDoesntExit = false;
                 } else {
                     System.out.println("Commande incorrecte :/ veuillez réessayer.");
                 }
             }
-        } while (!exitApp);
+        } while (isAppDoesntExit);
 
         scanner.close();
     }
