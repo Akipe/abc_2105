@@ -59,8 +59,6 @@ public class App {
                 }
             } catch(NumberFormatException e) {
                 isUserCommandIsDistance = false;
-
-                
             }
 
 
