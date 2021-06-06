@@ -17,13 +17,15 @@ public class App {
         double      distanceToConvert               = 0,
                     distanceConverted               = 0;
         Boolean     isUserCommandIsDistance         = false,
-                    isCommandhasTooMuchInfo         = false,
+                    isUserCommandHasError           = false,
                     isAppKeepRunning                = true;
         String      userCommand                     = new String(""),
                     unitDistanceToConvert           = new String(""),
-                    unitDistanceConverted           = new String("");
+                    unitDistanceConverted           = new String(""),
+                    errorMessage                    = new String("");
         Scanner     scanner                         = new Scanner(System.in);
         String[]    userCommandSplitSpace;
+
 
         System.out.println("Cette Application vous permets de convertir des kilomètres et des miles dans les deux sens.");
         System.out.println("Vous ne pouvez convertir que des distances comprises entre 0.01 et 1 000 000.)");
@@ -50,13 +52,15 @@ public class App {
                 
                 // If user enter too much informations than necessary
                 if (userCommandSplitSpace.length > 2) {
-                    isCommandhasTooMuchInfo = true;
-                    isUserCommandIsDistance = false;
+                    isUserCommandHasError = true;
+                    errorMessage = "vous devez entrer un nombre à convertir, et optionnelement une unité (\"km\" ou \"mi\").";
                 } else {
                     isUserCommandIsDistance = true;
                 }
             } catch(NumberFormatException e) {
                 isUserCommandIsDistance = false;
+
+                
             }
 
 
@@ -80,16 +84,18 @@ public class App {
                         distanceConverted = 1.609 * distanceToConvert;
                         unitDistanceConverted = "km";
                     } else {
-                        System.out.println("Votre unité est incorrecte, vous ne pouvez que mettre \"km\" ou \"mi\".");
+                        isUserCommandHasError = true;
+                        errorMessage = "Votre unité est incorrecte, vous ne pouvez que mettre \"km\" ou \"mi\".";
                     }
 
                     // Show result of conversion
                     if (unitDistanceToConvert.equals("km") || unitDistanceToConvert.equals("mi")) {
-                        System.out.println("La distance " + distanceToConvert + " " + unitDistanceToConvert + " = " + distanceConverted + " " + unitDistanceConverted);
+                        System.out.println("La distance " + distanceToConvert + " " + unitDistanceToConvert + " = " + distanceConverted + " " + unitDistanceConverted + "\n");
                     }
                     
                 } else {
-                    System.out.println("Votre distance dépasse la limite autorisée (entre 0.01 et 1 000 000).");
+                    isUserCommandHasError = true;
+                    errorMessage = "Votre distance dépasse la limite autorisée (entre 0.01 et 1 000 000).";
                 }
 
             } else { // else if this is not a number, we check others possibilities
@@ -97,11 +103,19 @@ public class App {
                 if (userCommand.equals("q")) {
                     System.out.println("Merci d'avoir utiliser le logiciel, à bientôt !");
                     isAppKeepRunning = false;
-                } else if (isCommandhasTooMuchInfo) {
-                    System.out.println("Votre commande est incorrecte : vous devez entrer au minima un nombre à convetir, et optionnelement une unité (\"km\" ou \"mi\").");
                 } else {
-                    System.out.println("Vous n'avez pas entré de distance à convertir.");
+                    isUserCommandHasError = true;
+                    errorMessage = "Vous n'avez ni entré une distance, ni une commande correcte.";
                 }
+            }
+
+            if (isUserCommandHasError) {
+                System.out.println("Votre commande est incorrecte :");
+                System.out.println(errorMessage + "\n");
+
+                // Reset error for next iteration
+                isUserCommandHasError = false;
+                errorMessage          = "";
             }
         } while (isAppKeepRunning);
 
