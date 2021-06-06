@@ -62,7 +62,7 @@ public class App {
                     errorMessage = "Vous devez entrer un nombre à convertir, et optionnellement une unité (\"km\" ou \"mi\").";
                 }
 
-                // We check if it is a double with the try catch
+                // We check if it is a distance (number) with the try catch
                 distanceToConvert = Double.parseDouble(userCommandSplitSpace[0]);
 
                 // We check distance limit
@@ -83,16 +83,16 @@ public class App {
 
             // if command is a distance, we store it to the list
             if (isUserCommandIsDistance && !isUserCommandHasError) {
-                // We use list if it is the first distance,
-                // but we need to recreate a new list
+                // We check if this is the first time we use the list,
+                // otherside we need to recreate a new list to add the new distance
                 if (tabDistanceToConvert.length == 1 && tabDistanceToConvert[0] == 0) {
                     tabDistanceToConvert[0]     = distanceToConvert;
                     tabUnitDistanceToConvert[0] = unitDistanceToConvert;
                 } else {
-                    // Recreate list of distance & unit with one more emplacement
-                    // For distance
+                    // Recreate a list of distance & unit with one more index
+                    // (for distance)
                     tabDistanceToConvert        = Arrays.copyOf(tabDistanceToConvert, tabDistanceToConvert.length + 1);
-                    // For unit
+                    // (and for unit)
                     tabUnitDistanceToConvert    = Arrays.copyOf(tabUnitDistanceToConvert, tabUnitDistanceToConvert.length + 1);
 
                     // Save distance & unit
@@ -100,7 +100,7 @@ public class App {
                     tabUnitDistanceToConvert[tabUnitDistanceToConvert.length - 1] = unitDistanceToConvert;
                 }
 
-            } else if (!isUserCommandHasError) { // else if this is not a number, we check others possibilities
+            } else if (!isUserCommandHasError) { // If this is not a number, we check others commands
                 if (userCommand.equals("quit")) {
                     System.out.println("\nAu revoir :)");
                     isAppKeepRunning = false;
@@ -112,15 +112,14 @@ public class App {
                     System.out.println("Pour afficher l'aide : \"help\"");
                     System.out.println("Pour quitter : \"quit\"\n");
                 } else if (userCommand.equals("go")) {
-                    // Check if there are a distance to convert
+                    // Check if there is a distance to convert
                     if (tabDistanceToConvert.length == 1 && tabDistanceToConvert[0] == 0) {
                         isUserCommandHasError = true;
                         errorMessage = "Vous n'avez pas entré de distances à convertir.";
                     } else {
-                        // Show all distances
+                        // Show all distances and do the conversion
                         System.out.println("\nVoici la liste des distances à convertir :");
                         for (index = 0; index < tabDistanceToConvert.length; index++) {
-                            // Do convertion
                             if (tabUnitDistanceToConvert[index].equals("km")) {
                                 distanceConverted = (1/1.609) * tabDistanceToConvert[index];
                                 unitDistanceConverted = "mi";
@@ -132,7 +131,7 @@ public class App {
                         }
                         System.out.println("");
 
-                        // No more need to show this distances
+                        // Empty the list of distance for next utilization
                         tabDistanceToConvert        = new double[] { 0 };
                         tabUnitDistanceToConvert    = new String[] { "" };
                     }
