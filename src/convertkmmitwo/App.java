@@ -110,8 +110,8 @@ public class App {
             }
 
             if (isUserCommandHasError) {
-                System.out.println("Votre commande est incorrecte :");
-                System.out.println(errorMessage + "\n");
+                System.err.println("Votre commande est incorrecte :");
+                System.err.println(errorMessage + "\n");
 
                 // Reset error for next iteration
                 isUserCommandHasError = false;
