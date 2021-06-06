@@ -91,18 +91,9 @@ public class App {
                 } else {
                     // Recreate list of distance & unit with one more emplacement
                     // For distance
-                    // tabDistanceToConvertTemp    = new double[tabDistanceToConvert.length + 1];
-                    // System.arraycopy(tabDistanceToConvert, 0, tabDistanceToConvertTemp, 0, tabDistanceToConvert.length);
-                    // tabDistanceToConvert        = new double[tabDistanceToConvertTemp.length];
-                    // tabDistanceToConvert        = tabDistanceToConvertTemp;
-                    tabDistanceToConvert = Arrays.copyOf(tabDistanceToConvert, tabDistanceToConvert.length + 1);
-
+                    tabDistanceToConvert        = Arrays.copyOf(tabDistanceToConvert, tabDistanceToConvert.length + 1);
                     // For unit
-                    // tabUnitDistanceToConvertTemp    = new String[tabUnitDistanceToConvert.length + 1];
-                    // System.arraycopy(tabUnitDistanceToConvert, 0, tabUnitDistanceToConvertTemp, 0, tabUnitDistanceToConvert.length);
-                    // tabUnitDistanceToConvert        = new String[tabUnitDistanceToConvertTemp.length];
-                    // tabUnitDistanceToConvert        = tabUnitDistanceToConvertTemp;
-                    tabUnitDistanceToConvert = Arrays.copyOf(tabUnitDistanceToConvert, tabUnitDistanceToConvert.length + 1);
+                    tabUnitDistanceToConvert    = Arrays.copyOf(tabUnitDistanceToConvert, tabUnitDistanceToConvert.length + 1);
 
                     // Save distance & unit
                     tabDistanceToConvert[tabUnitDistanceToConvert.length - 1]     = distanceToConvert;
