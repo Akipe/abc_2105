@@ -81,63 +81,64 @@ public class App {
             }
 
 
-            // if command is a distance, we store it to the list
-            if (isUserCommandIsDistance && !isUserCommandHasError) {
-                // We check if this is the first time we use the list,
-                // otherside we need to recreate a new list to add the new distance
-                if (tabDistanceToConvert.length == 1 && tabDistanceToConvert[0] == 0) {
-                    tabDistanceToConvert[0]     = distanceToConvert;
-                    tabUnitDistanceToConvert[0] = unitDistanceToConvert;
-                } else {
-                    // Recreate a list of distance & unit with one more index
-                    // (for distance)
-                    tabDistanceToConvert        = Arrays.copyOf(tabDistanceToConvert, tabDistanceToConvert.length + 1);
-                    // (and for unit)
-                    tabUnitDistanceToConvert    = Arrays.copyOf(tabUnitDistanceToConvert, tabUnitDistanceToConvert.length + 1);
-
-                    // Save distance & unit
-                    tabDistanceToConvert[tabUnitDistanceToConvert.length - 1]     = distanceToConvert;
-                    tabUnitDistanceToConvert[tabUnitDistanceToConvert.length - 1] = unitDistanceToConvert;
-                }
-
-            } else if (!isUserCommandHasError) { // If this is not a number, we check others commands
-                if (userCommand.equals("quit")) {
-                    System.out.println("\nAu revoir :)");
-                    isAppKeepRunning = false;
-                } else if (userCommand.equals("help")) {
-                    System.out.println("\nVous pouvez saisir une distance entre 0.01 et 1 000 000.");
-                    System.out.println("Pour convertir une distance, saisissez un nombre avec l'unité (\"km\" ou \"mi\") séparé par un espace.");
-                    System.out.println("Exemple : \"150 km\", \"40 mi\" ou \"5\" (km par défaut si aucune unité)");
-                    System.out.println("Pour afficher la conversion de toutes vos distances : \"go\"");
-                    System.out.println("Pour afficher l'aide : \"help\"");
-                    System.out.println("Pour quitter : \"quit\"\n");
-                } else if (userCommand.equals("go")) {
-                    // Check if there is a distance to convert
+            if (!isUserCommandHasError) {
+                // if command is a distance, we store it to the list
+                if (isUserCommandIsDistance) {
+                    // We check if this is the first time we use the list,
+                    // otherside we need to recreate a new list to add the new distance
                     if (tabDistanceToConvert.length == 1 && tabDistanceToConvert[0] == 0) {
-                        isUserCommandHasError = true;
-                        errorMessage = "Vous n'avez pas entré de distances à convertir.";
+                        tabDistanceToConvert[0]     = distanceToConvert;
+                        tabUnitDistanceToConvert[0] = unitDistanceToConvert;
                     } else {
-                        // Show all distances and do the conversion
-                        System.out.println("\nVoici la liste des distances à convertir :");
-                        for (index = 0; index < tabDistanceToConvert.length; index++) {
-                            if (tabUnitDistanceToConvert[index].equals("km")) {
-                                distanceConverted = (1/1.609) * tabDistanceToConvert[index];
-                                unitDistanceConverted = "mi";
-                            } else if (tabUnitDistanceToConvert[index].equals("mi")) {
-                                distanceConverted = 1.609 * tabDistanceToConvert[index];
-                                unitDistanceConverted = "km";
-                            }
-                            System.out.println(index + ": " + tabDistanceToConvert[index] + " " + tabUnitDistanceToConvert[index] + " = " + distanceConverted + " " + unitDistanceConverted);
-                        }
-                        System.out.println("");
+                        // Recreate a list of distance & unit with one more index
+                        // (for distance)
+                        tabDistanceToConvert        = Arrays.copyOf(tabDistanceToConvert, tabDistanceToConvert.length + 1);
+                        // (and for unit)
+                        tabUnitDistanceToConvert    = Arrays.copyOf(tabUnitDistanceToConvert, tabUnitDistanceToConvert.length + 1);
 
-                        // Empty the list of distance for next utilization
-                        tabDistanceToConvert        = new double[] { 0 };
-                        tabUnitDistanceToConvert    = new String[] { "" };
+                        // Save distance & unit
+                        tabDistanceToConvert[tabUnitDistanceToConvert.length - 1]     = distanceToConvert;
+                        tabUnitDistanceToConvert[tabUnitDistanceToConvert.length - 1] = unitDistanceToConvert;
                     }
-                } else {
-                    isUserCommandHasError = true;
-                    errorMessage = "Vous avez entré une commande inconnue (tapez \"help\" pour obtenir une aide).";
+                } else { // If this is not a number, we check others commands
+                    if (userCommand.equals("quit")) {
+                        System.out.println("\nAu revoir :)");
+                        isAppKeepRunning = false;
+                    } else if (userCommand.equals("help")) {
+                        System.out.println("\nVous pouvez saisir une distance entre 0.01 et 1 000 000.");
+                        System.out.println("Pour convertir une distance, saisissez un nombre avec l'unité (\"km\" ou \"mi\") séparé par un espace.");
+                        System.out.println("Exemple : \"150 km\", \"40 mi\" ou \"5\" (km par défaut si aucune unité)");
+                        System.out.println("Pour afficher la conversion de toutes vos distances : \"go\"");
+                        System.out.println("Pour afficher l'aide : \"help\"");
+                        System.out.println("Pour quitter : \"quit\"\n");
+                    } else if (userCommand.equals("go")) {
+                        // Check if there is a distance to convert
+                        if (tabDistanceToConvert.length == 1 && tabDistanceToConvert[0] == 0) {
+                            isUserCommandHasError = true;
+                            errorMessage = "Vous n'avez pas entré de distances à convertir.";
+                        } else {
+                            // Show all distances and do the conversion
+                            System.out.println("\nVoici la liste des distances à convertir :");
+                            for (index = 0; index < tabDistanceToConvert.length; index++) {
+                                if (tabUnitDistanceToConvert[index].equals("km")) {
+                                    distanceConverted = (1/1.609) * tabDistanceToConvert[index];
+                                    unitDistanceConverted = "mi";
+                                } else if (tabUnitDistanceToConvert[index].equals("mi")) {
+                                    distanceConverted = 1.609 * tabDistanceToConvert[index];
+                                    unitDistanceConverted = "km";
+                                }
+                                System.out.println(index + ": " + tabDistanceToConvert[index] + " " + tabUnitDistanceToConvert[index] + " = " + distanceConverted + " " + unitDistanceConverted);
+                            }
+                            System.out.println("");
+    
+                            // Empty the list of distance for next utilization
+                            tabDistanceToConvert        = new double[] { 0 };
+                            tabUnitDistanceToConvert    = new String[] { "" };
+                        }
+                    } else {
+                        isUserCommandHasError = true;
+                        errorMessage = "Vous avez entré une commande inconnue (tapez \"help\" pour obtenir une aide).";
+                    }
                 }
             }
 
