@@ -13,24 +13,26 @@ public class App {
          * or exo_3.1_recherche_nombre_tableau.eap with Enterprise Architect 7.1
          */
 
-         int        numberToFindInList      = 0,
-                    numberToSaveToList      = 0,
-                    index                   = 0;
-         Boolean    userWantAddNumbersToTheList = true;
-         String     userCommand             = new String("");
-         Scanner    scanner                 = new Scanner(System.in);
-         int[]      numberListForSearch     = { 0 };
+         int        numberToFindInList          = 0,
+                    numberToSaveToList          = 0,
+                    index                       = 0;
+         Boolean    userWantAddNumbersToTheList = true,
+                    userWantSearchNumber        = true,
+                    isNumberFind                = false;
+         String     userCommand                 = new String("");
+         Scanner    scanner                     = new Scanner(System.in);
+         int[]      numberListForSearch         = { 0 };
          String[]   listOfNumberToAddToListSeperate;
 
         do {
             System.out.println("Veuillez entrer un nombre à ajouter dans la liste,");
-            System.out.println("Ou \"clear\" pour supprimer les nombres sauvegardé, \"show\" pour les afficher, \"quit\" pour passer à la recherche :");
+            System.out.println("Ou \"clear\" pour supprimer les nombres sauvegardé, \"show\" pour les afficher, \"search\" pour passer à la recherche :");
             userCommand = scanner.nextLine();
 
             switch (userCommand) {
-                case "quit":
+                case "search":
                     userWantAddNumbersToTheList = false;
-                    System.out.println("Au revoir :)");
+                    //System.out.println("Au revoir :)");
                     break;
                 case "clear":
                     numberListForSearch = new int[] { 0 };
@@ -63,13 +65,44 @@ public class App {
             }
         } while (userWantAddNumbersToTheList);
         
-        //listOfNumberToAddToListSeperate = userCommand.split(" ");
+        do {
+            System.out.println("Entrez un nombre à rechercher dans le tableau,");
+            System.out.println("Ou \"quit\" pour arréter l'application.");
+            userCommand = scanner.nextLine();
 
-        // Check if there 2 data or more in the list
-        //if ()
+            switch (userCommand) {
+                case "quit":
+                    userWantSearchNumber = false;
+                    System.out.println("Au revoir :)");
+                    break;
+                default:
+                    try {
+                        numberToFindInList = Integer.parseInt(userCommand);
 
-        // Check if all data are numbers
+                        // Iteration of tab
+                        if (numberListForSearch[numberListForSearch.length - 1] >= numberToFindInList) {
+                            for (index = 0; numberToFindInList > numberListForSearch[index] || index < numberListForSearch.length - 1; index++) {
+                                if (numberToFindInList == numberListForSearch[index]) {
+                                    isNumberFind = true; // On a trouvé le nombre !!!
+                                }
+                            }
 
-        // Check if all number are crescent
+                            if (isNumberFind) {
+                                System.out.println("Le nombre recherché est bien dans la liste !");
+                                
+                                // Reinitialize for next search
+                                isNumberFind = false;
+                            } else {
+                                System.out.println("Le nombre recherché n'est pas dans la liste, dommage.");
+                            }
+                        } else {
+                            System.out.println("Votre nombre est trop grand par rapport au dernier nombre croissant du tableau.");
+                        }
+                        
+                    } catch (NumberFormatException e) { // We check if user has enter a number
+                        System.err.println("Erreur : Veuillez entrer uniquement un nombre.");
+                    }
+            }
+        } while (userWantSearchNumber);
     }
 }
