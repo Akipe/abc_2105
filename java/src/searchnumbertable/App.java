@@ -13,15 +13,15 @@ public class App {
          * or exo_3.1_recherche_nombre_tableau.eap with Enterprise Architect 7.1
          */
 
-         int        numberToFindInList          = 0,
-                    numberToSaveToList          = 0,
+         int        numberToAddToList           = 0,
+                    numberUsedToSearchInList    = 0,
                     index                       = 0;
          Boolean    userWantAddNumbersToTheList = true,
                     userWantSearchNumber        = true,
-                    isNumberFind                = false;
+                    isNumberFindInList          = false;
          String     userCommand                 = new String("");
          Scanner    scanner                     = new Scanner(System.in);
-         int[]      numberListForSearch         = { 0 };
+         int[]      listOfCrescentNumbers       = { 0 };
 
         do {
             System.out.println("Veuillez entrer un nombre à ajouter dans la liste,");
@@ -34,28 +34,28 @@ public class App {
                     //System.out.println("Au revoir :)");
                     break;
                 case "clear":
-                    numberListForSearch = new int[] { 0 };
+                    listOfCrescentNumbers = new int[] { 0 };
                     System.out.println("Suppression des nombres sauvegardés...");
                     break;
                 case "show":
                     System.out.println("Voici l'ensemble des nombres de votre liste :");
-                    for (index = 0; index < numberListForSearch.length; index++) {
-                        System.out.println("Nombre n°" + (index + 1) + ": " + numberListForSearch[index]);
+                    for (index = 0; index < listOfCrescentNumbers.length; index++) {
+                        System.out.println("Nombre n°" + (index + 1) + ": " + listOfCrescentNumbers[index]);
                     }
                     break;
                 default:
                     try {
-                        numberToSaveToList = Integer.parseInt(userCommand);
+                        numberToAddToList = Integer.parseInt(userCommand);
                         
                         // Check if the number is bigger than the previous (for crescent numbers)
-                        if (numberListForSearch[numberListForSearch.length - 1] <= numberToSaveToList) {
-                            if (!(numberListForSearch.length == 1 && numberListForSearch[0] == 0)) { // Check if we have a not empty list
-                                numberListForSearch = Arrays.copyOf(numberListForSearch, numberListForSearch.length + 1);
+                        if (listOfCrescentNumbers[listOfCrescentNumbers.length - 1] <= numberToAddToList) {
+                            if (!(listOfCrescentNumbers.length == 1 && listOfCrescentNumbers[0] == 0)) { // Check if we have a not empty list
+                                listOfCrescentNumbers = Arrays.copyOf(listOfCrescentNumbers, listOfCrescentNumbers.length + 1);
                             }
 
-                            numberListForSearch[numberListForSearch.length - 1] = numberToSaveToList;
+                            listOfCrescentNumbers[listOfCrescentNumbers.length - 1] = numberToAddToList;
                         } else {
-                            System.err.println("Erreur : Veuillez entrer un nombre égale ou plus grand que " + numberListForSearch[numberListForSearch.length - 1]);
+                            System.err.println("Erreur : Veuillez entrer un nombre égale ou plus grand que " + listOfCrescentNumbers[listOfCrescentNumbers.length - 1]);
                         }
                         
                     } catch(NumberFormatException e) { // We check if user has enter a number
@@ -76,21 +76,21 @@ public class App {
                     break;
                 default:
                     try {
-                        numberToFindInList = Integer.parseInt(userCommand);
+                        numberUsedToSearchInList = Integer.parseInt(userCommand);
 
                         // Iteration of tab
-                        if (numberListForSearch[numberListForSearch.length - 1] >= numberToFindInList) {
-                            for (index = 0; numberToFindInList > numberListForSearch[index] || index < numberListForSearch.length - 1; index++) {
-                                if (numberToFindInList == numberListForSearch[index]) {
-                                    isNumberFind = true; // On a trouvé le nombre !!!
+                        if (listOfCrescentNumbers[listOfCrescentNumbers.length - 1] >= numberUsedToSearchInList) {
+                            for (index = 0; numberUsedToSearchInList > listOfCrescentNumbers[index] || index < listOfCrescentNumbers.length - 1; index++) {
+                                if (numberUsedToSearchInList == listOfCrescentNumbers[index]) {
+                                    isNumberFindInList = true; // On a trouvé le nombre !!!
                                 }
                             }
 
-                            if (isNumberFind) {
+                            if (isNumberFindInList) {
                                 System.out.println("Le nombre recherché est bien dans la liste !");
                                 
                                 // Reinitialize for next search
-                                isNumberFind = false;
+                                isNumberFindInList = false;
                             } else {
                                 System.out.println("Le nombre recherché n'est pas dans la liste, dommage.");
                             }
