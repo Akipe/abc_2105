@@ -14,7 +14,8 @@ public class App {
          */
 
          int        numberToFindInList      = 0,
-                    numberToSaveToList      = 0;
+                    numberToSaveToList      = 0,
+                    index                   = 0;
          Boolean    userWantAddNumbersToTheList = true;
          String     userCommand             = new String("");
          Scanner    scanner                 = new Scanner(System.in);
@@ -22,33 +23,42 @@ public class App {
          String[]   listOfNumberToAddToListSeperate;
 
         do {
-            System.out.println("Veuillez entrer un nombre à ajouter dans la liste, ou \"quit\" pour arréter :");
+            System.out.println("Veuillez entrer un nombre à ajouter dans la liste,");
+            System.out.println("Ou \"clear\" pour supprimer les nombres sauvegardé, \"show\" pour les afficher, \"quit\" pour passer à la recherche :");
             userCommand = scanner.nextLine();
 
             switch (userCommand) {
                 case "quit":
                     userWantAddNumbersToTheList = false;
+                    System.out.println("Au revoir :)");
                     break;
                 case "clear":
-                    userWantAddNumbersToTheList = false;
+                    numberListForSearch = new int[] { 0 };
+                    System.out.println("Suppression des nombres sauvegardés...");
+                    break;
+                case "show":
+                    System.out.println("Voici l'ensemble des nombres de votre liste :");
+                    for (index = 0; index < numberListForSearch.length; index++) {
+                        System.out.println("Nombre n°" + (index + 1) + ": " + numberListForSearch[index]);
+                    }
                     break;
                 default:
                     try {
                         numberToSaveToList = Integer.parseInt(userCommand);
                         
-                        // Check if the number is bigger than the previous
+                        // Check if the number is bigger than the previous (for crescent numbers)
                         if (numberListForSearch[numberListForSearch.length - 1] <= numberToSaveToList) {
-                            if (!(numberListForSearch.length == 1 && numberListForSearch[0] == 0)) { // Check if we have data to the list
+                            if (!(numberListForSearch.length == 1 && numberListForSearch[0] == 0)) { // Check if we have a not empty list
                                 numberListForSearch = Arrays.copyOf(numberListForSearch, numberListForSearch.length + 1);
                             }
 
                             numberListForSearch[numberListForSearch.length - 1] = numberToSaveToList;
                         } else {
-                            // number is tiny
+                            System.err.println("Erreur : Veuillez entrer un nombre égale ou plus grand que " + numberListForSearch[numberListForSearch.length - 1]);
                         }
                         
                     } catch(NumberFormatException e) { // We check if user has enter a number
-                        // error
+                        System.err.println("Erreur : Veuillez entrer uniquement un nombre, sans espace ni d'autres caractères.");
                     }
             }
         } while (userWantAddNumbersToTheList);
