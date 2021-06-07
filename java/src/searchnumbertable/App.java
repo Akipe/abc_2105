@@ -22,7 +22,6 @@ public class App {
          String     userCommand                 = new String("");
          Scanner    scanner                     = new Scanner(System.in);
          int[]      numberListForSearch         = { 0 };
-         String[]   listOfNumberToAddToListSeperate;
 
         do {
             System.out.println("Veuillez entrer un nombre à ajouter dans la liste,");
@@ -104,5 +103,7 @@ public class App {
                     }
             }
         } while (userWantSearchNumber);
+
+        scanner.close();
     }
 }
