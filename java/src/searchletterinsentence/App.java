@@ -25,7 +25,7 @@ public class App {
 
 
         // We get the sentence
-        System.out.println("Veuillez entrer une phrases se terminant par un point \".\" : ");
+        System.out.println("Veuillez entrer une phrase se terminant par un point \".\" : ");
         sentence = scanner.nextLine();
 
         // We check if user has enter anything
@@ -67,7 +67,7 @@ public class App {
                     isUserHasCorrectInput = true;
                 } else {
                     // There is too many letters enter by user (only one is needed)
-                    System.err.println("Erreur : Vous avez entrer trop de caractères, veuillez n'écrire qu'un seul caractère !");
+                    System.err.println("Erreur : Vous avez entré trop de caractères, veuillez n'écrire qu'un seul caractère !");
 
                     isUserHasCorrectInput = false;
                 }
