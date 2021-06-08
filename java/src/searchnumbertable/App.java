@@ -31,17 +31,18 @@ public class App {
             switch (userCommand) {
                 case "search":
                     userWantAddNumbersToTheList = false;
-                    //System.out.println("Au revoir :)");
+                    System.out.println("");
                     break;
                 case "clear":
                     listOfCrescentNumbers = new int[] { 0 };
-                    System.out.println("Suppression des nombres sauvegardés...");
+                    System.out.println("Suppression des nombres sauvegardés...\n");
                     break;
                 case "show":
-                    System.out.println("Voici l'ensemble des nombres de votre liste :");
+                    System.out.println("\nVoici l'ensemble des nombres de votre liste :");
                     for (index = 0; index < listOfCrescentNumbers.length; index++) {
                         System.out.println("Nombre n°" + (index + 1) + ": " + listOfCrescentNumbers[index]);
                     }
+                    System.out.println("");
                     break;
                 default:
                     try {
@@ -54,25 +55,27 @@ public class App {
                             }
 
                             listOfCrescentNumbers[listOfCrescentNumbers.length - 1] = numberToAddToList;
+
+                            System.out.println("");
                         } else {
-                            System.err.println("Erreur : Veuillez entrer un nombre égale ou plus grand que " + listOfCrescentNumbers[listOfCrescentNumbers.length - 1]);
+                            System.err.println("Erreur : Veuillez entrer un nombre égale ou plus grand que " + listOfCrescentNumbers[listOfCrescentNumbers.length - 1] + "\n");
                         }
                         
                     } catch(NumberFormatException e) { // We check if user has enter a number
-                        System.err.println("Erreur : Veuillez entrer uniquement un nombre, sans espace ni d'autres caractères.");
+                        System.err.println("Erreur : Veuillez entrer uniquement un nombre, sans espace ni d'autres caractères.\n");
                     }
             }
         } while (userWantAddNumbersToTheList);
         
         do {
             System.out.println("Entrez un nombre à rechercher dans le tableau,");
-            System.out.println("Ou \"quit\" pour arréter l'application.");
+            System.out.println("Ou \"quit\" pour arréter l'application :");
             userCommand = scanner.nextLine();
 
             switch (userCommand) {
                 case "quit":
                     userWantSearchNumber = false;
-                    System.out.println("Au revoir :)");
+                    System.out.println("Au revoir :)\n");
                     break;
                 default:
                     try {
@@ -87,19 +90,19 @@ public class App {
                             }
 
                             if (isNumberFindInList) {
-                                System.out.println("Le nombre recherché est bien dans la liste !");
+                                System.out.println("Le nombre recherché est bien dans la liste !\n");
                                 
                                 // Reinitialize for next search
                                 isNumberFindInList = false;
                             } else {
-                                System.out.println("Le nombre recherché n'est pas dans la liste, dommage.");
+                                System.out.println("Le nombre recherché n'est pas dans la liste, dommage.\n");
                             }
                         } else {
-                            System.out.println("Votre nombre est trop grand par rapport au dernier nombre croissant du tableau.");
+                            System.out.println("Votre nombre est trop grand par rapport au dernier nombre croissant du tableau.\n");
                         }
                         
                     } catch (NumberFormatException e) { // We check if user has enter a number
-                        System.err.println("Erreur : Veuillez entrer uniquement un nombre.");
+                        System.err.println("Erreur : Veuillez entrer uniquement un nombre.\n");
                     }
             }
         } while (userWantSearchNumber);
