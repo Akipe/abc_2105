@@ -24,20 +24,35 @@ public class App {
             FIN_ALGORITHME
          */
     
-        int circleRadius    = 0;
-        Scanner scanner     = new Scanner(System.in);
+        int     circleRadius    = 0;
+        String  userInput       = "";
+        Scanner scanner         = new Scanner(System.in);
     
-        System.out.println("Veuillez rentrer le rayon de votre sphère :");
-        circleRadius = scanner.nextInt();
+        do {
+            try {
+                System.out.println("Veuillez rentrer le rayon de votre sphère :");
+                userInput = scanner.nextLine();
+
+                circleRadius = Integer.parseInt(userInput);
+
+                if (circleRadius <= 0) {
+                    throw new Exception("Le rayon doit être un nombre positif supérieur à 0.");
+                }
+
+            } catch(Exception error) {
+                System.err.println("Erreur : veuillez n'entrer qu'un nombre positif au dessus de 0.");
+                scanner.reset();
+            }
+        } while (circleRadius <= 0);
 
         System.out.println("Voici l'air de la sphère :");
         System.out.println(
-            (4 * Math.PI * Math.pow((float)circleRadius, 2))
+            (4 * Math.PI * Math.pow((float)circleRadius, 2)) + " m²"
         );
 
         System.out.println("Voici le volume de la sphère :");
         System.out.println(
-            ((4 * Math.PI * Math.pow((float)circleRadius, 3)) / 3)
+            ((4 * Math.PI * Math.pow((float)circleRadius, 3)) / 3) + " m3"
         );
 
         scanner.close();
