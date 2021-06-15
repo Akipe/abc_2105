@@ -3,6 +3,8 @@ package areacircularsector;
 import java.util.Scanner;
 
 public class App {
+    private static Scanner scanner = new Scanner(System.in);
+
     public static void main(String[] args) {
         System.out.println("Exercice 1.3 : Calcul de la surface d'un secteur circulaire.");
 
@@ -23,21 +25,40 @@ public class App {
         FIN_ALGORITHME
          */
 
-        float sectorRadius  = 0;
-        float sectorAngle   = 0;
-        Scanner scanner     = new Scanner(System.in);
+        double sectorRadius  = 0;
+        double sectorAngle   = 0;
 
-        System.out.println("Veuillez entrer le rayon de votre secteur circulaire :");
-        sectorRadius = scanner.nextFloat();
+        sectorRadius = askUserNumberNotZeroOrNegative("Veuillez entrer le rayon de votre secteur circulaire : ");
+        sectorAngle = askUserNumberNotZeroOrNegative("Veuillez entrer l'angle de votre secteur circulaire : ");
 
-        System.out.println("Veuillez entrer l'angle de votre secteur circulaire :");
-        sectorAngle = scanner.nextFloat();
+        System.out.println("Voici l'air du secteur circulaire : " + calculAreaCircularSector(sectorRadius, sectorAngle));
+    }
 
-        System.out.println("Voici l'air du secteur circulaire :");
-        System.out.println(
-            (Math.PI * Math.pow(sectorRadius, 2) * sectorAngle / 360)
-        );
+    private static double calculAreaCircularSector(double radius, double angle)
+    {
+        return (Math.PI * Math.pow(radius, 2) * angle / 360);
+    }
 
-        scanner.close();
+    private static double askUserNumberNotZeroOrNegative(String askMessage)
+    {
+        double number       = 0;
+        String userInput    = "";
+
+        do {
+            try {
+                System.out.println(askMessage);
+                userInput = scanner.nextLine();
+
+                number = Double.parseDouble(userInput);
+
+                if (number <= 0) {
+                    throw new Exception("Erreur : Veuillez entrer un nombre positif supérieur à 0.");
+                }
+
+                return number;
+            } catch (Exception error) {
+                System.err.println("Erreur : Veuillez entrer un nombre, positif et supérieur à 0.");
+            }
+        } while (true);
     }
 }
