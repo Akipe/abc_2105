@@ -3,6 +3,8 @@ package averageoneonetwo;
 import java.util.Scanner;
 
 public class App {
+    private static Scanner scanner = new Scanner(System.in);
+
     public static void main(String[] args) {
 
         System.out.println("Exercice 1.1.2 : Calcul de la moyenne de deux nombres avec boucle.");
@@ -31,27 +33,62 @@ public class App {
             FIN_ALGORITHME
          */
 
-        int firstNumber             = 0;
-        int secondNumber            = 0;
-        float averageResult         = 0;
-        boolean doRemakeCalculation = false;
-        Scanner scanner             = new Scanner(System.in);
+        int     firstNumber         = 0,
+                secondNumber        = 0;
+        Boolean doRemakeCalculation = false;
 
         do {
-            System.out.println("Veuillez écrire votre premier nombre :");
-            firstNumber = scanner.nextInt();
+            firstNumber     = askUserNumber("Veuillez écrire votre premier nombre :");
+            secondNumber    = askUserNumber("Veuillez écrire votre deuxième nombre :");
 
-            System.out.println("Veuillez écrire votre deuxième nombre :");
-            secondNumber = scanner.nextInt();
+            System.out.println("La moyenne des deux nombres est égale à : " + numberAverage(firstNumber, secondNumber));
 
-            averageResult = ((float)firstNumber + (float)secondNumber) / 2;
-
-            System.out.println("La moyenne des deux nombres est égale à : " + averageResult);
-
-            System.out.println("Voulez-vous faire un autre calcul ? (Oui=\"True\", Non=\"False\")");
-            doRemakeCalculation = scanner.nextBoolean();
+            doRemakeCalculation = askUserRemakeCalculation();
         } while (doRemakeCalculation);
+    }
 
-        scanner.close();
+    private static int askUserNumber(String askMessage)
+    {
+        int     number      = 0;
+        String  userInput   = "";
+
+        do {
+            try {
+                System.out.println(askMessage);
+                userInput   = scanner.nextLine();
+                number      = Integer.parseInt(userInput);
+
+                return number;
+            } catch(Exception error) {
+                System.err.println("Erreur : Veuillez entrer un nombre entier.");
+            }
+        } while(true);
+    }
+
+    private static float numberAverage(int firstNumber, int secondNumber)
+    {
+        return ((float)firstNumber + (float)secondNumber) / 2;
+    }
+
+    private static Boolean askUserRemakeCalculation()
+    {
+        String  userInput   = "";
+
+        do {
+            try {
+                System.out.println("Voulez-vous faire un autre calcul ? (\"oui\" ou \"non\")");
+                userInput = scanner.nextLine();
+
+                if (userInput.equalsIgnoreCase("oui")) {
+                    return true;
+                } else if (userInput.equalsIgnoreCase("non")) {
+                    return false;
+                } else {
+                    throw new Exception("Erreur : Veuillez écrire \"oui\" ou \"non\".");
+                }
+            } catch(Exception error) {
+                System.err.println("Erreur: Veuillez entrer uniquement \"oui\" ou \"non\".");
+            }
+        } while(true);
     }
 }
