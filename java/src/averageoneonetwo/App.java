@@ -72,7 +72,7 @@ public class App {
 
     private static Boolean askUserRemakeCalculation()
     {
-        String  userInput   = "";
+        String userInput = "";
 
         do {
             try {
