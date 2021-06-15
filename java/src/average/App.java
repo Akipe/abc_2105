@@ -3,9 +3,9 @@
 import java.util.Scanner;
 
 public class App {
-    
-    public static void main(String[] args) {
+    private static Scanner scanner = new Scanner(System.in);
 
+    public static void main(String[] args) {
 
         System.out.println("Exercice 1.1.1 : Calcul de la moyenne de deux nombres");
         
@@ -27,48 +27,35 @@ public class App {
          * 
         */
 
-        int firstNumber         = 0;
-        int secondNumber        = 0;
-        Boolean isInputHasError = true;
-        String  userInput       = "";
-        Scanner scanner         = new Scanner(System.in);
-        
+        int firstNumber     = 0;
+        int secondNumber    = 0;
 
-        // Use boolean because number can be 0 or negative, so we can't test that in condition
-        do {
-            try {
-                System.out.println("Veuillez écrire votre premier nombre :");
-                userInput = scanner.nextLine();
+        firstNumber     = askUserNumber("Veuillez écrire votre premier nombre :");
+        secondNumber    = askUserNumber("Veuillez écrire votre deuxième nombre :");
+    
+        System.out.println("La moyenne des deux nombres est égale à : " + numberAverage(firstNumber, secondNumber));
+    }
 
-                firstNumber = Integer.parseInt(userInput);
-                isInputHasError = false;
-
-            } catch(Exception error) {
-                System.err.println("Erreur : Veuillez entrer un nombre entier.");
-                isInputHasError = true;
-            }
-
-            scanner.reset();
-        } while (isInputHasError);
+    private static int askUserNumber(String askMessage)
+    {
+        int     number              = 0;
+        String  userInput           = "";
 
         do {
             try {
-                System.out.println("Veuillez écrire votre deuxième nombre :");
-                userInput = scanner.nextLine();
+                System.out.println(askMessage);
+                userInput   = scanner.nextLine();
+                number      = Integer.parseInt(userInput);
 
-                secondNumber = Integer.parseInt(userInput);
-                isInputHasError = false;
-
+                return number;
             } catch(Exception error) {
                 System.err.println("Erreur : Veuillez entrer un nombre entier.");
-                isInputHasError = true;
             }
+        } while (true);
+    }
 
-            scanner.reset();
-        } while (isInputHasError);
-        
-        System.out.println("La moyenne des deux nombres est égale à : " + (((float)firstNumber + (float)secondNumber) / 2));
-
-        scanner.close();
+    private static float numberAverage(int firstNumber, int secondNumber)
+    {
+        return ((float)firstNumber + (float)secondNumber) / 2;
     }
 }
