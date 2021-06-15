@@ -3,6 +3,8 @@ package inverttwovalues;
 import java.util.Scanner;
 
 public class App {
+    private static Scanner scanner = new Scanner(System.in);
+
     public static void main(String[] args) {
         
         System.out.println("Exercice 1.4: Inversion de deux valeurs.");
@@ -34,17 +36,13 @@ public class App {
         FIN_ALGORITHME
          */
 
-        float   numberA     = 0,
+        double  numberA     = 0,
                 numberB     = 0,
                 tempValueB  = 0;
-        Scanner scanner     = new Scanner(System.in);
         
 
-        System.out.println("Veuillez entrer la valeur du premier nombre (A) :");
-        numberA = scanner.nextFloat();
-
-        System.out.println("Veuillez entrer la valeur du deuxième nombre (B) :");
-        numberB = scanner.nextFloat();
+        numberA = askUserNumber("Veuillez entrer la valeur du premier nombre (A) :");
+        numberB = askUserNumber("Veuillez entrer la valeur du deuxième nombre (B) :");
 
         System.out.println("Le nombre A vaut actuellement : " + numberA);
         System.out.println("Le nombre B vaut actuellement : " + numberB);
@@ -56,6 +54,20 @@ public class App {
         System.out.println("Le nombre A vaut maintenant : " + numberA);
         System.out.println("Le nombre B vaut maintenant : " + numberB);
 
-        scanner.close();
+    }
+
+    private static double askUserNumber(String askMessage)
+    {
+        String userInput = "";
+
+        do {
+            try {
+                System.out.println(askMessage);
+                userInput = scanner.nextLine();
+                return Double.parseDouble(userInput);
+            } catch (Exception error) {
+                System.err.println("Erreur : Veuillez entrer un nombre.");
+            }
+        } while (true);
     }
 }
