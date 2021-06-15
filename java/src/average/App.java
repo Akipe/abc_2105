@@ -38,8 +38,8 @@ public class App {
 
     private static int askUserNumber(String askMessage)
     {
-        int     number              = 0;
-        String  userInput           = "";
+        int     number      = 0;
+        String  userInput   = "";
 
         do {
             try {
