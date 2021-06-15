@@ -38,16 +38,13 @@ public class App {
 
     private static int askUserNumber(String askMessage)
     {
-        int     number      = 0;
-        String  userInput   = "";
+        String userInput = "";
 
         do {
             try {
                 System.out.println(askMessage);
                 userInput   = scanner.nextLine();
-                number      = Integer.parseInt(userInput);
-
-                return number;
+                return Integer.parseInt(userInput);
             } catch(Exception error) {
                 System.err.println("Erreur : Veuillez entrer un nombre entier.");
             }
