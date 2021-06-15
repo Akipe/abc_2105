@@ -3,7 +3,8 @@ package volumeareasphere;
 import java.util.Scanner;
 
 public class App {
-    
+    private static Scanner scanner = new Scanner(System.in);
+
     public static void main(String[] args) {
 
         System.out.println("Exercice 1.2 : Calcul d'un volume d'une sphere.");
@@ -24,37 +25,46 @@ public class App {
             FIN_ALGORITHME
          */
     
-        int     circleRadius    = 0;
-        String  userInput       = "";
-        Scanner scanner         = new Scanner(System.in);
-    
+        double  circleRadius    = 0;
+
+
+        circleRadius = askUserCircleRadius();
+
+        System.out.println("Voici l'air de la sphère : " + sphereAir(circleRadius) + " m²");
+        System.out.println("Voici le volume de la sphère :" + sphereVolume(circleRadius) + " m3");
+    }
+
+    private static double askUserCircleRadius()
+    {
+        double circleRadius = 0;
+        String userInput    = "";
+
         do {
             try {
                 System.out.println("Veuillez rentrer le rayon de votre sphère :");
                 userInput = scanner.nextLine();
 
-                circleRadius = Integer.parseInt(userInput);
+                circleRadius = Double.parseDouble(userInput);
 
                 if (circleRadius <= 0) {
                     throw new Exception("Le rayon doit être un nombre positif supérieur à 0.");
                 }
 
+                return circleRadius;
+
             } catch(Exception error) {
                 System.err.println("Erreur : veuillez n'entrer qu'un nombre positif au dessus de 0.");
-                scanner.reset();
             }
-        } while (circleRadius <= 0);
+        } while (true);
+    }
 
-        System.out.println("Voici l'air de la sphère :");
-        System.out.println(
-            (4 * Math.PI * Math.pow((float)circleRadius, 2)) + " m²"
-        );
+    private static double sphereAir(double circleRadius)
+    {
+        return (4 * Math.PI * Math.pow(circleRadius, 2));
+    }
 
-        System.out.println("Voici le volume de la sphère :");
-        System.out.println(
-            ((4 * Math.PI * Math.pow((float)circleRadius, 3)) / 3) + " m3"
-        );
-
-        scanner.close();
+    private static double sphereVolume(double circleRadius)
+    {
+        return ((4 * Math.PI * Math.pow(circleRadius, 3)) / 3);
     }
 }
