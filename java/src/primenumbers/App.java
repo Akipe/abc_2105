@@ -54,7 +54,7 @@ public class App {
 
         listValidDiviser = returnDiviserToNumber(numberToTest);
 
-        if (listValidDiviser.length() == 0) {
+        if (listValidDiviser.isEmpty()) {
             System.out.println("Le nombre " + numberToTest + " est un nombre premier.");
         } else {
             System.out.println("Le nombre " + numberToTest + " n'est pas un nombre premier, il est divisable par :" + listValidDiviser);
