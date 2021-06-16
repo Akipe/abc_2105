@@ -39,7 +39,7 @@ public class App {
                     clearListOfCrescentNumbers();
                     break;
                 case "show":
-                    showListCrescentNumbersSave(listOfCrescentNumbers);
+                    showListCrescentNumbersSave();
                     break;
                 default:
                     askUserAddCrescentNumberToList(userCommand);
@@ -53,7 +53,7 @@ public class App {
         System.out.println("Suppression des nombres sauvegardés...\n");
     }
 
-    private static void showListCrescentNumbersSave(int[] listOfCrescentNumbers)
+    private static void showListCrescentNumbersSave()
     {
         int index = 0;
 
