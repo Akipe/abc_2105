@@ -3,6 +3,11 @@ package sortnumber;
 import java.util.Scanner;
 
 public class App {
+    private static double   numberA = 0;
+    private static double   numberB = 0;
+    private static double   numberC = 0;
+    private static Scanner  scanner = new Scanner(System.in);
+
     public static void main(String[] args) {
         System.out.println("Exercice 1.7 : Trie de nombres.");
 
@@ -59,63 +64,76 @@ public class App {
                 AFFICHER* numberC
             FIN_ALGORITHME
          */
-        
-        int     numberA     = 0,
-                numberB     = 0,
-                numberC     = 0,
-                numberTemp  = 0;
-        Scanner scanner     = new Scanner(System.in);
 
 
         /**
          *  First part of the programm : sort 2 numbers
          */
-        System.out.println("Rentrez le nombre A :");
-        numberA = scanner.nextInt();
+        numberA = askUserNumber("Rentrez le nombre A :");
+        numberB = askUserNumber("Rentrez le nombre B :");
 
-        System.out.println("Rentrez le nombre B :");
-        numberB = scanner.nextInt();
-
-        if (numberA > numberB) {
-            numberTemp = numberA;
-            numberA = numberB;
-            numberB = numberTemp;
-        }
+        sortNumbersAandB();
 
         System.out.println(
-            "Liste des nombres (ordre croissant) : " + numberA + " < " + numberB
+            "Liste des nombres (ordre croissant) : " + numberA + " (A) < " + numberB + " (B)"
         );
 
 
         /**
          * Second part of the program : sort 3 numbers
          */
-        System.out.println("Rentrez le nombre A :");
-        numberA = scanner.nextInt();
+        numberA = askUserNumber("Rentrez le nombre A :");
+        numberB = askUserNumber("Rentrez le nombre B :");
+        numberC = askUserNumber("Rentrez le nombre C :");
 
-        System.out.println("Rentrez le nombre B :");
-        numberB = scanner.nextInt();
+        sortNumbersAandBandC();
 
-        System.out.println("Rentrez le nombre C :");
-        numberC = scanner.nextInt();
+        System.out.println(
+            "Liste des nombres (ordre croissant) : " + numberA + " (A) < " + numberB + " (B) < " + numberC + " (C)"
+        );
+    }
+
+    private static double askUserNumber(String askMessage)
+    {
+        String userInput = "";
+
+        do {
+            try {
+                System.out.println(askMessage);
+                userInput = scanner.nextLine();
+                return Double.parseDouble(userInput);
+            } catch (Exception error) {
+                System.out.println("Erreur : veuillez entrer un nombre.");
+            }
+        } while (true);
+    }
+
+    private static void sortNumbersAandB()
+    {
+        double tempStorage = 0;
+
+        if (numberA > numberB) {
+            tempStorage = numberA;
+            numberA     = numberB;
+            numberB     = tempStorage;
+        }
+    }
+
+    private static void sortNumbersAandBandC()
+    {
+        double  tempStorage = 0;
 
         while (numberA > numberB || numberB > numberC) {
             if (numberA > numberB) {
-                numberTemp = numberA;
-                numberA = numberB;
-                numberB = numberTemp;
+                tempStorage = numberA;
+                numberA     = numberB;
+                numberB     = tempStorage;
             }
             if (numberB > numberC) {
-                numberTemp = numberB;
-                numberB = numberC;
-                numberC = numberTemp;
+                tempStorage = numberB;
+                numberB     = numberC;
+                numberC     = tempStorage;
             }
         }
-
-        System.out.println(
-            "Liste des nombres (ordre croissant) : " + numberA + " < " + numberB + " < " + numberC
-        );
-
-        scanner.close();
     }
 }
