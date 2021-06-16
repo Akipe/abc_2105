@@ -3,7 +3,9 @@ package inverttwovalues;
 import java.util.Scanner;
 
 public class App {
-    private static Scanner scanner = new Scanner(System.in);
+    private static double   numberA = 0;
+    private static double   numberB = 0;
+    private static Scanner  scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
         
@@ -36,20 +38,13 @@ public class App {
         FIN_ALGORITHME
          */
 
-        double  numberA     = 0,
-                numberB     = 0,
-                tempValueB  = 0;
-        
-
         numberA = askUserNumber("Veuillez entrer la valeur du premier nombre (A) :");
         numberB = askUserNumber("Veuillez entrer la valeur du deuxième nombre (B) :");
 
         System.out.println("Le nombre A vaut actuellement : " + numberA);
         System.out.println("Le nombre B vaut actuellement : " + numberB);
 
-        tempValueB  = numberB;
-        numberB     = numberA;
-        numberA     = tempValueB;
+        switchNumbers();
 
         System.out.println("Le nombre A vaut maintenant : " + numberA);
         System.out.println("Le nombre B vaut maintenant : " + numberB);
@@ -69,5 +64,14 @@ public class App {
                 System.err.println("Erreur : Veuillez entrer un nombre.");
             }
         } while (true);
+    }
+
+    private static void switchNumbers()
+    {
+        double tempValue = 0;
+
+        tempValue   = numberB;
+        numberB     = numberA;
+        numberA     = tempValue;
     }
 }

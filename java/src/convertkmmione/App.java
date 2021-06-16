@@ -41,8 +41,9 @@ public class App {
             // if command is a number, so we can try to convert it to miles
             if (isUserCommandIsNumber) {
                 System.out.println("Your distance in km is :" + kmToConvert);
-                if (kmToConvert >= 0.01 && kmToConvert <= 1000000) {
-                    distanceMiles = (1/1.609) * kmToConvert;
+                if (isDistanceIsWithinLimit(kmToConvert)) {
+                    distanceMiles = convertKilometersToMiles(kmToConvert);
+                    
                     System.out.println("La distance " + kmToConvert + " km = " + distanceMiles + " miles");
                 } else {
                     System.out.println("Votre distance dépasse la limite autorisée (entre 0.01 et 1 000 000).");
@@ -58,5 +59,15 @@ public class App {
         } while (isAppKeepRunning);
 
         scanner.close();
+    }
+
+    private static Boolean isDistanceIsWithinLimit(double distance)
+    {
+        return (distance >= 0.01 && distance <= 1000000);
+    }
+
+    private static double convertKilometersToMiles(double kilometers)
+    {
+        return ((1/1.609) * kilometers);
     }
 }

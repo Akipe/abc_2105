@@ -72,14 +72,12 @@ public class App {
 
                 // Check the distance limit
                 if (distanceToConvert >= 0.01 && distanceToConvert <= 1000000) {
-                    distanceConverted = (1/1.609) * distanceToConvert;
-
                     // Process in function of unit
                     if (unitDistanceToConvert.equals("km")) {
-                        distanceConverted = (1/1.609) * distanceToConvert;
+                        distanceConverted = convertKilometersToMiles(distanceToConvert);
                         unitDistanceConverted = "mi";
                     } else if (unitDistanceToConvert.equals("mi")) {
-                        distanceConverted = 1.609 * distanceToConvert;
+                        distanceConverted = convertMilesToKilometers(distanceToConvert);
                         unitDistanceConverted = "km";
                     } else {
                         isUserCommandHasError = true;
@@ -88,7 +86,7 @@ public class App {
 
                     // Show result of conversion
                     if (unitDistanceToConvert.equals("km") || unitDistanceToConvert.equals("mi")) {
-                        System.out.println("La distance " + distanceToConvert + " " + unitDistanceToConvert + " = " + distanceConverted + " " + unitDistanceConverted + "\n");
+                        showDistanceConverted(distanceToConvert, unitDistanceToConvert, distanceConverted, unitDistanceConverted);
                     }
                     
                 } else {
@@ -118,5 +116,27 @@ public class App {
         } while (isAppKeepRunning);
 
         scanner.close();
+    }
+
+    private static double convertKilometersToMiles(double kilometers)
+    {
+        return ((1/1.609) * kilometers);
+    }
+
+    private static double convertMilesToKilometers(double miles)
+    {
+        return (1.609 * miles);
+    }
+
+    private static void showDistanceConverted(
+        double distanceToConvert,
+        String unitDistanceToConvert,
+        double distanceConverted,
+        String unitDistanceConverted
+    )
+    {
+        System.out.println(
+            "La distance " + distanceToConvert + " " + unitDistanceToConvert + " = " + distanceConverted + " " + unitDistanceConverted + "\n"
+        );
     }
 }

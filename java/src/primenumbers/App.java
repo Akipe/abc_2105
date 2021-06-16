@@ -3,6 +3,8 @@ package primenumbers;
 import java.util.Scanner;
 
 public class App {
+    private static Scanner scanner = new Scanner(System.in);
+
     public static void main(String[] args) {
         System.out.println("Exercice 1.6 : Déterminer si un nombre est premier.");
 
@@ -45,30 +47,53 @@ public class App {
          */
 
 
-        int     numberToTest            = 0,
-                numberForCheckDivision  = 0;
-        boolean isPrimeNumber           = true;
-        String  listValidDiviser        = new String("");
-        Scanner scanner                 = new Scanner(System.in);
+        int     numberToTest        = 0;
+        String  listValidDiviser    = new String("");
 
+        numberToTest = askUserNumber("Veuillez entrer un nombre pour vérifier s'il est premier :");
 
-        System.out.println("Veuillez entrer un nombre pour vérifier s'il est premier :");
-        numberToTest = scanner.nextInt();
-        scanner.close();
+        listValidDiviser = returnDiviserToNumber(numberToTest);
 
-        // Verify by testing to divide all numbers from number himself-1 to 2,
-        // If the number can be divided without rest, it is not a prime number.
-        for (numberForCheckDivision = numberToTest - 1; numberForCheckDivision > 1; numberForCheckDivision--) {
-            if ((numberToTest % numberForCheckDivision) == 0) {
-                listValidDiviser = listValidDiviser + " " + numberForCheckDivision;
-                isPrimeNumber = false;
-            }
-        }
-
-        if (isPrimeNumber) {
+        if (listValidDiviser.isEmpty()) {
             System.out.println("Le nombre " + numberToTest + " est un nombre premier.");
         } else {
             System.out.println("Le nombre " + numberToTest + " n'est pas un nombre premier, il est divisable par :" + listValidDiviser);
         }
+    }
+
+    private static int askUserNumber(String askMessage)
+    {
+        int     number = 0;
+        String  userInput = "";
+
+        do {
+            try {
+                System.out.println(askMessage);
+                userInput = scanner.nextLine();
+                number = Integer.parseInt(userInput);
+
+                if (number <= 1) {
+                    throw new Exception("Erreur : veuillez entrer un nombre supérieur à 1.");
+                }
+
+                return number;
+            } catch (Exception error) {
+                System.err.println("Erreur : veuillez entrer un nombre entier supérieur à 1.");
+            }
+        } while (true);
+    }
+
+    private static String returnDiviserToNumber(int numberToTest)
+    {
+        int     numberForCheckDivision = 0;
+        String  listValidDiviser = "";
+
+        for (numberForCheckDivision = numberToTest - 1; numberForCheckDivision > 1; numberForCheckDivision--) {
+            if ((numberToTest % numberForCheckDivision) == 0) {
+                listValidDiviser = listValidDiviser + " " + numberForCheckDivision;
+            }
+        }
+
+        return listValidDiviser;
     }
 }
