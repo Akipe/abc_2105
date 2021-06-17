@@ -4,6 +4,10 @@ import java.util.Scanner;
 import java.util.Arrays;
 
 public class App {
+    private static String   listOfUnits     = new String("");
+    private static String   listOfDistances = new String("");
+    private static Scanner  scanner         = new Scanner(System.in);
+
     public static void main(String[] args) {
         System.out.println("Exercice 2.1.3: Conversion kilomètres et Miles.");
 
@@ -24,7 +28,6 @@ public class App {
                     unitDistanceToConvert           = new String(""),
                     unitDistanceConverted           = new String(""),
                     errorMessage                    = new String("");
-        Scanner     scanner                         = new Scanner(System.in);
         double[]    tabDistanceToConvert            = new double[] { 0 };
         String[]    tabUnitDistanceToConvert        = new String[] { "" },
                     userCommandSplitSpace;
@@ -153,5 +156,139 @@ public class App {
         } while (isAppKeepRunning);
 
         scanner.close();
+    }
+
+    private static void askUserCommand()
+    {
+        String      userCommand;
+        String      unitDistanceToConvert;
+        Boolean     isUserCommandIsDistance;
+        Boolean     isUserCommandHasError;
+        String[]    userCommandSplitSpace;
+
+        do {
+            System.out.print("Veuillez entrer votre distance à convertir ou une des commandes :\n");
+            userCommand = scanner.nextLine();
+
+            try {
+                // Check if command is a distance with an unit,
+                // so we split the command at space and verify that first word is a number
+                // [0] -> distance; [1] -> unit
+                userCommandSplitSpace = userCommand.split(" ");
+
+                if (userCommandSplitSpace.length == 0) {
+                    throw new Exception("Veuillez entrer une commande.");
+                } else if (userCommandSplitSpace.length == 1) {
+                    // Check if is distance or command
+                    if (isDistance(userCommand)) {
+                        // Save distance in km if no unit specify
+                        saveUserAskConversion(convertCommandToDistance(userCommandSplitSpace[0]), "km");
+                    } else {
+                        // Check string commands
+                        if (userCommand.equals("quit")) {
+                            terminateApp();
+                        } else if (userCommand.equals("help")) {
+                            showHelp();
+                        } else if (userCommand.equals("go")) {
+                            executeConversion();
+                        } else {
+                            throw new Exception("Vous avez entré une commande inconnue (tapez \"help\" pour obtenir une aide).");
+                        }
+                    }
+                } else if (userCommandSplitSpace.length == 2) {
+                    // Try convert first number
+                    if (isDistance(userCommandSplitSpace[0]) && isUnitCompatible(userCommandSplitSpace[1])) {
+                        // Save distance & unit
+                        saveUserAskConversion(convertCommandToDistance(userCommandSplitSpace[0]), userCommandSplitSpace[1]);
+                    }
+
+                    if (!isDistance(userCommandSplitSpace[0])) {
+                        throw new Exception("Vous n'avez pas entré de nombre pour convertir une distance.");
+                    }
+
+                    if (!isUnitCompatible(userCommandSplitSpace[1])) {
+                        throw new Exception("Vous n'avez pas entré d'unités compatibles pour la conversion (km ou mi).");
+                    }
+                } else {
+                    // Too many word in command
+                }
+
+                // We check if it is a distance (number) with the try catch
+                distanceToConvert = Double.parseDouble(userCommandSplitSpace[0]);
+
+                // We check distance limit
+                if (distanceToConvert < 0.01 || distanceToConvert > 1000000) {
+                    isUserCommandHasError = true;
+                    errorMessage = "Votre distance dépasse la limite autorisée (entre 0.01 et 1 000 000).";
+                }
+
+                // We check if unit is correct
+                if (!(unitDistanceToConvert.equals("km") || unitDistanceToConvert.equals("mi"))) {
+                    isUserCommandHasError = true;
+                    errorMessage = "Votre unité est incorrecte, vous ne pouvez que mettre \"km\" ou \"mi\".";
+                }
+            } catch(NumberFormatException e) { // We check if user has enter a number, else we will try other commands
+                isUserCommandIsDistance = false;
+            } catch(Exception error) {
+
+            }
+        } while (true);
+    }
+
+    private static Boolean isDistance(String input)
+    {
+        try {
+            convertCommandToDistance(input);
+            return true;
+        } catch(NumberFormatException e) {
+            return false;
+        }
+    }
+
+    private static Boolean isDistanceIsInLimiter(double distance)
+    {
+        return distance < 0.01 || distance > 1000000;
+    }
+
+    private static double convertCommandToDistance(String input)
+    {
+        return Double.parseDouble(input);
+    }
+
+    private static Boolean isUnitCompatible(String unit)
+    {
+        return unit.equalsIgnoreCase("km") || unit.equalsIgnoreCase("mi");
+    }
+
+    private static void terminateApp()
+    {
+        System.out.println("Merci d'avoir utilisé cette application. Bonne journée! :)");
+        System.exit(0);
+    }
+
+    private static void showHelp()
+    {
+        System.out.println("\nVous pouvez saisir une distance entre 0.01 et 1 000 000.");
+        System.out.println("Pour convertir une distance, saisissez un nombre avec l'unité (\"km\" ou \"mi\") séparé par un espace.");
+        System.out.println("Exemple : \"150 km\", \"40 mi\" ou \"5\" (km par défaut si aucune unité)");
+        System.out.println("Pour afficher la conversion de toutes vos distances : \"go\"");
+        System.out.println("Pour afficher l'aide : \"help\"");
+        System.out.println("Pour quitter : \"quit\"\n");
+    }
+
+    private static void executeConversion()
+    {
+        // ...
+    }
+
+    private static void saveUserAskConversion(double distance, String unit)
+    {
+        if (listOfDistances.length() == 0) {
+            listOfDistances = String.valueOf(distance);
+            listOfUnits     = unit;
+        } else {
+            listOfDistances = listOfDistances + " " + distance;
+            listOfUnits     = listOfUnits + " " + unit;
+        }
     }
 }
