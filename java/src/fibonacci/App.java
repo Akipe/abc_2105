@@ -19,9 +19,11 @@ public class App {
         newTotalRabbitsCouple   = 0;
 
         for (int month = 0; month < howManyMonth; month++) {
-            newTotalRabbitsCouple   = allCurrentRabbitCouple + adultsRabbitsCouple;
-            adultsRabbitsCouple     = allCurrentRabbitCouple;
-            allCurrentRabbitCouple  = newTotalRabbitsCouple;
+            if (month != 0) {
+                newTotalRabbitsCouple   = allCurrentRabbitCouple + adultsRabbitsCouple;
+                adultsRabbitsCouple     = allCurrentRabbitCouple;
+                allCurrentRabbitCouple  = newTotalRabbitsCouple;
+            }
         }
     }
 
