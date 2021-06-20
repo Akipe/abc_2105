@@ -45,32 +45,36 @@ public class App {
 
     private static void sortNumbersAandBandC()
     {
+        if (numberA < numberB) {
+            sortOnlyC();
+        } else {
+            sortOnlyAandB();
+            sortOnlyC();
+        }
+    }
+
+    private static void sortOnlyC()
+    {
         double  tempStorage = 0;
 
-        if (numberA > numberB) {
+        if (numberC < numberA) {
             tempStorage = numberA;
-            numberA     = numberB;
-            numberB     = tempStorage;
+            numberA = numberC;
+            numberC = numberB;
+            numberB = tempStorage;
+        } else if (numberC < numberB) {
+            tempStorage = numberC;
+            numberC = numberB;
+            numberB = tempStorage;
         }
+    }
 
-        if (numberA < numberB) {
-            if (numberC < numberB) {
-                tempStorage = numberC;
-                numberC     = numberB;
-                numberB     = tempStorage;
+    private static void sortOnlyAandB()
+    {
+        double  tempStorage = 0;
 
-                if (numberB < numberA) {
-                    tempStorage = numberB;
-                    numberB     = numberA;
-                    numberA     = tempStorage;
-                }
-            }
-            if (numberC < numberA) {
-                tempStorage = numberB;
-                numberB     = numberA;
-                numberA     = numberC;
-                numberC     = tempStorage;
-            }
-        }
+        tempStorage = numberA;
+        numberA = numberB;
+        numberB = tempStorage;
     }
 }
