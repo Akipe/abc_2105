@@ -33,15 +33,3 @@ Conceptes objet
 - la qualité du compilateur
 
     Je ne pense pas que ce soit un objet, parce que cette phrase décrit un état d'un objet (le compilateur). Du coup il pourrait être un attribut de l'objet compilateur (bonne ou mauvaise qualité).
-
-## Exercice 2 : états d'une bouteille
-
-Avec les différentes méthodes, nous pouvons imager plusieurs attributs :
-- (bouteille) ouverte, boolean à vrai ou faux
-- (bouteille) vide, boolean à vrai ou faux
-
-Donc nous pouvons avoir 4 états :
-1. Bouteille ouverte et vide
-2. Bouteille ouverte et pleine
-3. Bouteille fermé et vide
-4. Bouteille fermé et pleine
