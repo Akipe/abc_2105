@@ -3,8 +3,6 @@ Conceptes objet
 
 ## Exercice 1 : liste d'objets
 
-*todo: donner explications*
-
 ### Les éléments suivants sont des objets
 - Le poste de télévision du salon
 
