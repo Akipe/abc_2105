@@ -12,3 +12,8 @@ Donc nous pouvons avoir 4 états :
 2. Bouteille ouverte et pleine
 3. Bouteille fermé et vide
 4. Bouteille fermé et pleine
+
+Corretion, deux autres états :
+
+5. *partiellement ouverte*
+6. *partiellement fermé*
