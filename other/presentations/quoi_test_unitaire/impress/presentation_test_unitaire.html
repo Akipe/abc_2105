@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>Présentation test unitaire - TeDI ABC Dev</title>
+    
+    <meta name="description" content="impress.js is a presentation tool based on the power of CSS3 transforms and transitions in modern browsers and inspired by the idea behind prezi.com." />
+    <meta name="author" content="Julien Milletre Akipe" />
+
+    <link href="../../../../tools/impressjs/css/impress-demo.css" rel="stylesheet" />
+    <link href="../../../../tools/impressjs/css/impress-common.css" rel="stylesheet" />
+    <link href="presentation_test_unitaire.css" rel="stylesheet" />
+</head>
+
+<div class="fallback-message">
+    <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+</div>
+
+<div id="impress"
+    data-transition-duration="1000"
+    data-width="1024"
+    data-height="768"
+    data-max-scale="3"
+    data-min-scale="0"
+    data-perspective="1000"
+    data-autoplay="0">
+
+
+
+    <div id="title" class="step" data-x="-2000" data-y="0" data-autoplay="0">
+        <h1>Les tests unitaires</h1>
+        <span class="footnote">Quésaco ?</span>
+    </div>
+
+    <div id="what_is_unit_test" class="step fitImage" data-x="0" data-y="0">
+        <img
+            src="../img/qu_est_ce_test_unitaire.png"
+            alt="Le principe">
+    </div>
+
+    <div id="in_project" class="step" data-x="2000" data-y="0">
+        <img
+            src="../img/test_unitaires_poo.png"
+            alt="Test unitaire dans un projet">
+    </div>
+
+    <div id="pyramide_test" class="step" data-x="4000" data-y="0">
+        <img
+            src="../img/pyramide_de_tests.png"
+            alt="Pyramide des tests">
+    </div>
+
+    <div id="example" class="step" data-x="6000" data-y="0">
+        <img
+            src="../img/example_pratique_test_unitaire_java_1.png"
+            alt="Example 1">
+        <img
+            src="../img/example_pratique_test_unitaire_java_2.png"
+            alt="Example 2">
+    </div>
+
+
+
+</div>
+
+<div id="impress-toolbar"></div>
+
+<div class="hint">
+    <p>Use a spacebar or arrow keys to navigate. <br/>
+       Press 'P' to launch speaker console.</p>
+</div>
+<script>
+if ("ontouchstart" in document.documentElement) { 
+    document.querySelector(".hint").innerHTML = "<p>Swipe left or right to navigate</p>";
+}
+</script>
+
+<script src="../../../../tools/impressjs/js/impress.js"></script>
+<script>impress().init();</script>
+
+</body>
+</html>
