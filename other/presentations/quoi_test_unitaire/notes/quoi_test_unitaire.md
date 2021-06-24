@@ -24,7 +24,7 @@ Les tests peuvent être conçus avant, pendant ou après le développement de l'
 
 Les tests unitaires sont écrits soit par le développeur, soit par une autre personne. Ils sont normalement exécutés par les développeurs, bien qu'ils puissent l'être également par les responsables en assurance qualité (QA).
 
-Les tests unitaires peuvent être même à la base de certaines méthodologies de travail, comme pour Test Diven Development (TDD), qui consiste à élaborer les procédures de test unitaires avant d'écrire le code du logiciel. Le développement est donc effectué conformément aux exigences d'un cahier des charges ou des spécifications.
+Les tests unitaires peuvent être même à la base de certaines méthodologies de travail, comme pour le Test Diven Development (TDD), qui consiste à élaborer les procédures de test unitaires avant d'écrire le code du logiciel. Le développement est donc effectué conformément aux exigences d'un cahier des charges ou des spécifications.
 
 Mais les tests restent une tache secondaire dans l'élaboration d'une application, donc sur certains projets ils peuvent ne pas être mis oeuvre à cause d'un manque de ressources (pas assez de budgets ou de personnel, manque de temps...).
 
@@ -42,10 +42,10 @@ Il est donc possible de tester d'autres parties plus complexe d'une application.
 ![Le code Java à tester](../img/example_pratique_test_unitaire_java_1.png)
 ![Un test unitaire sur le code java ci-dessus](../img/example_pratique_test_unitaire_java_2.png)
 
-Voici un exemple concret de test unitaire avec le langage Java, et le framework JUnit.
+Voici un exemple concret de test unitaire avec le langage Java, et le framework JUnit. La première image correspond au code de l'application, et la deuxième au test unitaire.
 
 ### Première image
-Dans la première image, on a un exrmple de classe toute simple, Addition, qui a une méthode "calculer" qui va retourner le calcul sur deux nombres. Dans cet exemple, on fait exprès de réaliser une multiplication au lieu d'une addition, pour générer une erreur.
+Dans la première image, on a un exemple de classe toute simple, Addition, qui a une méthode "calculer" qui va retourner le calcul sur deux nombres. Dans cet exemple, on fait exprès de réaliser une multiplication au lieu d'une addition, pour générer une erreur.
 
 ### Deuxième image
 Dans la deuxième image on a une autre classe qui va tester la classe Addition.
