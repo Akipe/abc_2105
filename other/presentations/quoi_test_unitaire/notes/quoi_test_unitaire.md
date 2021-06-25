@@ -54,10 +54,14 @@ Il y a 3 étapes :
 2. étape : **Le test en lui-même** : caractérisé par le "@Test", c'est ici qu'on réalise les tests. Dans l'exemple, on va demander à JUnit qu'on attend pour le calcul de l'addition 3 + 3 le résultat de 6. Vu qu'on multiplie au lieu d'additionner, au lieu d'obtenir 6 on va obtenir 9. Du coup l'IDE arrive même à détecter que le test unitaire sera faux.
 3. étape : **Terminer le test** : cette étape permet de clôturer si besoin les différents objets et autres modules pour terminer le test. Dans le cas suivant, il n'est pas utile, on n'a donc aucun code.
 
+## Notes
+- Mock : instances d'objets utile pour l'objet à tester, dont on façonne son comportement pour réaliser le test ("faux objets")
+
 ## Sources
 - https://fr.wikipedia.org/wiki/Test_unitaire
 - https://practicalprogramming.fr/tests-unitaires
 - https://fr.yeeply.com/blog/test-unitaire-comment-sy-prendre/
+- https://artisandeveloppeur.fr/mon-premier-test-unitaire-avec-junit-android-studio-en-java/
 
 ## Outils
 - Presentation (alternative à PowerPoint) : https://github.com/impress/impress.js/
