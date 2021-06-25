@@ -352,3 +352,6 @@ MigrationBackup/
 
 # Enterprise Architect
 *.ldb
+
+# LibreOffice
+*.odp#
