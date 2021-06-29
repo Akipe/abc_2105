@@ -1,4 +1,4 @@
-
+package poo.animals;
 
 /**
  * @author Stagiaire
@@ -7,18 +7,12 @@
  */
 public class Herbivore extends Animal {
 
+    public Herbivore Herbivore(){
+        return null;
+    }
 
-
-	public void finalize() throws Throwable {
-		super.finalize();
-	}
-
-	public Herbivore Herbivore(){
-		return null;
-	}
-
-	public Herbivore feed(){
-		return null;
-	}
+    public Herbivore feed(){
+        return null;
+    }
 
 }

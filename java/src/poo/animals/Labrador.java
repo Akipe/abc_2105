@@ -1,4 +1,4 @@
-
+package poo.animals;
 
 /**
  * @author Stagiaire
@@ -7,24 +7,20 @@
  */
 public class Labrador extends Dog {
 
-	public Labrador(){
+    public Labrador(){
 
-	}
+    }
 
-	public void finalize() throws Throwable {
-		super.finalize();
-	}
+    /**
+     * 
+     * @param name
+     */
+    public Dog Labrador(String name){
+        return null;
+    }
 
-	/**
-	 * 
-	 * @param name
-	 */
-	public Dog Labrador(String name){
-		return null;
-	}
-
-	public Animal move(){
-		return null;
-	}
+    public Animal move(){
+        return null;
+    }
 
 }

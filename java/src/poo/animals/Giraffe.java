@@ -1,4 +1,4 @@
-
+package poo.animals;
 
 /**
  * @author Stagiaire
@@ -7,22 +7,16 @@
  */
 public class Giraffe extends Herbivore {
 
+    public Giraffe Giraffe(){
+        return null;
+    }
 
+    public Giraffe move(){
+        return null;
+    }
 
-	public void finalize() throws Throwable {
-		super.finalize();
-	}
-
-	public Giraffe Giraffe(){
-		return null;
-	}
-
-	public Giraffe move(){
-		return null;
-	}
-
-	public Giraffe moose(){
-		return null;
-	}
+    public Giraffe moose(){
+        return null;
+    }
 
 }

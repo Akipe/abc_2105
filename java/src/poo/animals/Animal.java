@@ -1,4 +1,4 @@
-
+package poo.animals;
 
 /**
  * @author Stagiaire
@@ -7,34 +7,30 @@
  */
 public class Animal {
 
-	private String species;
+    private String species;
 
-	public Animal(){
+    public Animal(){
 
-	}
+    }
 
-	public void finalize() throws Throwable {
+    /**
+     * 
+     * @param species
+     */
+    public Animal Animal(String species){
+        return null;
+    }
 
-	}
+    public Animal move(){
+        return null;
+    }
 
-	/**
-	 * 
-	 * @param species
-	 */
-	public Animal Animal(String species){
-		return null;
-	}
+    public Animal feed(){
+        return null;
+    }
 
-	public Animal move(){
-		return null;
-	}
-
-	public Animal feed(){
-		return null;
-	}
-
-	public String getSpecies(){
-		return "";
-	}
+    public String getSpecies(){
+        return "";
+    }
 
 }

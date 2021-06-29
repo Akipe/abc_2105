@@ -1,4 +1,4 @@
-
+package poo.animals;
 
 /**
  * @author Stagiaire
@@ -7,32 +7,28 @@
  */
 public class Bee extends Animal {
 
-	public Bee(){
+    public Bee(){
 
-	}
+    }
 
-	public void finalize() throws Throwable {
-		super.finalize();
-	}
+    /**
+     * 
+     * @param species
+     */
+    public Bee Bee(String species){
+        return null;
+    }
 
-	/**
-	 * 
-	 * @param species
-	 */
-	public Bee Bee(String species){
-		return null;
-	}
+    public Bee move(){
+        return null;
+    }
 
-	public Bee move(){
-		return null;
-	}
+    public Bee feed(){
+        return null;
+    }
 
-	public Bee feed(){
-		return null;
-	}
-
-	public Bee buzz(){
-		return null;
-	}
+    public Bee buzz(){
+        return null;
+    }
 
 }

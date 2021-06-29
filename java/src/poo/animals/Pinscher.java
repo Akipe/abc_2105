@@ -1,4 +1,4 @@
-
+package poo.animals;
 
 /**
  * @author Stagiaire
@@ -7,24 +7,20 @@
  */
 public class Pinscher extends Dog {
 
-	public Pinscher(){
+    public Pinscher(){
 
-	}
+    }
 
-	public void finalize() throws Throwable {
-		super.finalize();
-	}
+    /**
+     * 
+     * @param name
+     */
+    public Dog Pinscher(String name){
+        return null;
+    }
 
-	/**
-	 * 
-	 * @param name
-	 */
-	public Dog Pinscher(String name){
-		return null;
-	}
-
-	public Dog bark(){
-		return null;
-	}
+    public Dog bark(){
+        return null;
+    }
 
 }
