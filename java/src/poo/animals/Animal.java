@@ -9,16 +9,16 @@ public class Animal {
 
     private String species;
 
-    public Animal(){
-
-    }
-
     /**
      * 
      * @param species
      */
-    public Animal Animal(String species){
-        return null;
+    public Animal Animal(String _species){
+        if (!_species.isEmpty()) {
+            this.species = _species;
+        }
+
+        return this;
     }
 
     public Animal move(){
