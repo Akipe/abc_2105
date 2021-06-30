@@ -1,4 +1,6 @@
-package poo.animals;
+package poo.animals.composants.animal;
+
+import poo.animals.composants.Animal;
 
 /**
  * @author Stagiaire

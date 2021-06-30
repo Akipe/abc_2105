@@ -1,4 +1,4 @@
-package poo.animals;
+package poo.animals.composants;
 
 /**
  * @author Stagiaire
