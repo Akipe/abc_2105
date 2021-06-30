@@ -18,7 +18,7 @@ public class App
         Dog         dog;
         Labrador    labrador;
         Pinscher    pinscher;
-        Herbivore   herbivore;
+        Herbivore   snail;
         Horse       horse;
         Giraffe     giraffe;
 
@@ -46,8 +46,8 @@ public class App
 
         niceSeperation();
 
-        herbivore = new Herbivore("escargo");
-        herbivore.feed();
+        snail = new Herbivore("escargot");
+        snail.feed();
 
         niceSeperation();
 
