@@ -7,16 +7,23 @@ package poo.animals;
  */
 public class Giraffe extends Herbivore {
 
-    public Giraffe Giraffe(){
-        return null;
+    public Giraffe()
+    {
+        super("girafe");
     }
 
-    public Giraffe move(){
-        return null;
+    public Giraffe move()
+    {
+        System.out.println("La girafe ce déplace tout doucement ... zZzZzZzZz");
+
+        return this;
     }
 
-    public Giraffe moose(){
-        return null;
+    public Giraffe moose()
+    {
+        System.out.println("La girafe \"moose\" !!! La classe!");
+
+        return this;
     }
 
 }
