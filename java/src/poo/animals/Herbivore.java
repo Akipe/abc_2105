@@ -7,12 +7,15 @@ package poo.animals;
  */
 public class Herbivore extends Animal {
 
-    public Herbivore Herbivore(){
-        return null;
+    public Herbivore(String _species)
+    {
+        super(_species);
     }
 
-    public Herbivore feed(){
-        return null;
-    }
+    public Herbivore feed()
+    {
+        System.out.println("Le " + this.getSpecies() + " mange des végétaux, qu'est ce que c'est bon!");
 
+        return this;
+    }
 }
