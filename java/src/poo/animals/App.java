@@ -1,38 +1,73 @@
 package poo.animals;
 
-import java.util.concurrent.TimeUnit;
+public class App
+{
+    public static void main(String[] args)
+    {
+        Animal      cat;
+        Bee         bee;
+        Dog         dog;
+        Labrador    labrador;
+        Pinscher    pinscher;
+        Herbivore   herbivore;
+        Horse       horse;
+        Giraffe     giraffe;
 
-public class App {
-    public static void main(String[] args) {
-        Animal  cat;
-        Bee     bee;
-        Dog     dog;
-        Labrador labrador;
 
         cat = new Animal("chat");
         System.out.println("L'espèce de l'animal est " + cat.getSpecies());
         cat.move().feed();
 
-        System.out.println("");
+        niceSeperation();
 
         bee = new Bee();
         System.out.println("L'abeille est... une " + bee.getSpecies());
         bee.move().feed().buzz();
         
-        System.out.println("");
+        niceSeperation();
 
         dog = new Dog("Wisky");
         System.out.println("Le chien s'appelle "+ dog.getName());
         dog.feed().bark();
 
-        System.out.println("");
+        niceSeperation();
 
         labrador = new Labrador("Bibou");
-
         labrador.move().move().move().move().move();
 
-        TimeUnit.SECONDS.sleep(6);
+        niceSeperation();
 
-        System.out.println(new java.util.Date().getTime());
+        herbivore = new Herbivore("escargo");
+        herbivore.feed();
+
+        niceSeperation();
+
+        horse = new Horse();
+        horse.feed().neighs();
+
+        niceSeperation();
+
+        giraffe = new Giraffe();
+        giraffe.move().moose();
+
+        niceSeperation();
+        
+        pinscher = new Pinscher("George");
+
+        for (int i = 0; i < 6; i++) {
+            pinscher.bark().bark().bark();
+
+            try {
+                System.out.println("Attendre 5s...");
+                Thread.sleep(5000);
+            } catch(InterruptedException ex) {
+                Thread.currentThread().interrupt();
+            }
+        }
+    }
+
+    private static void niceSeperation()
+    {
+        System.out.println("---------------");
     }
 }
