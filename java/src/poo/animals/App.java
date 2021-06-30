@@ -3,9 +3,9 @@ package poo.animals;
 import poo.animals.composants.Animal;
 import poo.animals.composants.animal.Bee;
 import poo.animals.composants.animal.Dog;
-import poo.animals.composants.animal.Herbivore;
 import poo.animals.composants.animal.dog.Labrador;
 import poo.animals.composants.animal.dog.Pinscher;
+import poo.animals.composants.animal.Herbivore;
 import poo.animals.composants.animal.herbivore.Giraffe;
 import poo.animals.composants.animal.herbivore.Horse;
 
