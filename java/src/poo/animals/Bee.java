@@ -15,19 +15,19 @@ public class Bee extends Animal {
     }
 
     public Bee move(){
-        System.out.println("L'" + this.getSpecies() + " s'envole !");
+        System.out.println("L'abeille s'envole !");
 
         return this;
     }
 
     public Bee feed(){
-        System.out.println("L'" + this.getSpecies() + " mange du nectar");
+        System.out.println("L'abeille mange du nectar");
 
         return this;
     }
 
     public Bee buzz(){
-        System.out.println("L'" + this.getSpecies() + " bourdonne BzZzZzZzZzZz !");
+        System.out.println("L'abeille bourdonne BzZzZzZzZzZz !");
 
         return this;
     }

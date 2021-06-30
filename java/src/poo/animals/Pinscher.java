@@ -23,10 +23,10 @@ public class Pinscher extends Dog {
         long currentTimeMiliseconds = getCurrentTime();
 
         if (hasWaitEnoughBeforeBark(currentTimeMiliseconds)) {
-            System.out.println("Woaf woaf !!!");
+            System.out.println(this.getName() + " aboie : Woaf woaf !!!");
             setLastBarkTime(currentTimeMiliseconds);
         } else {
-            System.out.println("...");
+            System.out.println(this.getName() + " n'a pas envie d'aboyer...");
         }
 
         return this;
