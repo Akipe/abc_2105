@@ -11,26 +11,34 @@ public class Animal {
 
     /**
      * 
-     * @param species
+     * @param _species
      */
-    public Animal Animal(String _species){
-        if (!_species.isEmpty()) {
-            this.species = _species;
+    public Animal(String _species){
+        try {
+            if (!_species.isEmpty()) {
+                this.species = _species;
+            } else {
+                throw new Exception("Veuillez enter une éspéce pour cette animal.");
+            }
+        } catch (Exception error) {
+            System.out.println("Erreur : " + error.getMessage());
+            System.exit(2);
         }
+    }
+
+    public Animal move(){
+        System.out.println("L'animal "+ this.getSpecies() + " ce déplace.");
 
         return this;
     }
 
-    public Animal move(){
-        return null;
-    }
-
     public Animal feed(){
-        return null;
+        System.out.println("L'animal "+ this.getSpecies() + " mange : miam miam.");
+
+        return this;
     }
 
     public String getSpecies(){
-        return "";
+        return this.species;
     }
-
 }
