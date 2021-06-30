@@ -10,7 +10,7 @@ public class Labrador extends Dog {
 
     /**
      * 
-     * @param name
+     * @param _name
      */
     public Labrador(String _name){
         super(_name);
