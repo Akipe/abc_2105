@@ -7,16 +7,12 @@ package poo.animals;
  */
 public class Pinscher extends Dog {
 
-    public Pinscher(){
-
-    }
-
     /**
      * 
-     * @param name
+     * @param _name
      */
-    public Dog Pinscher(String name){
-        return null;
+    public Pinscher(String _name){
+        super(_name);
     }
 
     public Dog bark(){
