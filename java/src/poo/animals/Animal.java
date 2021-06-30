@@ -27,7 +27,7 @@ public class Animal {
     }
 
     public Animal move(){
-        System.out.println("L'animal "+ this.getSpecies() + " ce déplace.");
+        System.out.println("L'animal "+ this.getSpecies() + " se déplace.");
 
         return this;
     }
