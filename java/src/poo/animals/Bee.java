@@ -7,28 +7,29 @@ package poo.animals;
  */
 public class Bee extends Animal {
 
-    public Bee(){
-
-    }
-
     /**
      * 
-     * @param species
      */
-    public Bee Bee(String species){
-        return null;
+    public Bee(){
+        super("abeille");
     }
 
     public Bee move(){
-        return null;
+        System.out.println("L'" + this.getSpecies() + " s'envole !");
+
+        return this;
     }
 
     public Bee feed(){
-        return null;
+        System.out.println("L'" + this.getSpecies() + " mange du nectar");
+
+        return this;
     }
 
     public Bee buzz(){
-        return null;
+        System.out.println("L'" + this.getSpecies() + " bourdonne BzZzZzZzZzZz !");
+
+        return this;
     }
 
 }
