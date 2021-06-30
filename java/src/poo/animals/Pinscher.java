@@ -6,7 +6,7 @@ package poo.animals;
  * @created 29-juin-2021 12:43:36
  */
 public class Pinscher extends Dog {
-    public static final int WAIT_MILISECONDS_BEFORE_BARK = 10000;
+    public final int WAIT_MILISECONDS_BEFORE_BARK = 10000;
     private long lastBarkTimeMiliseconds;
 
     /**
