@@ -7,16 +7,20 @@ package poo.animals;
  */
 public class Horse extends Herbivore {
 
-    public Horse Horse(){
-        return null;
+    public Horse() {
+        super("cheval");
     }
 
     public Horse feed(){
-        return null;
+        System.out.println("Le cheval mange de l'herbe et du foin");
+
+        return this;
     }
 
     public Horse neighs(){
-        return null;
+        System.out.println("Le cheval hennit : Ruhruhruhruh !");
+
+        return this;
     }
 
 }
