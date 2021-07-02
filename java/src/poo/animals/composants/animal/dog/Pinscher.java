@@ -1,5 +1,6 @@
 package poo.animals.composants.animal.dog;
 
+import java.util.Timer;
 import poo.animals.composants.animal.Dog;
 
 /**
@@ -9,7 +10,7 @@ import poo.animals.composants.animal.Dog;
  */
 public class Pinscher extends Dog {
     public final int WAIT_MILISECONDS_BEFORE_BARK = 10000;
-    private long lastBarkTimeMiliseconds;
+    private Timer timer;
 
     /**
      * 
@@ -22,30 +23,9 @@ public class Pinscher extends Dog {
 
     public Dog bark()
     {
-        long currentTimeMiliseconds = getCurrentTime();
-
-        if (hasWaitEnoughBeforeBark(currentTimeMiliseconds)) {
-            System.out.println(this.getName() + " aboie : Woaf woaf !!!");
-            setLastBarkTime(currentTimeMiliseconds);
-        } else {
-            System.out.println(this.getName() + " n'a pas envie d'aboyer...");
-        }
+        timer = new Timer();
+        timer.schedule(new PinscherBarkTask(), 0, WAIT_MILISECONDS_BEFORE_BARK);
 
         return this;
-    }
-
-    private Boolean hasWaitEnoughBeforeBark(long _currentTimeMiliseconds)
-    { 
-        return ((_currentTimeMiliseconds - this.lastBarkTimeMiliseconds) >= (long) WAIT_MILISECONDS_BEFORE_BARK);
-    }
-
-    private void setLastBarkTime(long _currentTimeMiliseconds)
-    {
-        this.lastBarkTimeMiliseconds = _currentTimeMiliseconds;
-    }
-
-    private long getCurrentTime()
-    {
-        return System.currentTimeMillis();
     }
 }

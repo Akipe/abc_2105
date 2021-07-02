@@ -62,17 +62,7 @@ public class App
         niceSeperation();
         
         pinscher = new Pinscher("George");
-
-        for (int i = 0; i < 6; i++) {
-            pinscher.bark().bark().bark();
-
-            try {
-                System.out.println("Attendre 5s...");
-                Thread.sleep(5000);
-            } catch(InterruptedException ex) {
-                Thread.currentThread().interrupt();
-            }
-        }
+        pinscher.bark();
     }
 
     private static void niceSeperation()
