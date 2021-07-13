@@ -53,7 +53,6 @@ public class App
 
         horse = new Horse();
         System.out.println(horse.feed() + "\n" + horse.neighs());
-        System.out.println();
 
         niceSeperation();
 
