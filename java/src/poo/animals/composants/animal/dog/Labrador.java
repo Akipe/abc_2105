@@ -1,6 +1,5 @@
 package poo.animals.composants.animal.dog;
 
-import poo.animals.composants.Animal;
 import poo.animals.composants.animal.Dog;
 
 /**
