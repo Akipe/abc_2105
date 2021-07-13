@@ -14,18 +14,14 @@ public class Giraffe extends Herbivore {
         super("girafe");
     }
 
-    public Giraffe move()
+    public String move()
     {
-        System.out.println("La girafe ce déplace tout doucement ... zZzZzZzZz");
-
-        return this;
+        return "La girafe ce déplace tout doucement ... zZzZzZzZz";
     }
 
-    public Giraffe moose()
+    public String moose()
     {
-        System.out.println("La girafe \"moose\" !!! La classe!");
-
-        return this;
+        return "La girafe \"moose\" !!! La classe!";
     }
 
 }

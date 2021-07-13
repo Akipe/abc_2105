@@ -19,16 +19,14 @@ public class Labrador extends Dog {
         super(_name);
     }
 
-    public Animal move(){
+    public String move(){
         if (this.hasMove) {
-            System.out.println(this.getName() + " n'a pas envie de se déplacer :(");
             this.hasMove = false;
+            return this.getName() + " n'a pas envie de se déplacer :(";
         } else {
-            System.out.println(this.getName() + " marche tranquillement.");
             this.hasMove = true;
+            return this.getName() + " marche tranquillement.";
         }
-
-        return this;
     }
 
 }

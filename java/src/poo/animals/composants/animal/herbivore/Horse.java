@@ -13,16 +13,12 @@ public class Horse extends Herbivore {
         super("cheval");
     }
 
-    public Horse feed(){
-        System.out.println("Le cheval mange de l'herbe et du foin");
-
-        return this;
+    public String feed(){
+        return "Le cheval mange de l'herbe et du foin";
     }
 
-    public Horse neighs(){
-        System.out.println("Le cheval hennit : Ruhruhruhruh !");
-
-        return this;
+    public String neighs(){
+        return "Le cheval hennit : Ruhruhruhruh !";
     }
 
 }

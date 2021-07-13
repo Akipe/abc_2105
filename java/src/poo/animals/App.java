@@ -25,44 +25,45 @@ public class App
 
         cat = new Animal("chat");
         System.out.println("L'espèce de l'animal est " + cat.getSpecies());
-        cat.move().feed();
+        System.out.println(cat.move() + "\n" + cat.feed());
 
         niceSeperation();
 
         bee = new Bee();
         System.out.println("L'abeille est... une " + bee.getSpecies());
-        bee.move().feed().buzz();
+        System.out.println(bee.move() + "\n" + bee.feed() + "\n" + bee.buzz());
         
         niceSeperation();
 
         dog = new Dog("Wisky");
         System.out.println("Le chien s'appelle "+ dog.getName());
-        dog.feed().bark();
+        System.out.println(dog.feed() + "\n" + dog.bark());
 
         niceSeperation();
 
         labrador = new Labrador("Bibou");
-        labrador.move().move().move().move().move();
+        System.out.println(labrador.move() + "\n" + labrador.move() + "\n" + labrador.move() + "\n" + labrador.move());
 
         niceSeperation();
 
         snail = new Herbivore("escargot");
-        snail.feed();
+        System.out.println(snail.feed());
 
         niceSeperation();
 
         horse = new Horse();
-        horse.feed().neighs();
+        System.out.println(horse.feed() + "\n" + horse.neighs());
+        System.out.println();
 
         niceSeperation();
 
         giraffe = new Giraffe();
-        giraffe.move().moose();
+        System.out.println(giraffe.move() + "\n"  + giraffe.moose());
 
         niceSeperation();
         
         pinscher = new Pinscher("George");
-        pinscher.bark();
+        System.out.println(pinscher.bark());
     }
 
     private static void niceSeperation()

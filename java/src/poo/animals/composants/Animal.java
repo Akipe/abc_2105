@@ -26,16 +26,12 @@ public class Animal {
         }
     }
 
-    public Animal move(){
-        System.out.println("L'animal "+ this.getSpecies() + " se déplace.");
-
-        return this;
+    public String move(){
+        return "L'animal "+ this.getSpecies() + " se déplace.";
     }
 
-    public Animal feed(){
-        System.out.println("L'animal "+ this.getSpecies() + " mange : miam miam.");
-
-        return this;
+    public String feed(){
+        return "L'animal "+ this.getSpecies() + " mange : miam miam.";
     }
 
     public String getSpecies(){

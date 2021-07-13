@@ -16,22 +16,16 @@ public class Bee extends Animal {
         super("abeille");
     }
 
-    public Bee move(){
-        System.out.println("L'abeille s'envole !");
-
-        return this;
+    public String move(){
+        return "L'abeille s'envole !";
     }
 
-    public Bee feed(){
-        System.out.println("L'abeille mange du nectar");
-
-        return this;
+    public String feed(){
+        return "L'abeille mange du nectar";
     }
 
-    public Bee buzz(){
-        System.out.println("L'abeille bourdonne BzZzZzZzZzZz !");
-
-        return this;
+    public String buzz(){
+        return "L'abeille bourdonne BzZzZzZzZzZz !";
     }
 
 }

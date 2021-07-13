@@ -32,16 +32,12 @@ public class Dog extends Animal {
         return this.name;
     }
 
-    public Dog feed(){
-        System.out.println("Le " + this.getSpecies() + " " + this.getName() + " est entrain de manger sa pâtée.");
-
-        return this;
+    public String feed(){
+        return "Le " + this.getSpecies() + " " + this.getName() + " est entrain de manger sa pâtée.";
     }
 
-    public Dog bark(){
-        System.out.println("Le " + this.getSpecies() + " " + this.getName() + " est entrain d'aboyer : woaf woaf!");
-
-        return this;
+    public String bark(){
+        return "Le " + this.getSpecies() + " " + this.getName() + " est entrain d'aboyer : woaf woaf!";
     }
 
 }

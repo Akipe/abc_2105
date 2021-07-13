@@ -14,10 +14,8 @@ public class Herbivore extends Animal {
         super(_species);
     }
 
-    public Herbivore feed()
+    public String feed()
     {
-        System.out.println("Le " + this.getSpecies() + " mange des végétaux, qu'est ce que c'est bon!");
-
-        return this;
+        return "Le " + this.getSpecies() + " mange des végétaux, qu'est ce que c'est bon!";
     }
 }

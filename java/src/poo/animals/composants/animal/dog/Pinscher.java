@@ -21,11 +21,11 @@ public class Pinscher extends Dog {
         super(_name);
     }
 
-    public Dog bark()
+    public String bark()
     {
         timer = new Timer();
         timer.schedule(new PinscherBarkTask(), 0, WAIT_MILISECONDS_BEFORE_BARK);
 
-        return this;
+        return "Abboyement du Pinscher...";
     }
 }
