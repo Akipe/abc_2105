@@ -1,4 +1,4 @@
-
+package poo.cardgame.composants;
 
 /**
  * @author Stagiaire
@@ -6,57 +6,48 @@
  * @created 15-juil.-2021 09:17:59
  */
 public class Card {
+    private String  name;
+    private int     strength;
+    private int     armor;
+    private int     power;
 
-	private String name;
-	private int strength;
-	private int armor;
-	private int power;
 
-	public Card(){
+    /**
+     * 
+     * @param _name
+     * @param _strength
+     * @param _armor
+     * @param _power
+     */
+    public Card(String _name, int _strength, int _armor, int _power){
 
-	}
+    }
 
-	public void finalize() throws Throwable {
+    public String getName(){
+        return "";
+    }
 
-	}
+    public int getStrength(){
+        return 0;
+    }
 
-	/**
-	 * 
-	 * @param _name
-	 * @param _strength
-	 * @param _armor
-	 * @param _power
-	 */
-	public Card(String _name, int _strength, int _armor, int _power){
+    public int getArmor(){
+        return 0;
+    }
 
-	}
+    public int getPower(){
+        return 0;
+    }
 
-	public String getName(){
-		return "";
-	}
+    public Player[] getCardOwner(){
+        return null;
+    }
 
-	public int getStrength(){
-		return 0;
-	}
+    /**
+     * 
+     * @param _player
+     */
+    public void setCardOwner(Player _player){
 
-	public int getArmor(){
-		return 0;
-	}
-
-	public int getPower(){
-		return 0;
-	}
-
-	public Player[] getCardOwner(){
-		return null;
-	}
-
-	/**
-	 * 
-	 * @param _player
-	 */
-	public void setCardOwner(Player _player){
-
-	}
-
+    }
 }
