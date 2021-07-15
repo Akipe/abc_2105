@@ -1,5 +1,7 @@
 package poo.cardgame.composants;
 
+import java.util.Arrays;
+
 /**
  * @author Stagiaire
  * @version 1.0
@@ -10,7 +12,8 @@ public class Player {
     private String  firstName;
     private String  lastName;
     private String  email;
-    private Card    cards;
+    private Card[]  cards;
+    private Player  oppenent;
 
 
     /**
@@ -24,22 +27,24 @@ public class Player {
         try {
             if (_nickname.isEmpty()) {
                 throw new Exception("Veuillez entrer un surnom pour le joueur.");
+            } else if (_email.isEmpty()) {
+                throw new Exception("Veuillez entrer un email pour le joueur.");
             } else if (_firstName.isEmpty()) {
                 throw new Exception("Veuillez entrer un prénom pour le joueur.");
             } else if (_lastName.isEmpty()) {
                 throw new Exception("Veuillez entrer un nom pour le joueur.");
-            } else if (_email.isEmpty()) {
-                throw new Exception("Veuillez entrer une adresse courriel pour le joueur.");
             }
         } catch (Exception error) {
             System.out.println("Erreur : " + error.getMessage());
             System.exit(2);
         }
 
-        this.nickname = _nickname;
-        this.firstName = _firstName;
-        this.lastName = _lastName;
-        this.email = _email;
+        this.nickname   = _nickname;
+        this.email      = _email;
+        this.firstName  = _firstName;
+        this.lastName   = _lastName;
+        this.cards      = new Card[0];
+        this.oppenent   = null;
     }
 
     /**
@@ -73,6 +78,25 @@ public class Player {
         return this.lastName;
     }
 
+    /**
+     * 
+     * @param _email
+     */
+    public Player setEmail(String _email){
+        try {
+            if (_email.isEmpty()) {
+                throw new Exception("Veuillez entrer un email pour le joueur.");
+            }
+        } catch (Exception error) {
+            System.out.println("Erreur : " + error.getMessage());
+            System.exit(2);
+        }
+        
+        this.email = _email;
+
+        return this;
+    }
+
     public String getEmail(){
         return this.email;
     }
@@ -82,23 +106,53 @@ public class Player {
      * @param _player
      */
     public Player setOpponent(Player _player){
-        return null;
+        this.oppenent = _player;
+
+        // if (this.oppenent.getOpponent() != null) {
+        //     if (! this.oppenent.getOpponent().equals(this)) {
+        //         System.out.println("Objet pas égale");
+        //     } else {
+        //         System.out.println("Objet égale");
+        //     }
+        // }
+
+        // If the other player has already an other opponent,
+        // we need to ensure to remove them
+        if (this.oppenent.getOpponent() != null) {
+            if (! this.oppenent.getOpponent().equals(this)) {
+                this.oppenent.removeOpponent();
+                this.oppenent.setOpponent(this);
+            }
+        } else {
+            this.oppenent.setOpponent(this);
+        }
+
+        return this;
     }
 
     public Player getOpponent(){
-        return null;
+        return this.oppenent;
     }
 
     public Player removeOpponent(){
-        return null;
+        this.oppenent.removeOnlyOneOpponent();
+        this.oppenent = null;
+        
+        return this;
+    }
+
+    private void removeOnlyOneOpponent(){
+        this.oppenent = null;
     }
 
     public Card[] getHand(){
-        return null;
+        return this.cards;
     }
 
     public Player clearHand(){
-        return null;
+        this.cards = new Card[0];
+
+        return this;
     }
 
     /**
@@ -106,7 +160,25 @@ public class Player {
      * @param _card
      */
     public Player addCard(Card _card){
-        return null;
+        try {
+            if (_card == null) {
+                throw new Exception("Veuillez definir une carte à assigner au joueur.");
+            }
+        } catch (Exception error) {
+            System.out.println("Erreur : " + error.getMessage());
+            System.exit(2);
+        }
+
+        for (int index = 0; index < this.cards.length; index++) {
+            if (this.cards[index].equals(_card)) {
+                this.cards = Arrays.copyOf(this.cards, this.cards.length + 1);
+                this.cards[this.cards.length - 1] = _card;
+                _card.addCardOwner(this);
+                index = this.cards.length - 1; // Stop for
+            }
+        }
+
+        return this;
     }
 
     /**
@@ -114,6 +186,42 @@ public class Player {
      * @param _card
      */
     public Player removeCard(Card _card){
-        return null;
+        Boolean isCardIsOwn = false;
+
+        try {
+            if (this.cards.length == 0) {
+                throw new Exception("Aucune cartes n'est associé à ce joueur.");
+            } else if (_card == null) {
+                throw new Exception("Veuillez définir une carte à supprimer de la main du joueur.");
+            }
+        } catch (Exception error) {
+            System.out.println("Erreur : " + error.getMessage());
+            System.exit(2);
+        }
+
+        for (int index = 0; index < this.cards.length; index++) {
+            if (this.cards[index].equals(_card)) {
+                isCardIsOwn = true;
+            }
+        }
+
+        if (isCardIsOwn) {
+            Card[] arrayWithRemoveCard = new Card[this.cards.length - 1];
+
+            for (int indexOldTab = 0, indexNewTab = 0; indexOldTab < this.cards.length; ++indexOldTab) {
+
+                if (this.cards[indexOldTab].equals(_card)) {
+                    indexNewTab--;
+                } else {
+                    arrayWithRemoveCard[indexNewTab] = this.cards[indexOldTab];
+                }
+                indexNewTab++;
+            }
+
+            this.cards =  arrayWithRemoveCard;
+            _card.removeCardOwner(this);
+        }
+
+        return this;
     }
 }

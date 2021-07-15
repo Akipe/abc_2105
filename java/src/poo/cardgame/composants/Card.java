@@ -65,6 +65,14 @@ public class Card {
      * @param _player
      */
     public Card addCardOwner(Player _player){
+        try {
+            if (_player == null) {
+                throw new Exception("Veuillez definir le joueur à qui assigner la carte.");
+            }
+        } catch (Exception error) {
+            System.out.println("Erreur : " + error.getMessage());
+            System.exit(2);
+        }
         // this.inHandPlayers = Arrays.copyOf(this.inHandPlayers, this.inHandPlayers.length + 1);
         // this.inHandPlayers[this.inHandPlayers.length - 1] = _player;
         this.inHandPlayers = (Player[]) AkpArrays.appendObject(this.inHandPlayers, _player);
@@ -80,23 +88,26 @@ public class Card {
         try {
             if (this.inHandPlayers.length == 0) {
                 throw new Exception("Aucun joueur n'est associé à cette carte!");
+            } else if (_player == null) {
+                throw new Exception("Veuillez définir un joueur à assigner à cette carte.");
             }
 
-            // // Create a new array with 1 less index
-            // Player[] inHandPlayersWithRemovedPlayer = new Player[this.inHandPlayers.length - 1];
+            // Create a new array with 1 less index
+            Player[] inHandPlayersWithRemovedPlayer = new Player[this.inHandPlayers.length - 1];
 
-            // // We add value of old array to the new array, without the player that we want to delete
-            // for (int indexOldTab = 0, indexNewTab = 0; indexOldTab < this.inHandPlayers.length; indexNewTab = ++indexOldTab) {
+            // We add value of old array to the new array, without the player that we want to delete
+            for (int indexOldTab = 0, indexNewTab = 0; indexOldTab < this.inHandPlayers.length; ++indexOldTab) {
 
-            //     if (this.inHandPlayers[indexOldTab] == _player) {
-            //         indexNewTab--;
-            //     } else {
-            //         inHandPlayersWithRemovedPlayer[indexNewTab] = this.inHandPlayers[indexOldTab];
-            //     }
-            // }
+                if (this.inHandPlayers[indexOldTab] == _player) {
+                    indexNewTab--;
+                } else {
+                    inHandPlayersWithRemovedPlayer[indexNewTab] = this.inHandPlayers[indexOldTab];
+                }
+                indexNewTab++;
+            }
 
             // this.inHandPlayers = inHandPlayersWithRemovedPlayer;
-            this.inHandPlayers = (Player[]) AkpArrays.removeObject(this.inHandPlayers, _player);
+            //this.inHandPlayers = (Player[]) AkpArrays.removeObject(this.inHandPlayers, _player);
 
         } catch (Exception error) {
             System.out.println("Erreur : " + error.getMessage());
@@ -114,5 +125,9 @@ public class Card {
         this.inHandPlayers = new Player[0];
 
         return this;
+    }
+
+    public boolean equals(Card _card) {
+        return this.getName() == _card.getName();
     }
 }

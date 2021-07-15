@@ -8,13 +8,15 @@ public class AkpArrays {
     {
         Object[] arrayWithRemoveObject = new Object[_arrayObjects.length - 1];
 
-        for (int indexOldTab = 0, indexNewTab = 0; indexOldTab < _arrayObjects.length; indexNewTab = ++indexOldTab) {
+        for (int indexOldTab = 0, indexNewTab = 0; indexOldTab < _arrayObjects.length; indexOldTab++) {
 
-            if (_arrayObjects[indexOldTab] == _objectToRemove) {
+            if (_arrayObjects[indexOldTab].equals(_objectToRemove)) {
                 indexNewTab--;
             } else {
                 arrayWithRemoveObject[indexNewTab] = _arrayObjects[indexOldTab];
             }
+
+            indexNewTab++;
         }
 
         return arrayWithRemoveObject;
