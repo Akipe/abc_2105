@@ -152,8 +152,6 @@ public class Player {
      * @param _card
      */
     public Player addCard(CardClass _card){
-        Boolean isCardNotOwned;
-
         try {
             if (_card == null) {
                 throw new Exception("Veuillez definir une carte à assigner au joueur.");
@@ -163,15 +161,7 @@ public class Player {
             System.exit(2);
         }
 
-        isCardNotOwned = true;
-
-        for (int index = 0; index < this.cards.length; index++) {
-            if (this.cards[index].equals(_card)) {
-                isCardNotOwned = false;
-            }
-        }
-
-        if (isCardNotOwned) {
+        if (!this.isCardIsInHand(_card)) {
             this.cards = Arrays.copyOf(this.cards, this.cards.length + 1);
             this.cards[this.cards.length - 1] = _card;
         }
@@ -184,8 +174,6 @@ public class Player {
      * @param _card
      */
     public Player removeCard(CardClass _card){
-        Boolean isCardIsOwn;
-
         try {
             if (this.cards.length == 0) {
                 throw new Exception("Aucune cartes n'est associé à ce joueur.");
@@ -197,15 +185,7 @@ public class Player {
             System.exit(2);
         }
 
-        isCardIsOwn = false;
-
-        for (int index = 0; index < this.cards.length; index++) {
-            if (this.cards[index].equals(_card)) {
-                isCardIsOwn = true;
-            }
-        }
-
-        if (isCardIsOwn) {
+        if (this.isCardIsInHand(_card)) {
             CardClass[] cardsWithRemovedCard = new CardClass[this.cards.length - 1];
 
             for (int indexAllCards = 0, indexWithoutCard = 0; indexAllCards < this.cards.length; ++indexAllCards) {
@@ -222,5 +202,16 @@ public class Player {
         }
 
         return this;
+    }
+
+    private Boolean isCardIsInHand(CardClass _card)
+    {
+        for (int index = 0; index < this.cards.length; index++) {
+            if (this.cards[index].equals(_card)) {
+                return true;
+            }
+        }
+
+        return false;
     }
 }
