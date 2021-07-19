@@ -20,7 +20,8 @@ public class App {
 
         joueur1.addCard(carteA);
         joueur1.addCard(carteB);
-        joueur1.addCard(carteC);
+        joueur3.addCard(carteC);
+        joueur2.addCard(carteD);
 
         for (int index = 0; index < joueur1.getHand().length; index++) {
             System.out.println("Carte " + index + ": " + joueur1.getHand()[index].getName());
