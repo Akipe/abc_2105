@@ -1,7 +1,6 @@
 package poo.cardgame.composants.card;
 
 import poo.cardgame.composants.Card;
-import poo.cardgame.composants.Energy;
 
 /**
  * @author Stagiaire
@@ -21,16 +20,34 @@ public class CardClass extends Card {
      * @param _description
      * @param _energy
      */
-    public CardClass(String _name, String _description, Energy _energy){
+    public CardClass(String _name, int _strength, int _armor, int _power, String _className, String _description, Energy _energy){
+        super(_name, _strength, _armor, _power);
 
+        try {
+            if (_className.isEmpty()) {
+                throw new Exception("Veuillez entrer un surnom pour le joueur.");
+            } else if (_description.isEmpty()) {
+                throw new Exception("Veuillez entrer un email pour le joueur.");
+            } else if (_energy == null) {
+                throw new Exception("Veuillez entrer un prénom pour le joueur.");
+            }
+        } catch (Exception error) {
+            System.out.println("Erreur : " + error.getMessage());
+            System.exit(2);
+        }
+
+        this.classID = Card.getHowManyQuantities() - 1;
+        this.className = _className;
+        this.classDescription = _description;
+        this.classEnergy = _energy;
     }
 
     public int getClassID(){
-        return 0;
+        return this.classID;
     }
 
     public String getClassName(){
-        return "";
+        return this.className;
     }
 
     /**
@@ -38,18 +55,25 @@ public class CardClass extends Card {
      * @param _description
      */
     public CardClass setClassDescription(String _description){
-        return null;
+        try {
+            if (_description.isEmpty()) {
+                throw new Exception("Veuillez entrer une description.");
+            }
+        } catch (Exception error) {
+            System.err.println("Erreur : " + error.getMessage());
+            System.exit(2);
+        }
+
+        this.classDescription = _description;
+
+        return this;
     }
 
     public String getClassDescription(){
-        return "";
+        return this.classDescription;
     }
 
     public Energy getClassEnergy(){
-        return null;
-    }
-
-    private CardClass autoIncrementClassID(){
-        return null;
+        return this.classEnergy;
     }
 }

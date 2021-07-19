@@ -1,4 +1,4 @@
-package poo.cardgame.composants;
+package poo.cardgame.composants.card;
 
 /**
  * @author Stagiaire

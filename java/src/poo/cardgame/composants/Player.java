@@ -2,18 +2,20 @@ package poo.cardgame.composants;
 
 import java.util.Arrays;
 
+import poo.cardgame.composants.card.CardClass;
+
 /**
  * @author Stagiaire
  * @version 1.0
  * @created 15-juil.-2021 09:17:59
  */
 public class Player {
-    private String  nickname;
-    private String  firstName;
-    private String  lastName;
-    private String  email;
-    private Card[]  cards;
-    private Player  oppenent;
+    private String      nickname;
+    private String      firstName;
+    private String      lastName;
+    private String      email;
+    private CardClass[] cards;
+    private Player      oppenent;
 
 
     /**
@@ -43,7 +45,7 @@ public class Player {
         this.email      = _email;
         this.firstName  = _firstName;
         this.lastName   = _lastName;
-        this.cards      = new Card[0];
+        this.cards      = new CardClass[0];
         this.oppenent   = null;
     }
 
@@ -108,16 +110,6 @@ public class Player {
     public Player setOpponent(Player _player){
         this.oppenent = _player;
 
-        // if (this.oppenent.getOpponent() != null) {
-        //     if (! this.oppenent.getOpponent().equals(this)) {
-        //         System.out.println("Objet pas égale");
-        //     } else {
-        //         System.out.println("Objet égale");
-        //     }
-        // }
-
-        // If the other player has already an other opponent,
-        // we need to ensure to remove them
         if (this.oppenent.getOpponent() != null) {
             if (! this.oppenent.getOpponent().equals(this)) {
                 this.oppenent.removeOpponent();
@@ -145,12 +137,12 @@ public class Player {
         this.oppenent = null;
     }
 
-    public Card[] getHand(){
+    public CardClass[] getHand(){
         return this.cards;
     }
 
     public Player clearHand(){
-        this.cards = new Card[0];
+        this.cards = new CardClass[0];
 
         return this;
     }
@@ -159,7 +151,9 @@ public class Player {
      * 
      * @param _card
      */
-    public Player addCard(Card _card){
+    public Player addCard(CardClass _card){
+        Boolean isCardNotOwned;
+
         try {
             if (_card == null) {
                 throw new Exception("Veuillez definir une carte à assigner au joueur.");
@@ -169,13 +163,17 @@ public class Player {
             System.exit(2);
         }
 
+        isCardNotOwned = true;
+
         for (int index = 0; index < this.cards.length; index++) {
             if (this.cards[index].equals(_card)) {
-                this.cards = Arrays.copyOf(this.cards, this.cards.length + 1);
-                this.cards[this.cards.length - 1] = _card;
-                _card.addCardOwner(this);
-                index = this.cards.length - 1; // Stop for
+                isCardNotOwned = false;
             }
+        }
+
+        if (isCardNotOwned) {
+            this.cards = Arrays.copyOf(this.cards, this.cards.length + 1);
+            this.cards[this.cards.length - 1] = _card;
         }
 
         return this;
@@ -185,8 +183,8 @@ public class Player {
      * 
      * @param _card
      */
-    public Player removeCard(Card _card){
-        Boolean isCardIsOwn = false;
+    public Player removeCard(CardClass _card){
+        Boolean isCardIsOwn;
 
         try {
             if (this.cards.length == 0) {
@@ -199,6 +197,8 @@ public class Player {
             System.exit(2);
         }
 
+        isCardIsOwn = false;
+
         for (int index = 0; index < this.cards.length; index++) {
             if (this.cards[index].equals(_card)) {
                 isCardIsOwn = true;
@@ -206,20 +206,19 @@ public class Player {
         }
 
         if (isCardIsOwn) {
-            Card[] arrayWithRemoveCard = new Card[this.cards.length - 1];
+            CardClass[] cardsWithRemovedCard = new CardClass[this.cards.length - 1];
 
-            for (int indexOldTab = 0, indexNewTab = 0; indexOldTab < this.cards.length; ++indexOldTab) {
+            for (int indexAllCards = 0, indexWithoutCard = 0; indexAllCards < this.cards.length; ++indexAllCards) {
 
-                if (this.cards[indexOldTab].equals(_card)) {
-                    indexNewTab--;
+                if (this.cards[indexAllCards].equals(_card)) {
+                    indexWithoutCard--;
                 } else {
-                    arrayWithRemoveCard[indexNewTab] = this.cards[indexOldTab];
+                    cardsWithRemovedCard[indexWithoutCard] = this.cards[indexAllCards];
                 }
-                indexNewTab++;
+                indexWithoutCard++;
             }
 
-            this.cards =  arrayWithRemoveCard;
-            _card.removeCardOwner(this);
+            this.cards =  cardsWithRemovedCard;
         }
 
         return this;

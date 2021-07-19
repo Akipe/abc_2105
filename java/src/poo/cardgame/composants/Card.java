@@ -1,7 +1,5 @@
 package poo.cardgame.composants;
 
-import poo.cardgame.composants.helper.AkpArrays;
-
 /**
  * @author Stagiaire
  * @version 1.0
@@ -12,7 +10,7 @@ public class Card {
     private int         strength;
     private int         armor;
     private int         power;
-    private Player[]    inHandPlayers;
+    private static int  quantities;
 
 
     /**
@@ -37,7 +35,7 @@ public class Card {
         this.armor      = _armor;
         this.power      = _power;
 
-        this.inHandPlayers = new Player [0];
+        Card.quantities++;
     }
 
     public String getName(){
@@ -56,78 +54,7 @@ public class Card {
         return this.power;
     }
 
-    public Player[] getCardOwner(){
-        return this.inHandPlayers;
-    }
-
-    /**
-     * 
-     * @param _player
-     */
-    public Card addCardOwner(Player _player){
-        try {
-            if (_player == null) {
-                throw new Exception("Veuillez definir le joueur à qui assigner la carte.");
-            }
-        } catch (Exception error) {
-            System.out.println("Erreur : " + error.getMessage());
-            System.exit(2);
-        }
-        // this.inHandPlayers = Arrays.copyOf(this.inHandPlayers, this.inHandPlayers.length + 1);
-        // this.inHandPlayers[this.inHandPlayers.length - 1] = _player;
-        this.inHandPlayers = (Player[]) AkpArrays.appendObject(this.inHandPlayers, _player);
-
-        return this;
-    }
-
-    /**
-     * 
-     * @param _player
-     */
-    public Card removeCardOwner(Player _player){
-        try {
-            if (this.inHandPlayers.length == 0) {
-                throw new Exception("Aucun joueur n'est associé à cette carte!");
-            } else if (_player == null) {
-                throw new Exception("Veuillez définir un joueur à assigner à cette carte.");
-            }
-
-            // Create a new array with 1 less index
-            Player[] inHandPlayersWithRemovedPlayer = new Player[this.inHandPlayers.length - 1];
-
-            // We add value of old array to the new array, without the player that we want to delete
-            for (int indexOldTab = 0, indexNewTab = 0; indexOldTab < this.inHandPlayers.length; ++indexOldTab) {
-
-                if (this.inHandPlayers[indexOldTab] == _player) {
-                    indexNewTab--;
-                } else {
-                    inHandPlayersWithRemovedPlayer[indexNewTab] = this.inHandPlayers[indexOldTab];
-                }
-                indexNewTab++;
-            }
-
-            // this.inHandPlayers = inHandPlayersWithRemovedPlayer;
-            //this.inHandPlayers = (Player[]) AkpArrays.removeObject(this.inHandPlayers, _player);
-
-        } catch (Exception error) {
-            System.out.println("Erreur : " + error.getMessage());
-            System.exit(2);
-        }
-
-        return this;
-    }
-    
-    /**
-     * 
-     * @param _player
-     */
-    public Card removeAllCardOwners(Player _player){
-        this.inHandPlayers = new Player[0];
-
-        return this;
-    }
-
-    public boolean equals(Card _card) {
-        return this.getName() == _card.getName();
+    public static int getHowManyQuantities(){
+        return Card.quantities;
     }
 }
