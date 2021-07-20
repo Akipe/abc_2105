@@ -5,8 +5,10 @@ namespace abc2105\basket_app\fruit;
 
 use abc2105\basket_app\Fruit;
 
-class Pear extends Fruit {
+class Pear extends Fruit
+{
     private string $color;
+
 
     public function getColor(): string
     {

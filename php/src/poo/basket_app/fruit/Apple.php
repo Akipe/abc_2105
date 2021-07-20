@@ -9,6 +9,7 @@ class Apple extends Fruit
 {
     private boolean $redLabel;
 
+
     public function isRedLabel(): boolean
     {
         // ...
