@@ -1,7 +1,7 @@
 <?php
 declare(strict_types = 1);
 
-namespace abcd2105\basket_app;
+namespace abc2105\basket_app;
 
 class Fruit
 {
