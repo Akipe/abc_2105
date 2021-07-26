@@ -10,7 +10,7 @@ La sécurité des applications web
 - Présentation de la sécurité informatique, état actuelle de la sécurité, répércution financiére et autres
 - définir les risques et adversaires, accepter la possibilité d'être piraté
 - Présentation de la sécurité application web
-    - les différentes attaques
+    - les différentes attaques (top 10 des risque de sécurité web de OWASP)
     - les solutions
 - Conclusion sur comment gérer ces risques
 
@@ -58,3 +58,5 @@ La sécurité des applications web
 - https://www.edx.org/course/web-security-fundamentals
 - https://developer.mozilla.org/en-US/docs/Web/Security
 - https://www.synbioz.com/blog/securite-applications-web
+- https://owasp.org/www-project-top-ten/
+- https://fr.wikipedia.org/wiki/Open_Web_Application_Security_Project
