@@ -24,8 +24,8 @@ La sécurité des applications web
     - Les attaques XSS reflétées (reflected XSS attacks) qui ne stockent pas le contenu malicieux sur le serveur web, mais qui le livrent aux utilisateurs de l’application via une URL ou directement sur le navigateur.
 - Les attaques en injection (Commandes injection, SQL Injection, LDAP injection...).
 - Les attaques sur les sessions (cookie poisonning, session hijacking...).
-Exploitation de vulnérabilités sur le frontal HTTP (ver Nimda, faille Unicode...).
-Attaques sur les configurations standard (Default Password, Directory Transversal...).
+- Exploitation de vulnérabilités sur le frontal HTTP (ver Nimda, faille Unicode...).
+- Attaques sur les configurations standard (Default Password, Directory Transversal...).
 - Falsification de demandes intersites (CSRF), CSRF trompe les victimes lorsqu'elles font une demande qui utilise leur autorisation ou leur authentification. Par conséquent, grâce à ces privilèges de compte, les attaquants peuvent faire des requêtes usurpant l'identité de l'utilisateur. Cela pourrait entraîner un transfert de fonds, des changements de mot de passe, etc.
 - Déni de service (DoS) et déni de service distribué (DDoS), Les attaquants surchargent le serveur ciblé et / ou son infrastructure avec divers trafics d'attaque. Une fois que le serveur devient incapable de traiter efficacement les demandes inkling, il commence à se comporter lentement et refuse finalement le service à davantage de demandes entrantes, même de visiteurs légitimes.
 - Sécurité des systèmes interconnectés
