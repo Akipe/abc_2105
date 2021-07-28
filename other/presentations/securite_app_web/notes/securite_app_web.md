@@ -17,6 +17,10 @@ La sécurité des applications web
 - Faire une présentation avec des exemples, et peut être une comparaison avec un objet du quotidien (bateau, voiture, etc...) ?
 
 # Liste d'attaques
+- vérifier les données en entrée
+- vérifier les erreurs de conceptions
+- vérifier les erreurs techniques
+
 - authentification et bruteforce
 - gestion des droits d'accès et élévation de privilèges
 - exploitation de failles XSS, les attaques XSS reposent sur l’envoi de contenus malicieux affichés sur le navigateur des utilisateurs d’une application web, sous forme de pop-up ou une redirection vers un site externe.
