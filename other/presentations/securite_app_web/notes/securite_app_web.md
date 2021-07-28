@@ -64,3 +64,11 @@ La sécurité des applications web
 - https://www.synbioz.com/blog/securite-applications-web
 - https://owasp.org/www-project-top-ten/
 - https://fr.wikipedia.org/wiki/Open_Web_Application_Security_Project
+
+vidéos :
+- https://www.youtube.com/watch?v=qjR-BW5EG0c
+- https://www.youtube.com/watch?v=UW2ZsbhbFDY
+- https://www.youtube.com/watch?v=PlsSS16k8Vk
+- https://www.youtube.com/watch?v=Z48U5cqcOh0
+- https://www.youtube.com/watch?v=zVu-KEO8hps
+- https://www.youtube.com/watch?v=Ypgb7L1A2zI
