@@ -4,7 +4,7 @@ Plage - régles de gestion
 - Une plage appartient à une et une seul ville.
 - Une ville à zero ou plusieurs plages.
 
-- Une plage est caractérisé par une ou deux nature de terrain.
+- Une plage est caractérisé par une ou plusieurs natures de terrain.
 - Une nature de terrain caractértise zero ou plusieurs plages.
 
 - Une ville est localisé dans une département.
