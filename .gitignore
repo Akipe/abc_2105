@@ -354,4 +354,10 @@ MigrationBackup/
 *.ldb
 
 # LibreOffice
+*.ods#
+*.odt#
 *.odp#
+*.doc#
+*.xls#
+*.docx#
+*.xlsx#
