@@ -1,0 +1,15 @@
+Merise 02b – 1.1 Plage,,,,
+Mnémonique,Signification,Type,Longueur,Contraintes
+plage_nom,Nom de la plage,A,250,Identifiant
+plage_longueur_km,Longueur de la plage en kilomètre,N,"10,2",Obligatoire
+ville_code_postal,Code postal de la ville,AN,5,"Identifiant, doit être de taille 5"
+ville_nom,Nom de la ville,A,250,Obligatoire
+ville_nombre_touristes_annuel,Nombre de touristes annuel,N,10,Facultatif (valeur de 0 si vide)
+departement_code,Code du département,N,3,"Identifiant, doit être de taille entre 2 et 3"
+departement_nom,Nom du département,A,250,"Obligatoire, unique"
+region_code,Code Insee de la région,AN,2,Identifiant
+region_nom,Nom de la région,A,250,"Obligatoire, unique"
+responsable_id,Identifiant du responsable région,N,11,Identifiant auto incrémenté
+responsable_nom,Nom du responsable région,A,250,Obligatoire
+responsable_prenom,Prénom du responsable région,A,250,Obligatoire
+terrain_nom,Nom du type de nature d’une plage,A,250,Identifiant
