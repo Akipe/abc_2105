@@ -1,17 +1,16 @@
 Data dictionary for library,,,,
 Mnemonic,Description,Type,Length,Constraint
-,,,,
 customers_id,Identifier of customer,N,11,"Identifier, auto increment"
-customers_first_name,Customer first name,A,100,Required
-customers_last_name,Customer last name,A,100,Required
-customers_address,Customer address,AN,250,"Required, >= 5"
+customers_first_name,Customer first name,A,64,Required
+customers_last_name,Customer last name,A,64,Required
+customers_address,Customer address,AN,256,"Required, >= 5"
 customers_deposit,Deposit of customer,N,3,"Optional, >= 0"
 books_id,Identifier of book generate by library,N,11,Identifier (auto increment ?)
-books_title,Title of the book,AN,250,Required
-books_editor,Editor of the book,AN,250,Required
+books_title,Title of the book,AN,256,Required
+books_editor,Editor of the book,AN,256,Required
 books_date_purchase,Date of book purchase,D,x,"Required, YYYY-MM-DD"
 books_borrow_date,Date of borrow,D,x,"Optional, YYYY-MM-DD"
-books_condition,Name of the different conditions of a book,A,100,Required
+books_condition,Name of the different conditions of a book,A,512,Required
 writers_id,Identifier of a writer,N,30,"Identifier, auto increment"
-writers_first_name,First name of writer,A,100,Required
-writers_last_name,Last name of writer,A,100,Required
+writers_first_name,First name of writer,A,64,Required
+writers_last_name,Last name of writer,A,64,Required
