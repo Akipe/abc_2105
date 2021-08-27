@@ -32,7 +32,7 @@ CREATE TABLE writers
     writers_last_name VARCHAR(64) NOT NULL
 );
 
-CREATE TABLE write_t
+CREATE TABLE draft
 (
     books_id INT NOT NULL,
     writers_id INT NOT NULL,
