@@ -5,13 +5,13 @@ book_title,Titre du livre,AN,128,Required
 book_price,Prix du livre,N,5,"Required, > 0"
 book_price_currency,Devise du prix du livre,A,3,"Required, default « EUR »"
 book_award_winning,Liste des prix du livre séparé par un espace,AN,256,Optional
-author_id,Identifiant de l’auteur,N,10,Identifier
-author_firstname,Prénom de l’auteur,A,64,Required
-author_lastname,Nom de l’auteur,A,64,Required
-author_nickname,Pseudo de l’auteur,A,64,Optional
+writer_id,Identifiant de l’auteur,N,10,Identifier
+writer_firstname,Prénom de l’auteur,A,64,Required
+writer_lastname,Nom de l’auteur,A,64,Required
+writer_nickname,Pseudo de l’auteur,A,64,Optional
 edition_id,Identifiant de l’édition,N,10,Identifier
 edition_number,Numéro de l’édition du livre,N,3,"Required, > 0, default 1"
-edition_release_date,Date de sortie de l’édition du livre,D,,"Required, YYYY-MM-dd"
+edition_release_date,Date de sortie de l’édition du livre,D,,"Required, YYYY-MM-DD"
 edition_stock,Quantité du livre dans cette édition,N,10,"Required, ≥ 0"
 edition_total_print,Quantité du livre imprimé au total dans cette édition,N,10,"Required, > 0, ≥ edition_stock"
 bookstore_name,Nom de la librairie,A,128,Identifier
@@ -20,6 +20,6 @@ bookstore_address_city,Ville de la librairie,A,128,Required
 bookstore_address_postal_code,Code postal de la librairie,N,5,"Required, length = 5"
 bookstore_address_street,Rue de la librairie,AN,256,Required
 bookstore_address_complement,Complément de l’adresse de la librairie,AN,256,Optional
-order_id,Identifiant de la commande,N,10,Identifier
-order_quantities,Nombre de livre d’une certaine édition commandé par la librairie,N,5,"Required, > 1"
-order_date,Date de la commande de la librairie,DT,,"Required, YYYY-MM-dd HH-mm-ss,  ≤ DateTime now"
+command_id,Identifiant de la commande,N,10,Identifier
+command_quantities,Nombre de livre d’une certaine édition commandé par la librairie,N,10,"Required, > 1"
+command_date,Date de la commande de la librairie,DT,,"Required, YYYY-MM-DD hh-mm-ss,  ≤ DateTime now"
