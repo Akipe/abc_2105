@@ -1,7 +1,7 @@
 Horse racing - statement
 =========
 
-~~Un parieur assidu des champs de courses et des bases de données, voudrait mémoriser, dans une base de données relationnelle,~~ **les courses de chevaux**, **les paris** ~~qu'il a faits et~~ **les résultats**.
+~~Un parieur assidu des champs de courses et des bases de données, voudrait mémoriser, dans une base de données relationnelle, les courses de chevaux, les paris qu'il a faits et les résultats~~.
  
 ~~Plus précisément, il veut enregistrer les informations suivantes pour chaque course :~~
   
