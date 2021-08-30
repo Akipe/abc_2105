@@ -75,6 +75,7 @@ La sécurité des applications web
 - https://owasp.org/www-project-top-ten/
 - https://fr.wikipedia.org/wiki/Open_Web_Application_Security_Project
 - https://github.com/OWASP/Top10/tree/master/2017/fr
+- https://openclassrooms.com/fr/courses/1761931-securisez-vos-applications/5702500-identifiez-les-6-aspects-de-la-securite-d-une-application
 
 vidéos :
 - https://www.youtube.com/watch?v=qjR-BW5EG0c
