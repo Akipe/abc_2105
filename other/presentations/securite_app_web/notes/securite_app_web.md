@@ -1,6 +1,16 @@
 La sécurité des applications web
 ======================
 
+# Information présentation
+- date de passage : 13, 20, 27 septembres
+- 20 minutes de présentation
+- un support et une presentation oral
+- mise en page
+    - plan, sommaire
+    - développement
+    - conclusion, résumé + ouverture
+- 15 diapora en moyenne
+
 # Définition d'une problèmatique
 - Qu'est ce que la sécurité des applications web, et la limite ?
 - Comment sécurité une application web ?
@@ -64,6 +74,7 @@ La sécurité des applications web
 - https://www.synbioz.com/blog/securite-applications-web
 - https://owasp.org/www-project-top-ten/
 - https://fr.wikipedia.org/wiki/Open_Web_Application_Security_Project
+- https://github.com/OWASP/Top10/tree/master/2017/fr
 
 vidéos :
 - https://www.youtube.com/watch?v=qjR-BW5EG0c
