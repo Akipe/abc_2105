@@ -1,6 +1,6 @@
 DROP DATABASE IF EXISTS db_horse_bet;
 
-CRETAE DATABASE IF NOT EXISTS db_horse_bet;
+CREATE DATABASE IF NOT EXISTS db_horse_bet;
 
 USE db_horse_bet;
 
