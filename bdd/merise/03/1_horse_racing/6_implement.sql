@@ -7,7 +7,7 @@ USE db_horse_bet;
 CREATE TABLE races (
     race_id INT PRIMARY KEY AUTO_INCREMENT,
     race_name VARCHAR(256) NOT NULL,
-    race_start DATETIME NOT NUL
+    race_start DATETIME NOT NULL
 );
 
 CREATE TABLE horses (
