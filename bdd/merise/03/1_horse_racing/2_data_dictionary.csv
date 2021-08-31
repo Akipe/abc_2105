@@ -2,9 +2,9 @@ Data dictionary for horse racing,,,,
 Mnemonic,Description,Type,Length,Constraint
 race_id,Identifiant de la course,N,10,"Identifier, auto increment"
 race_name,Nom de la course,AN,256,Required
-race_datetime,Date et heure du début de la course,DT,,"Required, YYYY-MM-DD hh-mm-ss"
+race_start,Date et heure du début de la course,DT,,"Required, YYYY-MM-DD hh-mm-ss"
 race_horse_number,Numéro de cheval dans la course,N,3,"Required, >0, <20"
-race_horse_place,"Numéro d’arrivé du cheval à la course, valeur à 0 si hors forfait",N,3,"Required, ≥0, <20"
+race_horse_rank,"Numéro d’arrivé du cheval à la course, valeur à 0 si hors forfait",N,3,"Required, ≥0, <20"
 horse_name,Nom du cheval,A,64,Identifier
 bet_id,Identifiant du pari,N,10,Identifier
 bet_amount,"Somme du pari, en euro",N,5,"Required, >0"

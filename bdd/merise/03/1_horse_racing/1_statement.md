@@ -20,3 +20,7 @@ Horse racing - statement
 - *Le gain total du parieur pour la course* (couplé = **somme jouée** x 2, tiercé = somme jouée * 3, etc...).
  
 *Les noms de chevaux sont uniques* et *les noms de courses sont uniques* *(à un instant donné)*.
+
+
+# bonus
+A voir : https://casaqueverte.com/wp-content/uploads/2014/07/ticket-quint%C3%A9+.png
