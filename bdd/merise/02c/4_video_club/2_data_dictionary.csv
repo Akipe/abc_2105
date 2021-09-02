@@ -1,0 +1,30 @@
+Video club – data dictionary,,,,
+Mnemonic,Description,Type,Length,Constraint
+store_id,Numéro d’identification du magasin de location,N,10,"Identifier, auto increment"
+store_name,Nom du magasin de location,AN,128,Required
+store_address_city,Ville du magasin de location,A,128,Required
+store_address_postal_code,Code postal du magasin de location,N,5 (size),"Required, size = 5"
+store_address_street,Rue du magasin de location,AN,256,Required
+store_address_complement,Complément d’adresse du magasin de location,AN,512,Optional
+customer_id,Identification du client,N,10,"Identifier, auto increment"
+customer_firstname,Prénom du client,A,128,Required
+customer_lastname,Nom du client,A,128,Required
+customer_caution,Caution en euro déposé par le client,N,5,"Required, ≥ 0, default = 0"
+customer_address_country,Pays du client,A,128,"Required, default = « France »"
+customer_address_city,Ville du client,A,128,Required
+customer_address_postal_code,Code postal du client,N,5 (size),"Required, size = 5"
+customer_address_street,Rue du client,AN,256,Required
+customer_address_complement,Complément d’adresse du client,AN,512,Optional
+cassette_id,"Numéro d’identification de la cassette, commun à l’ensemble des magasins de location",AN,64,Identifier
+cassette_start_date,Date de mise en service de la cassette,D,,"Required, YYYY-MM-DD"
+cassette_number_borrow,Nombre d’emprunt réaliser pour cette cassette,N,5,"Required, ≥ 0"
+cassette_condition,État de la cassette : de très bon à mauvais,A,32,Required
+film_genre_name,Nom du genre cinématographique,A,64,Required
+film_genre_type_public,Type de publique pour le genre cinématographique,A,64,Required
+film_worker_id,Identifiant du personnel travaillant dans le cinéma,A,10,"Identifier, auto increment"
+film_worker_firstname,Prénom du personnel travaillant dans le cinéma,N,128,Required
+film_worker_lastname,Nom du personnel travaillant dans le cinéma,N,128,Required
+film_operating_license,Visa d’exploitation du film,N,9 (size),"Required, ≥ 0"
+film_duration_minutes,Durée du film en minutes,N,5,"Required, ≥ 0"
+film_title,Titre du film,AN,128,Required
+customer_cassette_borrow_date,Date d’emprunt d’une cassette par un client,D,,"Required, ≥ 0"
