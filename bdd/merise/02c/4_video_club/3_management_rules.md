@@ -2,12 +2,16 @@ Video club - management rules
 ========
 
 - **stores** and **cassettes**
-    - un magasin posséde de 1 à plusieurs cassettes
+    - un magasin posséde de 0 à plusieurs cassettes
     - une cassette est possédé par 1 magasin
 
-- **customers** and **cassettes**
-    - un client emprunte 0 ou 6 cassettes
-    - une cassette est emprunté par 0 ou 1 client
+- **loans** and **cassettes**
+    - un emprunt comporte 1 cassette
+    - une cassette fait partie d'1 ou 0 emprunts
+
+- **customers** and **loans**
+    - un client réalise entre 0 ou 6 emprunts
+    - un emprunt est réalisé par 0 ou 1 client
 
 - **cassettes** and **films**
     - une cassette enregistre 1 film

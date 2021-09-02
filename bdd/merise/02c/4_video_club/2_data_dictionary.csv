@@ -25,6 +25,7 @@ film_worker_id,Identifiant du personnel travaillant dans le cinéma,A,10,"Identi
 film_worker_firstname,Prénom du personnel travaillant dans le cinéma,N,128,Required
 film_worker_lastname,Nom du personnel travaillant dans le cinéma,N,128,Required
 film_operating_license,Visa d’exploitation du film,N,9 (size),"Required, ≥ 0"
-film_duration_minutes,Durée du film en minutes,N,5,"Required, ≥ 0"
 film_title,Titre du film,AN,128,Required
-customer_cassette_borrow_date,Date d’emprunt d’une cassette par un client,D,,"Required, ≥ 0"
+film_duration_minutes,Durée du film en minutes,N,5,"Required, ≥ 0"
+loan_id,Date d’emprunt d’une cassette par un client,D,10,Identifier
+loan_date,Date d’emprunt d’une cassette par un client,D,,"Required, YYYY-MM-DD"
