@@ -22,8 +22,10 @@ Airport - management rules
     - une intervention entretient 1 avion.
 
 - **mechanics** and **aircraft_intervention**
-    - un mechanicien participe à 0 ou plusieurs interventions.
-    - une intervention fait participer 2 méchaniciens.
+    - un mechanicien participe à 0 ou plusieurs interventions en tant que réparateur.
+    - un mechanicien participe à 0 ou plusieurs interventions pour vérifier la réparation.
+    - une intervention fait participer 1 méchanicien en tant que réparateur.
+    - une intervention fait participer 1 méchanicien pour vérifier la réparation.
 
 - **mechanics** and **aircraft_types**
     - un méchanicien est spécialisé dans 1 ou plusieurs types d'avions.
