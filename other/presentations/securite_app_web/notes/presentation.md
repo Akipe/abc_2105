@@ -28,9 +28,9 @@ La sécurité des applications web
 
     2. Historique.
         - La sécurité informatique est aujourd'hui un domaine majeur pour toutes les entreprises et autres organisations, mais il n'en a pas été toujours ainsi. Depuis l'invention et la généralisation des accès internets, de plus en plus de applications, de machines et donc de systèmes d'entreprises sont accéssible depuis internet et donc on un risque potentiel de sécurité.
+        - Il y a régulierement des actualités par rapport aux piratages d'entreprises, par exemple avec le ransomware WannaCrypt touchant des hopitaux en Angleterre et en espagne ainsi que de d'autres entreprises en 2017, ou plus récemment cette année avec le piratage du pipeline Colonial qui a entrainé une pénurie de carburants aux Etats-Unis
 
     3. Importance de la sécurité
-        - Il y a régulierement des actualités par rapport aux piratages d'entreprises, par exemple avec le ransomware WannaCrypt touchant des hopitaux en Angleterre et en espagne ainsi que de d'autres entreprises en 2017, ou plus récemment cette année avec le piratage du pipeline Colonial qui a entrainé une pénurie de carburants aux Etats-Unis,
         - Pour les application web, elle sont par définition accessible le plus souvent à internet, ou au réseau web de l'entreprise.
         - savoir sécurisé une application, c'est également connaitre les technique de piratage, s'entrainer et connaitre les dernières techniques vous permettrons de prevenir les principales attaques et implémenter au plus tôt les contres mesures
         
@@ -93,18 +93,33 @@ La sécurité des applications web
         SELECT * FROM Utilisateur WHERE nom = 'Toto'';--' AND mot_de_passe = 'jesaispas';
         ```
 
-    2. Broken authentification
+    2. Authentification de mauvaise qualité
+        - Regroupe 2 types d'attaques :
+            1. Les attaques de type brut force, c'est à dire tester pleins de combinaisons de nom d'utilisateurs et de mots de passes de manière automatisé.
+            2. Récupérer des identifiant de sessions, pour permet de prendre le controle d'un utilisateur déjà authentifier.
+            3. Pas assez de sécurité dans l'authentification, comme avec l'authentification en 2 étapes, un identifiant par défaut, la possibilité d'avoir un mot de passe trop facile ou déjà connu ou la possibilité de récupérer le mot de passe à partir de questions personnels. 
         - brut force
             - politique de protection anti brutforce
             - mot de passe taille minimum, charactère obligatoire, pas même mot de passe
             - gestionnaire de mot de passe
         - ne donner que les droits strictement nécessaires pour chaques utilisateur ou application
 
-    3. Sensitive Data Exposure
+    3. Exposition de données sensibles
+        Cela concerne la possibilité d'avoir accès à des données facilement. Par exemple, si vous proposer votre application avec le protocole HTTP, qui ne chiffre pas les connexions, les autres utilisateurs du réseau local peuvent récupérer les données envoyé au serveur, comme par exemple les identifiants ou d'autres données privés.
+        Il faut donc utiliser le plus possible des protocole qui sont par défaut chiffré, ou chiffré ceux qui ne le sont pas. Il ne faut utiliser que les données qui sont strictements nécéssaire à l'application. On peut également chiffré les données au niveau application. Il faut également utiliser des protocole de chiffrement reconnu.
 
-    4. XML External Entities
+    4. XML Entités externes (XXE)
+        Des applications et en particulier les services Web basés sur XML ou les intégrations en aval peuvent être vulnérables aux attaques si.
+        Json également.
 
-    5. Broken Access Control
+    5. Disfonctionnement des contrôles d'accès
+        Les controles d'accès permettent d'autoriser ou de limiter l'accès à certaines partie d'une application à certains utilisateurs.
+        Si vous ne réalisez pas le controle d'accès sur certainnes adresses (URL), un utilistaur malveillant connaissant le chemin peut accéder à des données.
+        Par exemple : Vous avez accès à des données médicales d'un laboratoire :
+        https://laboratoire.fr/id=156453&doc=resultat
+        On peut présumé que la variable id correspond à un utilisateur.
+        Une mauvaise sécurisation des controles d'accès permettrait d'accéder à d'autres document en modifiant l'id :
+        https://laboratoire.fr/id=500000&doc=resultat par exemple.
 
     6. Security Misconfiguration
 
