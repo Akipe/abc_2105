@@ -2,7 +2,7 @@ La sécurité des applications web
 =======================
 
 1. La sécurité des applications web
-    - Présentation pas aussi technique que voulu, parce que pas assez de temps, mais je vous partagerai des ressources.
+    - Présentation très théorique et courte par rapport au sujet
 
     - Présentation du plan :
 
@@ -36,7 +36,6 @@ La sécurité des applications web
                 - la politique de mise à jour des applications...
 
         - Besoin connaitre globalité application web
-            - bas à haut niveau
             - partie technique qu'une partie.
 
         - Mais chaine pas que technique
@@ -69,10 +68,6 @@ La sécurité des applications web
             - 2017, ransomware WannaCrypt
 
                 - Hopitaux en Angleterre et en espagne HS ainsi que de d'autres entreprises touché
-
-            - 2021, piratage du pipeline Colonial avec ransonmware
-
-                - pénurie de carburants aux Etats-Unis
 
     3. Importance de la sécurité
 
@@ -174,10 +169,7 @@ La sécurité des applications web
 
     - Présentation exemple
 
-        - (https://apcpedagogie.comQuelques examples de risque/les-injections-sql-classiques/)
-        - (https://kinsta.com/fr/blog/injections-sql/)
-
-        Il faut vérifier et traité chacune des entrée de l'utilisateur, en échappant les caractères spéciaux qui servirait à executer du code.
+        Il faut vérifier et traité chacune des entrée de l'utilisateuren échappant les caractères spéciaux qui servirait à executer du code.
 
         Exemple : 
         ```
