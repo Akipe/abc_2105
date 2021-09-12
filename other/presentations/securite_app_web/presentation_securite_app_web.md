@@ -14,7 +14,7 @@ La sécurité des applications web
 
             2. Pourquoi le piratage est-ce si fréquent ?
 
-        3. Quelques example de risque
+        3. Presentation d'un exemple concret de risque de piratage
 
         4. Conclusion
 
@@ -32,8 +32,8 @@ La sécurité des applications web
                 - serveur
                 - configuration
                 - librairie
-                - mot de passe par défaut non changé
-                - sapplication pas mise à jour...
+                - la gestion des mots de passe
+                - la politique de mise à jour des applications...
 
         - Besoin connaitre globalité application web
             - bas à haut niveau
@@ -63,7 +63,7 @@ La sécurité des applications web
 
             - plus en plus système d'informations accessible à tous
 
-            - exemple : parefeux windows xp SP2, avant rien
+            - exemple : parefeux windows xp SP2 (2004), avant rien
 
         - Récemment
             - 2017, ransomware WannaCrypt
@@ -82,11 +82,11 @@ La sécurité des applications web
 
                 - même si pas connecté à internet
 
-        - Avant, sécurité n'était pas important.
-
-        - Maintenant, plus pris en compte nécessite volonté :
+        - Maintenant, risque sécurité connu, mais besoin volonté pour mettre place défence :
 
             - pas nécessaire pour fonctionnement d'une application
+
+            - sécurité n'apporte rien au fonctionnement de l'app
 
             - besoin de solide compétence en sécurité
 
@@ -140,7 +140,7 @@ La sécurité des applications web
         - propose également outils
 
     - un des projets : Top Ten OWASP
-        - fournir liste des 10 risques de sécurité des application web les plus critiques.
+        - fournir liste des 10 risques de sécurité des application web les plus courants.
 
         - presentation rapide Top Ten 2017
         
@@ -156,7 +156,7 @@ La sécurité des applications web
 
             - sinon développeur doit protéger
 
-        - Permet execution de code non prévu d'un utilisateur dans une entrée application
+        - Permet execution de code non prévu par un utilisateur dans votre application
 
             - exemple : formulaire de connexion
             
@@ -229,7 +229,7 @@ La sécurité des applications web
 
 6. Conclusion
 
-    - Système de plus en plus touché par la sécurité
+    - Système d'information de plus en plus touché par risques piratage
 
         - Répercution grave, voire présentation de Damien sur les concéquences
 
@@ -243,7 +243,7 @@ La sécurité des applications web
 
         - rester en alterte
 
-        - n'oubliez pas le coté global sécu - chaine & maillon
+        - penser sécurité manière global - chaine & maillon
         
     - Si je devais pirater, que ferais-je ?
 
@@ -273,17 +273,15 @@ La sécurité des applications web
 
             - https://www.journalduhacker.net/
 
-        - regarder guides & ressources
+        - bonnes pratiques & outils
 
             - OWASP
                 - OWASP Top Ten : https://owasp.org/www-project-top-ten/
-                - d'autre contenu sur site
+                - pleins de contenu
 
             - ANSSI : https://www.ssi.gouv.fr/entreprise/guide/recommandations-pour-la-securisation-des-sites-web/
                 - pdf : Recommandations pour la sécurisation des sites web
                 - pdf : Recommandations pour la mise en œuvre d'un site web : maîtriser les standards de sécurité côté navigateur
 
     - Série MR Robot
-        - representation de divers technique de piratage, manière réaliste
-
-
+        - presente divers technique de piratage, manière réaliste
