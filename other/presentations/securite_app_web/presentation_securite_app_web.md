@@ -63,6 +63,8 @@ La sécurité des applications web
 
             - plus en plus système d'informations accessible à tous
 
+            - exemple : parefeux windows xp SP2, avant rien
+
         - Récemment
             - 2017, ransomware WannaCrypt
 
@@ -81,8 +83,6 @@ La sécurité des applications web
                 - même si pas connecté à internet
 
         - Avant, sécurité n'était pas important.
-
-            - exemple : parefeux windows xp SP2, avant rien
 
         - Maintenant, plus pris en compte nécessite volonté :
 
@@ -123,7 +123,7 @@ La sécurité des applications web
             - rester imble et éviter de juger
 
 
-3. Quelques examples de risque
+3. Un example concret de risque de piratage
 
     - OWASP
 
@@ -172,7 +172,11 @@ La sécurité des applications web
 
         > never trust input user
 
-        - Présentation exemple :
+    - Présentation exemple
+
+        - (https://apcpedagogie.comQuelques examples de risque/les-injections-sql-classiques/)
+        - (https://kinsta.com/fr/blog/injections-sql/)
+
         Il faut vérifier et traité chacune des entrée de l'utilisateur, en échappant les caractères spéciaux qui servirait à executer du code.
 
         Exemple : 
@@ -193,7 +197,7 @@ La sécurité des applications web
         SELECT * FROM Utilisateur WHERE nom = 'Toto'';--' AND mot_de_passe = 'jesaispas';
         ```
 
-    2. Quelques autres erreurs courantes, jusqu'au top 6
+    2. (bonus) Quelques autres erreurs courantes, jusqu'au top 6
 
         - 2- l'authentification de mauvaise qualité
 
@@ -225,17 +229,61 @@ La sécurité des applications web
 
 6. Conclusion
 
-- état actuelle de la sécurité, répércution financiére et autres
-- Ne vous arrêtez pas à 10. Il existe des centaines de problèmes susceptibles d'altérer la sécurité globale d'une application web, comme expliqué dans le Guide du Développeur OWASP et la série des aide-mémoire OWASP. Un travail de tous les jours pour apprendre et découvrir les dernières nouvelles techniques.
-- Les attaquants peuvent potentiellement utiliser de nombreux chemins différents à travers votre application pour nuire à votre entreprise ou organisation. Les pirates ont beaucoup de créativité pour passer par des chemins dont on n'aurait jamais imaginer pour entrer sur des systèmes. Chacune de ces voies représente un risque qui peut, ou non, être suffisamment grave pour justifier une attention particulière.
-- Posez vous la question : si je devais pirater, que ferais je ? Apprenez à piratez mais en respectant les lois, comme par exemple avec des
+    - Système de plus en plus touché par la sécurité
 
-- Autre présentation sur les couts et retombés à cause du piratage
+        - Répercution grave, voire présentation de Damien sur les concéquences
 
-7. Quelques liens, en savoir plus
-- The OWASP Application Security Verification Standard (ASVS) Project provides a basis for testing web application technical security controls and also provides developers with a list of requirements for secure development.
-- https://github.com/OWASP/CheatSheetSeries/tree/master/cheatsheets
-- Mr Robot
-- chaine youtube https://www.youtube.com/watch?v=4YS7Qh1xFIs
-- ANSSI (Recommandations pour la sécurisation des sites web)
-- https://arfp.eu/crm/ressources/securite/
+    - développeur est responsable de son application
+        - ayez une bonne hygienne numérique
+        - prendre conscience des menaces
+
+    - Attaquant très créatif
+
+        - passent par chemin non prévu
+
+        - rester en alterte
+
+        - n'oubliez pas le coté global sécu - chaine & maillon
+        
+    - Si je devais pirater, que ferais-je ?
+
+        - attention : légalement, interdit de pirater, risque de peine de prison
+    
+        - Apprendre pirater par jeux, plateforme entrainement piratage légale
+
+            - challenge piratage
+
+            - Hack the Box - https://www.hackthebox.eu/
+
+            - Try hack me - https://tryhackme.com/
+
+        
+    - Chaine Twitch & Youtube "Khaos Farbauti"
+
+        - explication pédagogique de piratage sur des système 
+
+        - https://www.twitch.tv/khaos_farbauti
+
+        - https://www.youtube.com/channel/UCsRIv1fsbnQRIPKmUQbRzZg
+
+    - Informez vous, allez plus loins que présentation
+
+        - actualité numérique  
+            - Nextinpact
+
+            - https://www.journalduhacker.net/
+
+        - regarder guides & ressources
+
+            - OWASP
+                - OWASP Top Ten : https://owasp.org/www-project-top-ten/
+                - d'autre contenu sur site
+
+            - ANSSI : https://www.ssi.gouv.fr/entreprise/guide/recommandations-pour-la-securisation-des-sites-web/
+                - pdf : Recommandations pour la sécurisation des sites web
+                - pdf : Recommandations pour la mise en œuvre d'un site web : maîtriser les standards de sécurité côté navigateur
+
+    - Série MR Robot
+        - representation de divers technique de piratage, manière réaliste
+
+
