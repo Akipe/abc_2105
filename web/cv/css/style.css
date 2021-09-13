@@ -1,0 +1,45 @@
+/*  CSS pour akipe.fr
+    Actuellement utilisé uniquement pour le projet CV en html
+    License MIT */
+
+/*  Fonts
+    Source: https://github.com/alsacreations/webfonts */
+    
+/*  Roboto
+    License : Apache License */
+@font-face {
+    font-family: 'roboto';
+    src: url('fonts/roboto/roboto-regular.woff2?#iefix') format('woff2'),
+         url('fonts/roboto/roboto-regular.woff') format('woff'),
+         url('fonts/roboto/roboto-regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'roboto';
+    src: url('fonts/roboto/roboto-italic.woff2?#iefix') format('woff2'),
+         url('fonts/roboto/roboto-italic.woff') format('woff'),
+         url('fonts/roboto/roboto-italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'roboto';
+    src: url('fonts/roboto/roboto-light.woff2?#iefix') format('woff2'),
+         url('fonts/roboto/roboto-light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'roboto';
+    src: url('fonts/roboto/roboto-bold.woff2?#iefix') format('woff2'),
+         url('fonts/roboto/roboto-bold.woff') format('woff'),
+         url('fonts/roboto/roboto-bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+/*  Theme
+*/
+body {
+}
