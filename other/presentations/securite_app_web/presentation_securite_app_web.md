@@ -1,22 +1,31 @@
 La sécurité des applications web
 =======================
 
+> Diapo 1
+
 1. La sécurité des applications web
-    - Présentation très théorique et courte par rapport au sujet
 
-    - Présentation du plan :
+> Diapo 2
 
-        1. Qu'est ce que la sécurité
+- Présentation très théorique et courte par rapport au sujet
 
-            1. Définir le sujet et les limites.
+> Diapo 3
 
-            2. Historique de la sécurité.
+- Présentation du plan :
 
-            2. Pourquoi le piratage est-ce si fréquent ?
+    1. Qu'est ce que la sécurité
 
-        3. Presentation d'un exemple concret de risque de piratage
+        1. Définir le sujet et les limites.
 
-        4. Conclusion
+        2. Historique de la sécurité.
+
+        2. Pourquoi le piratage est-ce si fréquent ?
+
+    3. Presentation d'un exemple concret de risque de piratage
+
+    4. Conclusion
+
+> Diapo 4
 
 2. Qu'est ce que la sécurité
 
@@ -26,97 +35,109 @@ La sécurité des applications web
 
         - presentation que petite partie technique.
 
-        - Comparaison sécurité à chaine
+> Diapo 5
 
-            - Maillon :
-                - serveur
-                - configuration
-                - librairie
-                - la gestion des mots de passe
-                - la politique de mise à jour des applications...
+- Comparaison sécurité à chaine
 
-        - Besoin connaitre globalité application web
-            - partie technique qu'une partie.
+    - Maillon :
+        - serveur
+        - configuration
+        - librairie
+        - la gestion des mots de passe
+        - la politique de mise à jour des applications...
 
-        - Mais chaine pas que technique
-            - exemple: gestion personnel travaillant sur projet
-            - exemple: accès locaux à n'importe qui (malvaillant?)
+- Besoin connaitre globalité application web
+    - partie technique qu'une partie.
 
-        - Très difficile, impossible de sécurisé totalement une application
-            - erreur humaine
-            - nécessaire connaissance total
+- Mais chaine pas que technique
+    - exemple: gestion personnel travaillant sur projet
+    - exemple: accès locaux à n'importe qui (malvaillant?)
 
-        - Mais existe bonnes pratiques pour limiter risques.
+- Très difficile, impossible de sécurisé totalement une application
+    - erreur humaine
+    - nécessaire connaissance total
 
-        - Comparaison sécurité informatique avec sécurité maison :
-            - protéger porte entrée, mais passer par fenêtre ou derrière, ou toit ?
+- Mais existe bonnes pratiques pour limiter risques.
 
-    2. Historique.
-        - Avant, systèmes information hors ligne
+> Diapo 6
 
-            - quand même risque virus avec disquette, cd, clés usb
+- Comparaison sécurité informatique avec sécurité maison :
+    - protéger porte entrée, mais passer par fenêtre ou derrière, ou toit ?
 
-            - plutôt technique humaine pour empécher risque
 
-        - Début 21éme siécle, réseaux haut débit, profileration des risques potentiel de sécurité
+> Diapo 7
 
-            - plus en plus système d'informations accessible à tous
+2. Historique.
+    - Avant, systèmes information hors ligne
 
-            - exemple : parefeux windows xp SP2 (2004), avant rien
+        - quand même risque virus avec disquette, cd, clés usb
 
-        - Récemment
-            - 2017, ransomware WannaCrypt
+        - plutôt technique humaine pour empécher risque
 
-                - Hopitaux en Angleterre et en espagne HS ainsi que de d'autres entreprises touché
+    - Début 21éme siécle, réseaux haut débit, profileration des risques potentiel de sécurité
 
-    3. Importance de la sécurité
+        - plus en plus système d'informations accessible à tous
 
-        - Pour les application web sont par défaut accessible réseau, souvent à internet.
-            
-            - ne pas sous éstimer risque piratage application web intranet
+        - exemple : parefeux windows xp SP2 (2004), avant rien
 
-                - même si pas connecté à internet
+    - Récemment
+        - 2017, ransomware WannaCrypt
 
-        - Maintenant, risque sécurité connu, mais besoin volonté pour mettre place défence :
+            - Hopitaux en Angleterre et en espagne HS ainsi que de d'autres entreprises touché
 
-            - pas nécessaire pour fonctionnement d'une application
+> Diapo 8
 
-            - sécurité n'apporte rien au fonctionnement de l'app
+3. Importance de la sécurité
 
-            - besoin de solide compétence en sécurité
-
-            - besoin de resssources (temps, argent, personnel...)
-
-            - besoin également souvent plus ressource informatique (cout en CPU, mémoire...)
-
-            - nécessiter penser sécurité dans phase conception 
-
-        - sécuriser application -> connaitre les technique de piratage
-
-            - s'informer
-
-            - s'entrainer
+    - Pour les application web sont par défaut accessible réseau, souvent à internet.
         
-        - Malgré celà le risque zero n'existe pas
+        - ne pas sous éstimer risque piratage application web intranet
 
-            - systèmes informatique de plus en plus complexe
-            
-            - difficile tenir au courant nouvaux risques
+            - même si pas connecté à internet
 
-            - erreur humaine
+    - Maintenant, risque sécurité connu, mais besoin volonté pour mettre place défence :
 
-        - Accepter risque d'être pirater et s'y prépare
+        - pas nécessaire pour fonctionnement d'une application
 
-            - contre mesure si piratage
+        - sécurité n'apporte rien au fonctionnement de l'app
 
-                - exemple : chiffrement données
-                
-            - compte rendu aux client
-            
-            - apprendre de ses erreures
+        - besoin de solide compétence en sécurité
 
-            - rester imble et éviter de juger
+        - besoin de resssources (temps, argent, personnel...)
 
+        - besoin également souvent plus ressource informatique (cout en CPU, mémoire...)
+
+        - nécessiter penser sécurité dans phase conception 
+
+> Diapo 9
+
+- sécuriser application -> connaitre les technique de piratage
+
+    - s'informer
+
+    - s'entrainer
+
+- Malgré celà le risque zero n'existe pas
+
+    - systèmes informatique de plus en plus complexe
+    
+    - difficile tenir au courant nouvaux risques
+
+    - erreur humaine
+
+- Accepter risque d'être pirater et s'y prépare
+
+    - contre mesure si piratage
+
+        - exemple : chiffrement données
+        
+    - compte rendu aux client
+    
+    - apprendre de ses erreures
+
+    - rester imble et éviter de juger
+
+> Diapo 10
 
 3. Un example concret de risque de piratage
 
@@ -167,57 +188,65 @@ La sécurité des applications web
 
         > never trust input user
 
-    - Présentation exemple
+> Diapo 11
 
-        Il faut vérifier et traité chacune des entrée de l'utilisateuren échappant les caractères spéciaux qui servirait à executer du code.
+> Diapo 12
 
-        Exemple : 
-        ```
-        SELECT * FROM Utilisateur WHERE nom = 'Toto' AND mot_de_passe = 'ljkè456qrt1q';
+> Diapo 13
 
-        Au lieu de "Toto" -> "Toto';--"
+- Présentation exemple
 
-        SELECT * FROM Utilisateur WHERE nom = 'Toto';--' AND mot_de_passe = 'jesaispas';
-        <=>
-        SELECT * FROM Utilisateur WHERE nom = 'Toto'
+    Il faut vérifier et traité chacune des entrée de l'utilisateuren échappant les caractères spéciaux qui servirait à executer du code.
 
-        Du coup plus besoin d'avoir un mot de passe pour se connecter en tant que Toto
+    Exemple : 
+    ```
+    SELECT * FROM Utilisateur WHERE nom = 'Toto' AND mot_de_passe = 'ljkè456qrt1q';
 
-        Si échapement de caractère :
-        "Toto';--" -> "Toto'';--"
+    Au lieu de "Toto" -> "Toto';--"
 
-        SELECT * FROM Utilisateur WHERE nom = 'Toto'';--' AND mot_de_passe = 'jesaispas';
-        ```
+    SELECT * FROM Utilisateur WHERE nom = 'Toto';--' AND mot_de_passe = 'jesaispas';
+    <=>
+    SELECT * FROM Utilisateur WHERE nom = 'Toto'
 
-    2. (bonus) Quelques autres erreurs courantes, jusqu'au top 6
+    Du coup plus besoin d'avoir un mot de passe pour se connecter en tant que Toto
 
-        - 2- l'authentification de mauvaise qualité
+    Si échapement de caractère :
+    "Toto';--" -> "Toto'';--"
 
-            - outre passer la gestion de l’authentification
-            - et de la session.
+    SELECT * FROM Utilisateur WHERE nom = 'Toto'';--' AND mot_de_passe = 'jesaispas';
+    ```
 
-        - 3- l'exposition de données sensibles
+2. (bonus) Quelques autres erreurs courantes, jusqu'au top 6
 
-            - accès à des données sensibles
+    - 2- l'authentification de mauvaise qualité
 
-                - comme les mots de passe & données personnelles.
+        - outre passer la gestion de l’authentification
+        - et de la session.
 
-        - 4- les faille lié à la gestion des fichiers XML
+    - 3- l'exposition de données sensibles
 
-            - Mauvaise interprétation de fichier XML
+        - accès à des données sensibles
 
-                - permet l'execution de code arbitraire
+            - comme les mots de passe & données personnelles.
 
-        - 5- la disfonctionnement des contrôles d'accès
+    - 4- les faille lié à la gestion des fichiers XML
 
-            - accès à des fonctionnalités non autorisé
+        - Mauvaise interprétation de fichier XML
 
-        - 6- Mauvaise configuration des applications
+            - permet l'execution de code arbitraire
 
-            - mauvaise configuration des applications liée aux
-                - serveurs web (apache)
-                - base de données (mysql)
-                - au frameworks (symfony)
+    - 5- la disfonctionnement des contrôles d'accès
+
+        - accès à des fonctionnalités non autorisé
+
+    - 6- Mauvaise configuration des applications
+
+        - mauvaise configuration des applications liée aux
+            - serveurs web (apache)
+            - base de données (mysql)
+            - au frameworks (symfony)
+
+> Diapo 14
 
 6. Conclusion
 
@@ -239,41 +268,48 @@ La sécurité des applications web
         
     - Si je devais pirater, que ferais-je ?
 
-        - attention : légalement, interdit de pirater, risque de peine de prison
+> Diapo 15
+
+- attention : légalement, interdit de pirater, risque de peine de prison
+
+- Apprendre pirater par jeux, plateforme entrainement piratage légale
+
+    - challenge piratage
+
+    - Hack the Box - https://www.hackthebox.eu/
+
+    - Try hack me - https://tryhackme.com/
+
     
-        - Apprendre pirater par jeux, plateforme entrainement piratage légale
+- Chaine Twitch & Youtube "Khaos Farbauti"
 
-            - challenge piratage
+    - explication pédagogique de piratage sur des système 
 
-            - Hack the Box - https://www.hackthebox.eu/
+    - https://www.twitch.tv/khaos_farbauti
 
-            - Try hack me - https://tryhackme.com/
+    - https://www.youtube.com/channel/UCsRIv1fsbnQRIPKmUQbRzZg
 
-        
-    - Chaine Twitch & Youtube "Khaos Farbauti"
 
-        - explication pédagogique de piratage sur des système 
+> Diapo 16
 
-        - https://www.twitch.tv/khaos_farbauti
+- Informez vous, allez plus loins que présentation
 
-        - https://www.youtube.com/channel/UCsRIv1fsbnQRIPKmUQbRzZg
+    - actualité numérique  
+        - Nextinpact
 
-    - Informez vous, allez plus loins que présentation
+        - https://www.journalduhacker.net/
 
-        - actualité numérique  
-            - Nextinpact
+    - bonnes pratiques & outils
 
-            - https://www.journalduhacker.net/
+        - OWASP
+            - OWASP Top Ten : https://owasp.org/www-project-top-ten/
+            - pleins de contenu
 
-        - bonnes pratiques & outils
+        - ANSSI : https://www.ssi.gouv.fr/entreprise/guide/recommandations-pour-la-securisation-des-sites-web/
+            - pdf : Recommandations pour la sécurisation des sites web
+            - pdf : Recommandations pour la mise en œuvre d'un site web : maîtriser les standards de sécurité côté navigateur
 
-            - OWASP
-                - OWASP Top Ten : https://owasp.org/www-project-top-ten/
-                - pleins de contenu
+- Série MR Robot
+    - presente divers technique de piratage, manière réaliste
 
-            - ANSSI : https://www.ssi.gouv.fr/entreprise/guide/recommandations-pour-la-securisation-des-sites-web/
-                - pdf : Recommandations pour la sécurisation des sites web
-                - pdf : Recommandations pour la mise en œuvre d'un site web : maîtriser les standards de sécurité côté navigateur
-
-    - Série MR Robot
-        - presente divers technique de piratage, manière réaliste
+> Diapo 17
