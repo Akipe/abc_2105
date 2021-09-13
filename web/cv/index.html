@@ -27,24 +27,28 @@
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
     <link rel="alternate icon" href="favicon.ico" />
 
-    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="blue"> <!-- TODO: définir la couleur -->
+    <meta name="theme-color" content="blue"> <!-- TODO: définir la couleur -->
 </head>
 <body>
 
-    <header> <!-- Bandeau de tête du site -->
-        <p><a href="#">akpweb</a></p>
-        <h1><a href="#">CV</a></h1>
+    <header id="page-header"> <!-- Bandeau de tête du site -->
+        <aside id="page-header-title"> <!-- Titre de la page -->
+            <p><a href="#">akpweb</a></p>
+            <h1><a href="#">CV</a></h1>
+        </aside>
+        
+        <aside id="page-header-navigation"> <!-- Navigation du site -->
+            <nav>
+                <ul>
+                    <li><a href="#">Accueil</a></li>
+                    <li><a href="#">Articles</a></li>
+                    <li><a href="#">CV</a></li>
+                </ul>
+            </nav>
+        </aside>
     </header>
 
-    <nav> <!-- Navigation du site -->
-        <ul>
-            <li><a href="#">Accueil</a></li>
-            <li><a href="#">Articles</a></li>
-            <li><a href="#">CV</a></li>
-        </ul>
-    </nav>
-
-    <main>
+    <main id="page-main">
         <article id="cv"> <!-- CV -->
             <header id="cv_introduction_personnelle"> <!-- CV : informations de base -->
                 <img src="img/profil.jpg"
@@ -52,7 +56,7 @@
                 <h2>Julien Milletre</h2>
                 <p>Développeur concepteur informatique</p>
                 <p>Disponible en Île-de-France, France</p>
-                <p><a href="#cv_me_contacter">Me contacter</a></p>
+                <p><a href="#cv_contact">Me contacter</a></p>
                 <nav>
                     <ul>
                         <li><a href="https://www.linkedin.com/in/milletrejulien/">linkedin.com/in/milletrejulien/</a></li>
@@ -211,8 +215,7 @@
             </section>
         </article>
         
-
-        <aside id="cv_me_contacter"> <!-- Formulaire pour me contacter -->
+        <aside id="cv_contact"> <!-- Formulaire pour me contacter -->
             <section>
                 <h2>Me contacter</h2>
                 <form action="#" method="POST">
@@ -231,22 +234,22 @@
                 </form>
             </section>
         </aside>
-
-        <footer> <!-- Pied de page du site -->
-            <aside> <!-- informations annexes sur la page -->
-                <p>Fait avec amour et respectant la norme W3C HTML5</p>
-            </aside>
-            
-            <aside> <!-- menu pour accéder aux différentes parties du site -->
-                <nav>
-                    <ul>
-                        <li><a href="#">Accueil</a></li>
-                        <li><a href="#">Articles</a></li>
-                        <li><a href="#">Autre...</a></li>
-                    </ul>
-                </nav>
-            </aside>
-        </footer>
     </main>
+
+    <footer id="page-footer"> <!-- Pied de page du site -->
+        <aside id="page-footer-presentation"> <!-- informations annexes sur la page -->
+            <p>Fait avec amour et respectant la norme W3C HTML5</p>
+        </aside>
+        
+        <aside id="page-footer-navigation"> <!-- menu pour accéder aux différentes parties du site -->
+            <nav>
+                <ul>
+                    <li><a href="#">Accueil</a></li>
+                    <li><a href="#">Articles</a></li>
+                    <li><a href="#">Autre...</a></li>
+                </ul>
+            </nav>
+        </aside>
+    </footer>
 </body>
 </html>
