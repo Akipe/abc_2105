@@ -6,6 +6,7 @@
 
     <title>CV numérique de Julien Milletre (Akipe) - akpweb</title>
 
+    <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/print.css" media="print" />
 
@@ -29,15 +30,15 @@
 
     <meta name="theme-color" content="blue"> <!-- TODO: définir la couleur -->
 </head>
-<body>
+<body class="page-container">
 
-    <header id="page-header"> <!-- Bandeau de tête du site -->
-        <aside id="page-header-title"> <!-- Titre de la page -->
+    <header class="page-header"> <!-- Bandeau de tête du site -->
+        <aside class="page-header-title"> <!-- Titre de la page -->
             <p><a href="#">akpweb</a></p>
             <h1><a href="#">CV</a></h1>
         </aside>
         
-        <aside id="page-header-navigation"> <!-- Navigation du site -->
+        <aside class="page-header-navigation"> <!-- Navigation du site -->
             <nav>
                 <ul>
                     <li><a href="#">Accueil</a></li>
@@ -48,32 +49,38 @@
         </aside>
     </header>
 
-    <main id="page-main">
-        <article id="cv"> <!-- CV -->
-            <header id="cv_introduction_personnelle"> <!-- CV : informations de base -->
-                <img src="img/profil.jpg"
+    <main class="page-main">
+        <article class="cv"> <!-- CV -->
+            <header class="cv_introduction_personnelle"> <!-- CV : informations de base -->
+                <figure class="cv_introduction_personnelle_profile">
+                    <img src="img/profil.jpg"
                     alt="Image de profil de Julien Milletre">
-                <h2>Julien Milletre</h2>
-                <p>Développeur concepteur informatique</p>
-                <p>Disponible en Île-de-France, France</p>
-                <p><a href="#cv_contact">Me contacter</a></p>
-                <nav>
-                    <ul>
-                        <li><a href="https://www.linkedin.com/in/milletrejulien/">linkedin.com/in/milletrejulien/</a></li>
-                        <li><a href="https://github.com/Akipe">github.com/Akipe</a></li>
-                        <li><a href="https://akipe.fr">akipe.fr</a></li>
-                    </ul>
-                </nav>
+                    <figcaption>Julien Milletre</figcaption>
+                </figure>
+                <section class="cv_introduction_personnelle_titre">
+                    <h2>Développeur Concepteur Informatique</h2>
+                </section>
+                <section class="cv_introduction_personnelle_liens">
+                    <p>Île-de-France, France</p>
+                    <p><a href="#cv_contact_me">Me contacter</a></p>
+                    <nav>
+                        <ul>
+                            <li><a href="https://www.linkedin.com/in/milletrejulien/">linkedin.com/in/milletrejulien/</a></li>
+                            <li><a href="https://github.com/Akipe">github.com/Akipe</a></li>
+                            <li><a href="https://akipe.fr">akipe.fr</a></li>
+                        </ul>
+                    </nav>
+                </section>
             </header>
 
-            <section id="cv_presentation"> <!-- CV : présentation -->
+            <section class="cv_presentation"> <!-- CV : présentation -->
                 <h2>Présentation</h2>
                 <p>
                     Passioné d'informatique, je cherche à en découvrir d'avantage. (TODO: ajout de texte)
                 </p>
             </section>
 
-            <section id="cv_competences"> <!-- CV : compétences -->
+            <section class="cv_competences"> <!-- CV : compétences -->
                 <h2>Compétences</h2>
                 <section>
                     <h3>Programmation</h3>
@@ -119,7 +126,7 @@
                 </section>
             </section>
             
-            <section id="cv_formations"> <!-- CV : formations -->
+            <section class="cv_formations"> <!-- CV : formations -->
                 <h2>Formation</h2>
                 <section>
                     <h3>ABC Développement</h3>
@@ -166,7 +173,7 @@
                 </section>
             </section>
 
-            <section id="cv_experiences"> <!-- CV : expériences -->
+            <section class="cv_experiences"> <!-- CV : expériences -->
                 <h2>Expériences</h2>
                 <section>
                     <h3>Stage de découverte chez Osaxis</h3>
@@ -209,13 +216,13 @@
                 </section>
             </section>
 
-            <section id="cv_centre_interets"> <!-- CV : centres d'intérêts -->
+            <section class="cv_centre_interets"> <!-- CV : centres d'intérêts -->
                 <h2>Centres d'intérêts</h2>
                 <p>Pratique de l’auto-hébergement, lecture hebdomadaire de l'actualité numérique, pratique d'activités manuelles, notions en électronique, débutant en guitare basse.</p>
             </section>
         </article>
         
-        <aside id="cv_contact"> <!-- Formulaire pour me contacter -->
+        <aside class="cv_contact" id="cv_contact_me"> <!-- Formulaire pour me contacter -->
             <section>
                 <h2>Me contacter</h2>
                 <form action="#" method="POST">
@@ -236,7 +243,7 @@
         </aside>
     </main>
 
-    <footer id="page-footer"> <!-- Pied de page du site -->
+    <footer class="page-footer"> <!-- Pied de page du site -->
         <aside id="page-footer-presentation"> <!-- informations annexes sur la page -->
             <p>Fait avec amour et respectant la norme W3C HTML5</p>
         </aside>
