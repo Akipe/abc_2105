@@ -49,7 +49,7 @@
         </aside>
     </header>
 
-    <main class="page-main">
+    <main class="main">
         <article class="cv"> <!-- CV -->
             <header class="cv_introduction_personnelle"> <!-- CV : informations de base -->
                 <figure class="cv_introduction_personnelle_profile">
@@ -62,9 +62,9 @@
                 </section>
                 <section class="cv_introduction_personnelle_liens">
                     <p>Île-de-France, France</p>
-                    <p><a href="#cv_contact_me">Me contacter</a></p>
                     <nav>
                         <ul>
+                            <li><a href="#cv_contact_me">Me contacter</a></li>
                             <li><a href="https://www.linkedin.com/in/milletrejulien/">linkedin.com/in/milletrejulien/</a></li>
                             <li><a href="https://github.com/Akipe">github.com/Akipe</a></li>
                             <li><a href="https://akipe.fr">akipe.fr</a></li>
@@ -73,15 +73,15 @@
                 </section>
             </header>
 
-            <section class="cv_presentation"> <!-- CV : présentation -->
-                <h2>Présentation</h2>
+            <section class="cv_presentation cv-part"> <!-- CV : présentation -->
+                <h2 class="main-title">Présentation</h2>
                 <p>
                     Passioné d'informatique, je cherche à en découvrir d'avantage. (TODO: ajout de texte)
                 </p>
             </section>
 
-            <section class="cv_competences"> <!-- CV : compétences -->
-                <h2>Compétences</h2>
+            <section class="cv_competences cv-part"> <!-- CV : compétences -->
+                <h2 class="main-title">Compétences</h2>
                 <section>
                     <h3>Programmation</h3>
                     <ul>
@@ -126,8 +126,8 @@
                 </section>
             </section>
             
-            <section class="cv_formations"> <!-- CV : formations -->
-                <h2>Formation</h2>
+            <section class="cv_formations cv-part"> <!-- CV : formations -->
+                <h2 class="main-title">Formation</h2>
                 <section>
                     <h3>ABC Développement</h3>
                     <p>CRM - Mulhouse 68</p>
@@ -173,8 +173,8 @@
                 </section>
             </section>
 
-            <section class="cv_experiences"> <!-- CV : expériences -->
-                <h2>Expériences</h2>
+            <section class="cv_experiences cv-part"> <!-- CV : expériences -->
+                <h2 class="main-title">Expériences</h2>
                 <section>
                     <h3>Stage de découverte chez Osaxis</h3>
                     <p>Paris 75</p>
@@ -216,15 +216,15 @@
                 </section>
             </section>
 
-            <section class="cv_centre_interets"> <!-- CV : centres d'intérêts -->
-                <h2>Centres d'intérêts</h2>
+            <section class="cv_centre_interets cv-part"> <!-- CV : centres d'intérêts -->
+                <h2 class="main-title">Centres d'intérêts</h2>
                 <p>Pratique de l’auto-hébergement, lecture hebdomadaire de l'actualité numérique, pratique d'activités manuelles, notions en électronique, débutant en guitare basse.</p>
             </section>
         </article>
         
         <aside class="cv_contact" id="cv_contact_me"> <!-- Formulaire pour me contacter -->
-            <section>
-                <h2>Me contacter</h2>
+            <section class="cv-part">
+                <h2 class="main-title">Me contacter</h2>
                 <form action="#" method="POST">
                     <div>
                         <label for="name">Nom :</label>

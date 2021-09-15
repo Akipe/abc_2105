@@ -48,7 +48,15 @@
 /*  Theme
 */
 body {
+    background-color: white;
     font-family: "roboto", Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: rgb(67, 78, 94);
 }
 
 img {
@@ -58,6 +66,10 @@ img {
 ul {
     list-style: none;
     padding: 0;
+}
+
+p, li {
+    color: rgb(88, 103, 124);
 }
 
 .page-container {
@@ -133,10 +145,6 @@ ul {
     text-align: center;
 }
 
-.page-main {
-    background-color: aquamarine;
-}
-
 .page-footer {
     background-color: bisque;
 }
@@ -145,13 +153,47 @@ ul {
 /*  CV
 */
 
+
+
+
+/* Main
+*/
+
+.cv > * {
+    
+}
+
+.main-title {
+    border-bottom: 1px solid black;
+
+    padding: 0 0 16px 0;
+    margin: 0 0 16px 0;
+
+    font-weight: 500;
+    line-height: 1.2;
+
+    font-size: 1.25rem;
+    color: #434E5E;
+    text-transform: uppercase;
+}
+
+.cv-part {
+    padding: 20px 30px;
+}
+
+/* CV
+*/
+
 .cv_introduction_personnelle {
     display: grid;
     grid-template-columns: 100%;
     grid-template-rows: auto;
 
     background-color: #434e5e;
-    color: rgba(255, 255, 255, 0.9)
+    color: rgba(255, 255, 255, 0.9);
+
+    padding: 10px;
+    margin-bottom: 20px;
 }
 
 .cv_introduction_personnelle * {
@@ -161,7 +203,7 @@ ul {
 .cv_introduction_personnelle_profile {
     margin-left: auto;
     margin-right: auto;
-    margin: 15px auto 5px auto;
+    /* margin: 15px auto 5px auto; */
 
     text-align: center
 }
@@ -174,7 +216,7 @@ ul {
     border-radius: 4px;
     width: 35%;
 
-    margin: 10px auto 10px auto;
+    /* margin: 10px auto 10px auto; */
 }
 
 .cv_introduction_personnelle_profile > figcaption {
@@ -183,17 +225,21 @@ ul {
     text-transform: uppercase;
     box-sizing: border-box;
 
-    margin-top: 10px;
+    /* margin-top: 10px; */
 }
 
 .cv_introduction_personnelle_titre {
-    width: 80%
+    width: 80%;
 }
 
 .cv_introduction_personnelle_titre * {
-    margin: 5px;
+    /* margin: 5px; */
     text-align: center;
     font-weight: normal;
+}
+
+.cv_introduction_personnelle_titre > h2 {
+    color: white;
 }
 
 .cv_introduction_personnelle_liens {
@@ -203,8 +249,8 @@ ul {
 .cv_introduction_personnelle_liens * {
     color: rgba(255, 255, 255, 0.6);
     text-decoration: none;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    /* margin-top: 10px;
+    margin-bottom: 10px; */
 }
 /* .page-header > a:visited {
     color: yellow;
