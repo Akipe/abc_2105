@@ -54,6 +54,10 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: normal;
 }
 
+button {
+    font-family: "oldsh", sans-serif;
+}
+
 /*  Components
 */
 
@@ -70,94 +74,96 @@ h1, h2, h3, h4, h5, h6 {
     text-align: center;
 }
 
-
-
-
 .Menu {
-    list-style: none; 
+
+}
+
+.Menu-List {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+
+    gap: 0 10px;
+
     padding: 0;
-    margin: 0;
+
+    list-style-type: none;
 }
 
-.Menu--horizontal-left .Menu-Item {
-    display: block;
-    float: left; 
+.Menu-List--horizontal {
+    flex-direction: row;
 }
 
-.Menu--horizontal-right .Menu-Item {
-    display: block;
-    float: right; 
+.Menu-List--horizontal-inverse {
+    flex-direction: row-reverse;
 }
 
-.Menu-Item {
-}
-
-.Menu-Item-Content {
-    display: block;
-    
-    /* text-decoration: none;
-    font-family:helvetica;
-    font-size:20px;
-    background-color:deepskyblue;
-    padding: 10px;
-    color: black;
-    width:100%; 
-    border: 2px solid black;
-    border-radius:5%; */
-
-    /* display: flex;
+.Menu-List--vertical {
     flex-direction: column;
-    justify-content: center; */
-  
 }
 
-.Menu-Item-Content:hover {
-    /* background:deepskyblue;
-    color:white; */
+.Menu-List--vertical-inverse {
+    flex-direction: column-reverse;
 }
 
+.Menu-List-Item {
+    /* display: flex;
+    align-items: center; */
+}
 
+.Menu-List-Item-Content {
+    /* line-height: 150%; */
+    /* padding: 10px; */
+}
 
-.SubMenu {
+.SubMenuList {
     display: none;
 }
 
-.Menu-Item:hover .SubMenu {
-    display: block; 
+.Menu-List-Item:hover .SubMenuList {
+    display: flex; 
+    flex-direction: column;
     position: absolute; 
 }
 
-.Menu-Item:hover .SubMenu .Menu-Item {
-    float: none; 
+.Menu-List-Item:hover .SubMenuList .Menu-List-Item {
+    /* float: none;  */
 }
-
 
 
 
 /*  Custom theme
 */
 .PageHeader {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+
     background-color: black;
 
-    height: 60px;
+    padding-top: 5px;
 
     border-bottom: 1px solid white;
 
     font-family: "channel", sans-serif;
     font-size: 1em;
 
-    vertical-align: middle;
+}
+
+.PageHeader .Menu-List {
+    margin: 5px 0;
 }
 
 .PageHeader-Menu-Content {
+    display:inline-block ;
+    width: 150px;
+    /* height: 50px; */
 
-    width: 180px;
-    height: 50px;
+    /* text-align: center;
+    vertical-align: middle; */
 
-    text-align: center;
-    vertical-align: middle;
-
-    padding: 5px 0;
+    /* padding: 5px 0; */
 
 }
 
@@ -165,9 +171,16 @@ h1, h2, h3, h4, h5, h6 {
     color: red;
 }
 
-.SubMenu .PageHeader-Menu-Content {
+.PageHeader-SubMenu-Content {
+    display:inline-block ;
+    width: 200px;
     background-color: rgba(0, 0, 0, 0.5);
     border: 1px solid white;
+    padding-left: 20px;
+}
+
+.PageHeader-SubMenu-Content:hover {
+    color: red;
 }
 
 
@@ -188,15 +201,15 @@ h1, h2, h3, h4, h5, h6 {
     grid-area: content;
 
     background-color: rgba(255, 255, 255, 0.1);
-    background-image: url("../img/footer-bg.jpg");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: bottom;
+    background-image: url("../img/img_footer.png"), url("../img/footer-bg.jpg") ;
+    background-size: inherit, contain;
+    background-repeat: no-repeat, no-repeat;
+    background-position: right bottom, bottom;
 
-    
-    background-image: url("../img/footer-bg.jpg");
+    background-size: auto, 100% auto;;
 
     padding: 0 30px;
+    padding-top: 10px;
 
     border: 1px solid black;
     box-shadow: 0 0 0.75rem black;
@@ -245,7 +258,7 @@ h1, h2, h3, h4, h5, h6 {
 
     width:30%;
 
-    margin: 20px 0;
+    margin: 10px 0;
 
     background-image: url("../img/bg_g.png");
     background-size: contain;
@@ -266,6 +279,8 @@ h1, h2, h3, h4, h5, h6 {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 5px;
+    margin-left: 30px;
+    margin-top: 20px;
 }
 
 .PagePresentation-Explications-Item-Head * {
@@ -273,6 +288,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .PagePresentation-Explications-Item-Title {
+    padding-top: 5px;
+    padding-left: 40px;
     font-size: 1em;
 }
 
@@ -413,4 +430,21 @@ h1, h2, h3, h4, h5, h6 {
 
     display: flex;
     flex-direction: row;
+    align-items: flex-end;
+
+    height: 150px;
+    margin-top: 20px;
+
+    border-top: 2px solid rgba(255, 255, 255, 0.26);
+    
+    font-family: "channel", sans-serif;
+    font-size: 0.8em;
+}
+
+.PageFooterMenu {
+    margin: 20px;
+}
+
+.PageFooterMenu .Menu-List-Item-Content {
+    padding: 20px;
 }
