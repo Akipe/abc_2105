@@ -16,6 +16,34 @@
         url("../fonts/oldsh/oldsh.ttf") format("truetype");
 }
 
+/*  Variables
+*/
+
+:root {
+    --base-font-size: 1rem;
+
+    --base-backgroud-color: rgba(255, 255, 255, 0.1);
+
+    --title-color: white;
+    --title-font-family: "channel", sans-serif;
+
+    --content-font-size: 1em;
+    --content-font-family: "oldsh", sans-serif;
+    --content-font-color: black;
+
+    --presentation-font-color: rgba(112, 0, 0, 0.747);
+    --presentation-font-size: 1.2em;
+
+    --button-background-color: rgb(160, 160, 160);
+    --button-font-color: white;
+    --button-font-size: 1.1em;
+    --button-rotation: 0deg;
+    --button-hover-transition-speed: 0.5s;
+    --button-hover-font-color: red;
+    --button-hover-background-color: rgb(51, 51, 51);
+    --button-hover-rotation: -10deg;
+}
+
 /*  Generic
 */
 
@@ -28,12 +56,12 @@ body {
 }
 
 p {
-    font-family: "oldsh", sans-serif;
-    font-size: 1em;
+    font-family: var(--content-font-family);
+    font-size: var(--content-font-family);
 }
 
 a {
-    color: white;
+    color: var(--button-font-color);
     text-decoration: none;
 }
 
@@ -47,12 +75,12 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: "channel", sans-serif;
+    font-family: var(--title-font-family);
     font-weight: normal;
 }
 
 button {
-    font-family: "oldsh", sans-serif;
+    font-family: var(--content-font-family);
 }
 
 /*  Components
@@ -70,7 +98,7 @@ button {
     line-height: 2em;
     font-size: 1.1em;
 
-    transition: 0.5s;
+    transition: var(--button-hover-transition-speed);
 }
 
 .Btn * {
@@ -79,7 +107,7 @@ button {
     color: white;
     text-align: center;
 
-    transition: 0.5s;
+    transition: var(--button-hover-transition-speed);
 }
 
 .Btn:hover {
@@ -89,13 +117,13 @@ button {
 
     font-size: 1.5em;
 
-    transition: 0.5s;
+    transition: var(--button-hover-transition-speed);
 }
 
 .Btn:hover * {
     color: red;
 
-    transition: 0.5s;
+    transition: var(--button-hover-transition-speed);
 }
 
 /* Menu */
