@@ -1,0 +1,516 @@
+/*  Fonts
+*/
+
+@font-face {
+    font-family: "channel";
+    src: url("../fonts/channel/channel.eot"),
+        url("../fonts/channel/channel.woff") format("woff"),
+        url("../fonts/channel/channel.ttf") format("truetype"),
+        url("../fonts/channel/channel.svg") format("svg");
+}
+
+@font-face {
+    font-family: "oldsh";
+    src: url("../fonts/oldsh/oldsh.woff2") format("woff2"),
+        url("../fonts/oldsh/oldsh.woff") format("woff"),
+        url("../fonts/oldsh/oldsh.ttf") format("truetype");
+}
+
+/*  Variables
+*/
+
+:root {
+    --base-font-size: 1rem;
+
+    --base-backgroud-color: rgba(255, 255, 255, 0.1);
+
+    --title-color: white;
+    --title-font-family: "channel", sans-serif;
+
+    --content-font-size: 1em;
+    --content-font-family: "oldsh", sans-serif;
+    --content-font-color: black;
+
+    --presentation-font-color: rgba(112, 0, 0, 0.747);
+    --presentation-font-size: 1.2em;
+
+    --button-background-color: rgb(160, 160, 160);
+    --button-font-color: white;
+    --button-font-size: 1.1em;
+    --button-rotation: 0deg;
+    --button-hover-transition-speed: 0.5s;
+    --button-hover-font-color: red;
+    --button-hover-background-color: rgb(51, 51, 51);
+    --button-hover-rotation: -10deg;
+}
+
+/*  Generic
+*/
+
+body {
+    margin: 0;
+    background-image: url("../img/bg_motif.gif");
+
+    font-size: 1rem;
+    color: white;
+}
+
+p {
+    font-family: var(--content-font-family);
+    font-size: var(--content-font-family);
+}
+
+a {
+    color: var(--button-font-color);
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--title-font-family);
+    font-weight: normal;
+}
+
+button {
+    font-family: var(--content-font-family);
+}
+
+/*  Components
+*/
+
+/* Btn */
+.Btn {
+    height: 50px;
+
+    transform: rotate(-0deg);
+
+    background-color: rgb(160, 160, 160);
+    border: none;
+
+    line-height: 2em;
+    font-size: 1.1em;
+
+    transition: var(--button-hover-transition-speed);
+}
+
+.Btn * {
+    padding: 10px;
+
+    color: white;
+    text-align: center;
+
+    transition: var(--button-hover-transition-speed);
+}
+
+.Btn:hover {
+    transform: rotate(-10deg);
+
+    background-color: rgb(51, 51, 51);
+
+    font-size: 1.5em;
+
+    transition: var(--button-hover-transition-speed);
+}
+
+.Btn:hover * {
+    color: red;
+
+    transition: var(--button-hover-transition-speed);
+}
+
+/* Menu */
+.Menu {
+}
+
+.Menu-List {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+
+    gap: 0 10px;
+
+    padding: 0;
+
+    list-style-type: none;
+}
+
+.Menu-List--horizontal {
+    flex-direction: row;
+}
+
+.Menu-List--horizontal-inverse {
+    flex-direction: row-reverse;
+}
+
+.Menu-List--vertical {
+    flex-direction: column;
+}
+
+.Menu-List--vertical-inverse {
+    flex-direction: column-reverse;
+}
+
+.Menu-List-Item {
+}
+
+.Menu-List-Item-Content {
+}
+
+.SubMenuList {
+    display: none;
+}
+
+.Menu-List-Item:hover .SubMenuList {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+}
+
+.Menu-List-Item:hover .SubMenuList .Menu-List-Item {
+}
+
+/*  Personal website theme
+*/
+.PageHeader-Menu {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+
+    padding-top: 5px;
+
+    background-color: black;
+
+    border-bottom: 1px solid white;
+
+    font-family: "channel", sans-serif;
+    font-size: 1em;
+}
+
+.PageHeader-Menu .Menu-List {
+    margin: 5px 0;
+}
+
+.PageHeader-Menu-Content {
+    display: inline-block;
+    width: 150px;
+}
+
+.PageHeader-Menu-Content:hover {
+    color: red;
+}
+
+.PageHeader-SubMenu-Content {
+    display: inline-block;
+    width: 200px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 1px solid white;
+    padding-left: 20px;
+}
+
+.PageHeader-SubMenu-Content:hover {
+    color: red;
+}
+
+.Page {
+    display: grid;
+    grid-template-columns: 1fr 5fr 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+        ". content ."
+        ". content .";
+
+    max-width: 1500px;
+    min-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.PageContent {
+    grid-area: content;
+
+    background-color: rgba(255, 255, 255, 0.1);
+    background-image: url("../img/img_footer.png"), url("../img/footer-bg.png");
+    background-size: inherit, contain;
+    background-repeat: no-repeat, no-repeat;
+    background-position: right bottom, bottom;
+
+    background-size: auto, 100% auto;
+
+    padding: 0 30px;
+    padding-top: 10px;
+
+    border: 1px solid black;
+    border-top: none;
+    box-shadow: 0 10px 0.75rem black;
+}
+
+.PageContentMain {
+    grid-area: main;
+}
+
+.PageHeader-Logo {
+    position: relative;
+    top: -26px;
+    left: 50px;
+}
+
+.PageHeader-Title {
+    /* background: linear-gradient(rgba(219, 0, 0, 0.829), rgba(133, 0, 0, 0.829));
+    position:  relative;
+    width: 50px;
+    height: 250px;
+    top: 0px;
+    left: 100px;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+
+    border-top-right-radius: 30px 40px;
+    border-bottom-left-radius: 30px 40px;
+    border-bottom-right-radius: 30px 40px; */
+}
+
+/* Todo: https://www.zonecss.fr/laboratoire-css/les-formes-geometriques.html */
+.PageHeader-Title-Figure {
+    /* position: relative;
+    left: 10px;
+
+    height: 30px;
+    width: 50px;
+    background : rgba(219, 0, 0, 0.829);
+
+    border-top-left-radius: 30px 40px;
+    border-top-right-radius: 30px 40px; */
+}
+
+.PageHeader-Title-Content {
+    /* position: relative;
+    top: 50px;
+    margin: 0;
+    margin-right: 8px;
+    font-size: 1.4em; */
+}
+
+.PagePresentation-Show {
+    box-shadow: 0 0 0.75rem rgba(255, 255, 255, 0.39);
+
+    margin: 0;
+}
+
+.PagePresentation-Show-Image {
+    width: 100%;
+}
+
+.PagePresentation-Show-Text {
+    background-color: white;
+    color: rgba(112, 0, 0, 0.747);
+
+    font-size: 1.2em;
+    text-align: center;
+    font-weight: 500;
+    line-height: 1.6em;
+}
+
+.PagePresentation-Explications {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: center;
+
+    margin-top: 8px;
+    border-top: 1px solid rgb(110, 110, 110);
+}
+
+.PagePresentation-Explications-Item {
+    display: flex;
+    flex-direction: column;
+
+    width: 30%;
+
+    margin: 10px 0;
+
+    background-image: url("../img/bg_g.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.PagePresentation-Explications-Item a {
+    padding: 10px;
+}
+
+.PagePresentation-Explications-Item p {
+    color: black;
+}
+
+.PagePresentation-Explications-Item-Head {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+    margin-left: 30px;
+    margin-top: 20px;
+}
+
+.PagePresentation-Explications-Item-Head * {
+    margin: 0;
+}
+
+.PagePresentation-Explications-Item-Title {
+    padding-top: 5px;
+    padding-left: 40px;
+    font-size: 1em;
+}
+
+.PagePresentation-Explications-Item-Head img {
+    height: 50px;
+}
+
+.PagePresentation-Explications-Item-Head button {
+    height: 50px;
+}
+
+.PageFooterBox {
+    background-color: rgba(255, 255, 255, 0.205);
+}
+
+.PageContentFooter {
+    grid-area: footer;
+
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+        "selection merchandise"
+        "menu menu";
+}
+
+.PageSelection {
+    grid-area: selection;
+
+    margin-right: 10px;
+}
+
+.PageSelection-Title {
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+.PageSelection-List {
+    list-style: inside url("../img/liste.png");
+    padding: 0;
+}
+
+.PageSelection-List-Item {
+    border-top: 3px solid rgba(255, 255, 255, 0.26);
+    padding: 5px;
+    padding-left: 50px;
+}
+
+.PageSelection-List-Item:last-child {
+    border-bottom: 3px solid rgba(255, 255, 255, 0.26);
+}
+
+.PageSelection-List-Item-Content {
+    color: black;
+    font-size: 1.1em;
+    text-align: center;
+    width: 100%;
+    padding-left: 10px;
+}
+
+.PageMerchandise {
+    grid-area: merchandise;
+
+    display: grid;
+    grid-template-columns: 35% 65%;
+    grid-template-rows: repeat(4, auto);
+    grid-template-areas:
+        "title title"
+        "image subtitle"
+        "image text"
+        "image button";
+
+    justify-self: center;
+
+    margin-left: 10px;
+}
+
+.PageMerchandise-Title {
+    grid-area: title;
+
+    justify-self: center;
+
+    margin: 10px 0 0 0;
+
+    font-size: 1.1em;
+}
+
+.PageMerchandise-SubTitle {
+    grid-area: subtitle;
+
+    justify-self: left;
+
+    margin: 0;
+
+    font-size: 0.8em;
+}
+
+.PageMerchandise-Image {
+    grid-area: image;
+
+    justify-self: center;
+
+    width: 80%;
+
+    border: 4px solid white;
+}
+
+.PageMerchandise-Text {
+    grid-area: text;
+    color: black;
+    line-height: 1.1em;
+    margin: 5px 15px 5px 0;
+}
+
+.PageMerchandise-Link {
+    grid-area: button;
+    text-align: center;
+    padding: 10px;
+}
+
+.PageFooterMenu {
+    grid-area: menu;
+
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+
+    height: 150px;
+    margin-top: 20px;
+
+    border-top: 2px solid rgba(255, 255, 255, 0.26);
+
+    font-family: "channel", sans-serif;
+    font-size: 0.8em;
+}
+
+.PageFooterMenu {
+    margin: 20px;
+}
+
+.PageFooterMenu .Menu-List-Item-Content {
+    padding: 20px;
+}
+
+.PageFooterMenu .Menu-List-Item-Content:hover {
+    color: red;
+}

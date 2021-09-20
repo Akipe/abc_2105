@@ -1,0 +1,257 @@
+/*  CSS pour akipe.fr
+    Actuellement utilisé uniquement pour le projet CV en html
+    License MIT */
+
+/*  Fonts
+    Source: https://github.com/alsacreations/webfonts */
+    
+/*  Roboto
+    License : Apache License */
+@font-face {
+    font-family: 'roboto';
+    src: url('fonts/roboto/roboto-regular.woff2?#iefix') format('woff2'),
+         url('fonts/roboto/roboto-regular.woff') format('woff'),
+         url('fonts/roboto/roboto-regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'roboto';
+    src: url('fonts/roboto/roboto-italic.woff2?#iefix') format('woff2'),
+         url('fonts/roboto/roboto-italic.woff') format('woff'),
+         url('fonts/roboto/roboto-italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'roboto';
+    src: url('fonts/roboto/roboto-light.woff2?#iefix') format('woff2'),
+         url('fonts/roboto/roboto-light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'roboto';
+    src: url('fonts/roboto/roboto-bold.woff2?#iefix') format('woff2'),
+         url('fonts/roboto/roboto-bold.woff') format('woff'),
+         url('fonts/roboto/roboto-bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+/*  Vars
+*/
+:root {
+
+}
+
+/*  Theme
+*/
+body {
+    background-color: white;
+    font-family: "roboto", Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: rgb(67, 78, 94);
+}
+
+img {
+    max-width: 100%;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+p, li {
+    color: rgb(88, 103, 124);
+}
+
+.page-container {
+    /* margin: 0; */
+}
+
+.page-header {
+    background-color: rgb(56, 174, 234);
+
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+        "header-title"
+        "header-navigation";
+}
+
+.page-header * > a {
+    color: white;
+    text-decoration: none;
+}
+
+/* .page-header > a:visited {
+    color: yellow;
+} */
+
+.page-header-title {
+    grid-area: "header-title";
+
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: auto;
+
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.page-header-title > * {
+    /* background-color: blue; */
+
+    /* justify-self: stretch;
+    place-self: center stretch;
+    align-self: stretch; */
+    place-self: center;
+
+    /* size: 100%; */
+    margin: 10px;
+
+    /* text-align: center; */
+}
+
+.page-header-navigation {
+    /* background-color: burlywood; */
+    
+    grid-area: "header-navigation";
+
+    text-align: center;
+}
+
+.page-header-navigation > nav > ul {
+    margin: 0;
+}
+
+.page-header-navigation > nav > ul > li {
+    /* background-color: #fff;
+    display: block; */
+    /* height: 100px; */
+}
+
+.page-header-navigation > nav > ul > li > a {
+    display: block;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+}
+
+.page-footer {
+    background-color: bisque;
+}
+
+
+/*  CV
+*/
+
+
+
+
+/* Main
+*/
+
+.cv > * {
+    
+}
+
+.main-title {
+    border-bottom: 1px solid black;
+
+    padding: 0 0 16px 0;
+    margin: 0 0 16px 0;
+
+    font-weight: 500;
+    line-height: 1.2;
+
+    font-size: 1.25rem;
+    color: #434E5E;
+    text-transform: uppercase;
+}
+
+.cv-part {
+    padding: 20px 30px;
+}
+
+/* CV
+*/
+
+.cv_introduction_personnelle {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto;
+
+    background-color: #434e5e;
+    color: rgba(255, 255, 255, 0.9);
+
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.cv_introduction_personnelle * {
+    place-self: center;
+}
+
+.cv_introduction_personnelle_profile {
+    margin-left: auto;
+    margin-right: auto;
+    /* margin: 15px auto 5px auto; */
+
+    text-align: center
+}
+
+.cv_introduction_personnelle_profile > img {
+    background-color: darkgoldenrod;
+
+    /* margin-left: 100px;
+    margin-right: 100px; */
+    border-radius: 4px;
+    width: 35%;
+
+    /* margin: 10px auto 10px auto; */
+}
+
+.cv_introduction_personnelle_profile > figcaption {
+    font-size: 2em;
+    font-weight: 900;
+    text-transform: uppercase;
+    box-sizing: border-box;
+
+    /* margin-top: 10px; */
+}
+
+.cv_introduction_personnelle_titre {
+    width: 80%;
+}
+
+.cv_introduction_personnelle_titre * {
+    /* margin: 5px; */
+    text-align: center;
+    font-weight: normal;
+}
+
+.cv_introduction_personnelle_titre > h2 {
+    color: white;
+}
+
+.cv_introduction_personnelle_liens {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.cv_introduction_personnelle_liens * {
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+    /* margin-top: 10px;
+    margin-bottom: 10px; */
+}
+/* .page-header > a:visited {
+    color: yellow;
+} */
