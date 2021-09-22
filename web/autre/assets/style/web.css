@@ -1,0 +1,9 @@
+.Page {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto;
+}
+
+body {
+  color: white;
+}/*# sourceMappingURL=web.css.map */
