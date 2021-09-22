@@ -90,7 +90,7 @@ button {
 .Btn {
     height: 50px;
 
-    transform: rotate(-0deg);
+    transform: rotate(-0deg) scale(1);
 
     background-color: rgb(160, 160, 160);
     border: none;
@@ -111,11 +111,9 @@ button {
 }
 
 .Btn:hover {
-    transform: rotate(-10deg);
+    transform: rotate(-10deg) scale(1.2);
 
     background-color: rgb(51, 51, 51);
-
-    font-size: 1.5em;
 
     transition: var(--button-hover-transition-speed);
 }
