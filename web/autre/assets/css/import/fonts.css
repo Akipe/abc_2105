@@ -1,0 +1,193 @@
+@font-face {
+  font-family: 'Source Sans';
+  font-weight: 200;
+  font-style: normal;
+  font-stretch: normal;
+  src: url("../fonts/source-sans/woff2/SourceSans3-ExtraLight.otf.woff2") format("woff2"), url("../fonts/source-sans/woff/SourceSans3-ExtraLight.otf.woff") format("woff"), url("../fonts/source-sans/otf/SourceSans3-ExtraLight.otf") format("opentype"), url("../fonts/source-sans/ttf/SourceSans3-ExtraLight.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'Source Sans';
+  font-weight: 200;
+  font-style: italic;
+  font-stretch: normal;
+  src: url("../fonts/source-sans/woff2/SourceSans3-ExtraLightIt.otf.woff2") format("woff2"), url("../fonts/source-sans/woff/SourceSans3-ExtraLightIt.otf.woff") format("woff"), url("../fonts/source-sans/otf/SourceSans3-ExtraLightIt.otf") format("opentype"), url("../fonts/source-sans/ttf/SourceSans3-ExtraLightIt.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'Source Sans';
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: normal;
+  src: url("../fonts/source-sans/woff2/SourceSans3-Light.otf.woff2") format("woff2"), url("../fonts/source-sans/woff/SourceSans3-Light.otf.woff") format("woff"), url("../fonts/source-sans/otf/SourceSans3-Light.otf") format("opentype"), url("../fonts/source-sans/ttf/SourceSans3-Light.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'Source Sans';
+  font-weight: 300;
+  font-style: italic;
+  font-stretch: normal;
+  src: url("../fonts/source-sans/woff2/SourceSans3-LightIt.otf.woff2") format("woff2"), url("../fonts/source-sans/woff/SourceSans3-LightIt.otf.woff") format("woff"), url("../fonts/source-sans/otf/SourceSans3-LightIt.otf") format("opentype"), url("../fonts/source-sans/ttf/SourceSans3-LightIt.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'Source Sans';
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+  src: url("../fonts/source-sans/woff2/SourceSans3-Regular.otf.woff2") format("woff2"), url("../fonts/source-sans/woff/SourceSans3-Regular.otf.woff") format("woff"), url("../fonts/source-sans/otf/SourceSans3-Regular.otf") format("opentype"), url("../fonts/source-sans/ttf/SourceSans3-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'Source Sans';
+  font-weight: 400;
+  font-style: italic;
+  font-stretch: normal;
+  src: url("../fonts/source-sans/woff2/SourceSans3-It.otf.woff2") format("woff2"), url("../fonts/source-sans/woff/SourceSans3-It.otf.woff") format("woff"), url("../fonts/source-sans/otf/SourceSans3-It.otf") format("opentype"), url("../fonts/source-sans/ttf/SourceSans3-It.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'Source Sans';
+  font-weight: 600;
+  font-style: normal;
+  font-stretch: normal;
+  src: url("../fonts/source-sans/woff2/SourceSans3-Semibold.otf.woff2") format("woff2"), url("../fonts/source-sans/woff/SourceSans3-Semibold.otf.woff") format("woff"), url("../fonts/source-sans/otf/SourceSans3-Semibold.otf") format("opentype"), url("../fonts/source-sans/ttf/SourceSans3-Semibold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'Source Sans';
+  font-weight: 600;
+  font-style: italic;
+  font-stretch: normal;
+  src: url("../fonts/source-sans/woff2/SourceSans3-SemiboldIt.otf.woff2") format("woff2"), url("../fonts/source-sans/woff/SourceSans3-SemiboldIt.otf.woff") format("woff"), url("../fonts/source-sans/otf/SourceSans3-SemiboldIt.otf") format("opentype"), url("../fonts/source-sans/ttf/SourceSans3-SemiboldIt.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'Source Sans';
+  font-weight: 700;
+  font-style: normal;
+  font-stretch: normal;
+  src: url("../fonts/source-sans/woff2/SourceSans3-Bold.otf.woff2") format("woff2"), url("../fonts/source-sans/woff/SourceSans3-Bold.otf.woff") format("woff"), url("../fonts/source-sans/otf/SourceSans3-Bold.otf") format("opentype"), url("../fonts/source-sans/ttf/SourceSans3-Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'Source Sans';
+  font-weight: 700;
+  font-style: italic;
+  font-stretch: normal;
+  src: url("../fonts/source-sans/woff2/SourceSans3-BoldIt.otf.woff2") format("woff2"), url("../fonts/source-sans/woff/SourceSans3-BoldIt.otf.woff") format("woff"), url("../fonts/source-sans/otf/SourceSans3-BoldIt.otf") format("opentype"), url("../fonts/source-sans/ttf/SourceSans3-BoldIt.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'Source Sans';
+  font-weight: 900;
+  font-style: normal;
+  font-stretch: normal;
+  src: url("../fonts/source-sans/woff2/SourceSans3-Black.otf.woff2") format("woff2"), url("../fonts/source-sans/woff/SourceSans3-Black.otf.woff") format("woff"), url("../fonts/source-sans/otf/SourceSans3-Black.otf") format("opentype"), url("../fonts/source-sans/ttf/SourceSans3-Black.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'Source Sans';
+  font-weight: 900;
+  font-style: italic;
+  font-stretch: normal;
+  src: url("../fonts/source-sans/woff2/SourceSans3-BlackIt.otf.woff2") format("woff2"), url("../fonts/source-sans/woff/SourceSans3-BlackIt.otf.woff") format("woff"), url("../fonts/source-sans/otf/SourceSans3-BlackIt.otf") format("opentype"), url("../fonts/source-sans/ttf/SourceSans3-BlackIt.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-weight: 200;
+  font-style: normal;
+  font-stretch: normal;
+  src: url("../fonts/source-sans-pro/woff2/source-sans-pro-v14-latin-200.woff2") format("woff2"), url("../fonts/source-sans-pro/woff/source-sans-pro-v14-latin-200.woff") format("woff"), url("../fonts/source-sans-pro/ttf/source-sans-pro-v14-latin-200.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-weight: 200;
+  font-style: italic;
+  font-stretch: normal;
+  src: url("../fonts/source-sans-pro/woff2/source-sans-pro-v14-latin-200italic.woff2") format("woff2"), url("../fonts/source-sans-pro/woff/source-sans-pro-v14-latin-200italic.woff") format("woff"), url("../fonts/source-sans-pro/ttf/source-sans-pro-v14-latin-200italic.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: normal;
+  src: url("../fonts/source-sans-pro/woff2/source-sans-pro-v14-latin-300.woff2") format("woff2"), url("../fonts/source-sans-pro/woff/source-sans-pro-v14-latin-300.woff") format("woff"), url("../fonts/source-sans-pro/ttf/source-sans-pro-v14-latin-300.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-weight: 300;
+  font-style: italic;
+  font-stretch: normal;
+  src: url("../fonts/source-sans-pro/woff2/source-sans-pro-v14-latin-300italic.woff2") format("woff2"), url("../fonts/source-sans-pro/woff/source-sans-pro-v14-latin-300italic.woff") format("woff"), url("../fonts/source-sans-pro/ttf/source-sans-pro-v14-latin-300italic.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+  src: url("../fonts/source-sans-pro/woff2/source-sans-pro-v14-latin-regular.woff2") format("woff2"), url("../fonts/source-sans-pro/woff/source-sans-pro-v14-latin-regular.woff") format("woff"), url("../fonts/source-sans-pro/ttf/source-sans-pro-v14-latin-regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-weight: 400;
+  font-style: italic;
+  font-stretch: normal;
+  src: url("../fonts/source-sans-pro/woff2/source-sans-pro-v14-latin-italic.woff2") format("woff2"), url("../fonts/source-sans-pro/woff/source-sans-pro-v14-latin-italic.woff") format("woff"), url("../fonts/source-sans-pro/ttf/source-sans-pro-v14-latin-italic.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-weight: 600;
+  font-style: normal;
+  font-stretch: normal;
+  src: url("../fonts/source-sans-pro/woff2/source-sans-pro-v14-latin-600.woff2") format("woff2"), url("../fonts/source-sans-pro/woff/source-sans-pro-v14-latin-600.woff") format("woff"), url("../fonts/source-sans-pro/ttf/source-sans-pro-v14-latin-600.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-weight: 600;
+  font-style: italic;
+  font-stretch: normal;
+  src: url("../fonts/source-sans-pro/woff2/source-sans-pro-v14-latin-600italic.woff2") format("woff2"), url("../fonts/source-sans-pro/woff/source-sans-pro-v14-latin-600italic.woff") format("woff"), url("../fonts/source-sans-pro/ttf/source-sans-pro-v14-latin-600italic.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-weight: 700;
+  font-style: normal;
+  font-stretch: normal;
+  src: url("../fonts/source-sans-pro/woff2/source-sans-pro-v14-latin-700.woff2") format("woff2"), url("../fonts/source-sans-pro/woff/source-sans-pro-v14-latin-700.woff") format("woff"), url("../fonts/source-sans-pro/ttf/source-sans-pro-v14-latin-700.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-weight: 700;
+  font-style: italic;
+  font-stretch: normal;
+  src: url("../fonts/source-sans-pro/woff2/source-sans-pro-v14-latin-700italic.woff2") format("woff2"), url("../fonts/source-sans-pro/woff/source-sans-pro-v14-latin-700italic.woff") format("woff"), url("../fonts/source-sans-pro/ttf/source-sans-pro-v14-latin-700italic.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-weight: 900;
+  font-style: normal;
+  font-stretch: normal;
+  src: url("../fonts/source-sans-pro/woff2/source-sans-pro-v14-latin-900.woff2") format("woff2"), url("../fonts/source-sans-pro/woff/source-sans-pro-v14-latin-900.woff") format("woff"), url("../fonts/source-sans-pro/ttf/source-sans-pro-v14-latin-900.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-weight: 900;
+  font-style: italic;
+  font-stretch: normal;
+  src: url("../fonts/source-sans-pro/woff2/source-sans-pro-v14-latin-900italic.woff2") format("woff2"), url("../fonts/source-sans-pro/woff/source-sans-pro-v14-latin-900italic.woff") format("woff"), url("../fonts/source-sans-pro/ttf/source-sans-pro-v14-latin-900italic.ttf") format("truetype");
+}
+
+/*# sourceMappingURL=fonts.css.map */

@@ -1,0 +1,12 @@
+{
+	"version": 3,
+	"file": "page.css",
+	"sources": [
+		"../../../../assets_dev/scss/import/blocks/page.scss"
+	],
+	"sourcesContent": [
+		".Page {\r\n    display: grid;\r\n    grid-template-columns: 100%;\r\n    grid-template-rows: auto;\r\n\r\n    padding: 40px 20px;\r\n\r\n    &-Head {\r\n        background-color: aqua;\r\n    }\r\n\r\n    &-Menu {\r\n        background-color: aquamarine;\r\n    }\r\n\r\n    &-Main {\r\n        background-color: beige;\r\n    }\r\n\r\n    &-Foot {\r\n        background-color: cadetblue;\r\n    }\r\n}\r\n"
+	],
+	"names": [],
+	"mappings": ";AAAA,AAAA,KAAK,CAAC;EACF,OAAO,EAAE,IAAI;EACb,qBAAqB,EAAE,IAAI;EAC3B,kBAAkB,EAAE,IAAI;EAExB,OAAO,EAAE,SAAS;CAiBrB;;;AAfI,AAAD,UAAM,CAAC;EACH,gBAAgB,EAAE,IAAI;CACzB;;;AAEA,AAAD,UAAM,CAAC;EACH,gBAAgB,EAAE,UAAU;CAC/B;;;AAEA,AAAD,UAAM,CAAC;EACH,gBAAgB,EAAE,KAAK;CAC1B;;;AAEA,AAAD,UAAM,CAAC;EACH,gBAAgB,EAAE,SAAS;CAC9B"
+}

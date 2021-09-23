@@ -1,0 +1,12 @@
+{
+	"version": 3,
+	"file": "components.css",
+	"sources": [
+		"../../../assets_dev/scss/import/components.scss"
+	],
+	"sourcesContent": [
+		"// Website components\r\n"
+	],
+	"names": [],
+	"mappings": ""
+}

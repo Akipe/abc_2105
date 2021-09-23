@@ -1,0 +1,12 @@
+{
+	"version": 3,
+	"file": "blocks.css",
+	"sources": [
+		"../../../assets_dev/scss/import/blocks.scss"
+	],
+	"sourcesContent": [
+		"// Blocks\r\n"
+	],
+	"names": [],
+	"mappings": ""
+}
