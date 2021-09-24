@@ -26,4 +26,16 @@
   padding: 40px 20px;
 }
 
+/* line 11, ../../../Developpement/abc_dev/abc_2105/web/autre/assets_dev/scss/import/baseline/page.scss */
+.Page-Head {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto;
+}
+
+/* line 16, ../../../Developpement/abc_dev/abc_2105/web/autre/assets_dev/scss/import/baseline/page.scss */
+.Page-Head-Title {
+  place-self: center;
+}
+
 /*# sourceMappingURL=baseline.css.map */

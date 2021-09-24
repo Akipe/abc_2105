@@ -1,0 +1,12 @@
+{
+	"version": 3,
+	"file": "debug.css",
+	"sources": [
+		"../../../../assets_dev/scss/import/layout/debug.scss"
+	],
+	"sourcesContent": [
+		"// Debug\r\n.Page {\r\n    // &-Head {\r\n    //     background-color: aqua;\r\n    // }\r\n\r\n    // &-Menu {\r\n    //     background-color: aquamarine;\r\n    // }\r\n\r\n    &-Main {\r\n        background-color: beige;\r\n    }\r\n\r\n    &-Foot {\r\n        background-color: cadetblue;\r\n    }\r\n}\r\n"
+	],
+	"names": [],
+	"mappings": ";AAUK,AAAD,UAAM,CAAC;EACH,gBAAgB,EAAE,KAAK;CAC1B;;;AAEA,AAAD,UAAM,CAAC;EACH,gBAAgB,EAAE,SAAS;CAC9B"
+}

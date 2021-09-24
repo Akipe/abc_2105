@@ -1,0 +1,55 @@
+// Base page
+@import 'debug';
+
+.Page {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto;
+
+    padding: 20px 20px;
+
+
+    &-Head {
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: auto;
+        justify-items: center;
+
+
+        &-Profile {
+            display: grid;
+            grid-template-columns: auto;
+            grid-template-rows: auto;
+            justify-items: center;
+        }
+    }
+
+
+    &-Menu {
+        border-bottom: 1px dotted rgb(79, 139, 181);
+
+
+        &-Navigation {
+            &-Site {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+            }
+
+
+            &-GeneralLink {
+                display: flex;
+                justify-content: center;
+                gap: 10px;
+            }
+
+
+            &-SiteLanguage {
+                display: flex;
+                justify-content: center;
+                gap: 10px;
+            }
+        }
+    }
+}

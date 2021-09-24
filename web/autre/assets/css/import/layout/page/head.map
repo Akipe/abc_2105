@@ -1,0 +1,12 @@
+{
+	"version": 3,
+	"file": "head.css",
+	"sources": [
+		"../../../../../assets_dev/scss/import/layout/page/head.scss"
+	],
+	"sourcesContent": [
+		"// Page Head\r\n"
+	],
+	"names": [],
+	"mappings": ""
+}
