@@ -1,8 +1,8 @@
 # Web other
-web/autre/assets/css/style.css
-web/autre/assets/css/style.map
-web/autre/assets/css/import/
-web/autre/assets/css/import/*
+web/html5/autre/assets/css/style.css
+web/html5/autre/assets/css/style.map
+web/html5/autre/assets/css/import/
+web/html5/autre/assets/css/import/*
 
 
 ## Ignore Visual Studio temporary files, build results, and
