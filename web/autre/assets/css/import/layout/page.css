@@ -1,11 +1,6 @@
-/* line 11, ../../../Developpement/abc_dev/abc_2105/web/autre/assets_dev/scss/import/layout/debug.scss */
-.Page-Main {
-  background-color: beige;
-}
-
 /* line 15, ../../../Developpement/abc_dev/abc_2105/web/autre/assets_dev/scss/import/layout/debug.scss */
-.Page-Foot {
-  background-color: cadetblue;
+.Page-Main-Content {
+  background-color: antiquewhite;
 }
 
 /* line 4, ../../../Developpement/abc_dev/abc_2105/web/autre/assets_dev/scss/import/layout/page.scss */
@@ -48,15 +43,38 @@
 /* line 41, ../../../Developpement/abc_dev/abc_2105/web/autre/assets_dev/scss/import/layout/page.scss */
 .Page-Menu-Navigation-GeneralLink {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   gap: 10px;
 }
 
-/* line 48, ../../../Developpement/abc_dev/abc_2105/web/autre/assets_dev/scss/import/layout/page.scss */
+/* line 49, ../../../Developpement/abc_dev/abc_2105/web/autre/assets_dev/scss/import/layout/page.scss */
 .Page-Menu-Navigation-SiteLanguage {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   gap: 10px;
+}
+
+/* line 61, ../../../Developpement/abc_dev/abc_2105/web/autre/assets_dev/scss/import/layout/page.scss */
+.Page-Main-Head-Title {
+  font-size: 4em;
+}
+
+/* line 71, ../../../Developpement/abc_dev/abc_2105/web/autre/assets_dev/scss/import/layout/page.scss */
+.Page-Foot-Info-Navigation-AboutLink {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0 20px;
+}
+
+/* line 78, ../../../Developpement/abc_dev/abc_2105/web/autre/assets_dev/scss/import/layout/page.scss */
+.Page-Foot-Info-Navigation-OtherLink {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
 }
 
 /*# sourceMappingURL=page.css.map */

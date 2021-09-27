@@ -40,6 +40,7 @@
 
             &-GeneralLink {
                 display: flex;
+                flex-wrap: wrap;
                 justify-content: center;
                 gap: 10px;
             }
@@ -47,8 +48,39 @@
 
             &-SiteLanguage {
                 display: flex;
+                flex-wrap: wrap;
                 justify-content: center;
                 gap: 10px;
+            }
+        }
+    }
+
+
+    &-Main {
+        &-Head {
+            &-Title {
+                font-size: 4em;
+            }
+        }
+    }
+
+
+    &-Foot {
+        &-Info {
+            &-Navigation {
+                &-AboutLink {
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    gap: 0 20px;
+                }
+
+                &-OtherLink {
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    gap: 20px;
+                }
             }
         }
     }

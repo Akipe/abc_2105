@@ -5,8 +5,8 @@
 		"../../../../assets_dev/scss/import/layout/debug.scss"
 	],
 	"sourcesContent": [
-		"// Debug\r\n.Page {\r\n    // &-Head {\r\n    //     background-color: aqua;\r\n    // }\r\n\r\n    // &-Menu {\r\n    //     background-color: aquamarine;\r\n    // }\r\n\r\n    &-Main {\r\n        background-color: beige;\r\n    }\r\n\r\n    &-Foot {\r\n        background-color: cadetblue;\r\n    }\r\n}\r\n"
+		"// Debug\r\n.Page {\r\n    // &-Head {\r\n    //     background-color: aqua;\r\n    // }\r\n\r\n    // &-Menu {\r\n    //     background-color: aquamarine;\r\n    // }\r\n\r\n    // &-Main-Head {\r\n    //     background-color: beige;\r\n    // }\r\n\r\n    &-Main-Content {\r\n        background-color: antiquewhite;\r\n    }\r\n\r\n    // &-Foot {\r\n    //     background-color: cadetblue;\r\n    // }\r\n\r\n    // &-Foot {\r\n    //     &-Info {\r\n    //         &-Navigation {\r\n    //             &-AboutLink {\r\n    //                 background-color: blueviolet;\r\n    //             }\r\n\r\n    //             &-OtherLink {\r\n    //                 background-color:crimson;\r\n    //             }\r\n    //         }\r\n    //     }\r\n    // }\r\n}\r\n"
 	],
 	"names": [],
-	"mappings": ";AAUK,AAAD,UAAM,CAAC;EACH,gBAAgB,EAAE,KAAK;CAC1B;;;AAEA,AAAD,UAAM,CAAC;EACH,gBAAgB,EAAE,SAAS;CAC9B"
+	"mappings": ";AAcK,AAAD,kBAAc,CAAC;EACX,gBAAgB,EAAE,YAAY;CACjC"
 }

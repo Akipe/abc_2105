@@ -8,11 +8,29 @@
     //     background-color: aquamarine;
     // }
 
-    &-Main {
-        background-color: beige;
+    // &-Main-Head {
+    //     background-color: beige;
+    // }
+
+    &-Main-Content {
+        background-color: antiquewhite;
     }
 
-    &-Foot {
-        background-color: cadetblue;
-    }
+    // &-Foot {
+    //     background-color: cadetblue;
+    // }
+
+    // &-Foot {
+    //     &-Info {
+    //         &-Navigation {
+    //             &-AboutLink {
+    //                 background-color: blueviolet;
+    //             }
+
+    //             &-OtherLink {
+    //                 background-color:crimson;
+    //             }
+    //         }
+    //     }
+    // }
 }
