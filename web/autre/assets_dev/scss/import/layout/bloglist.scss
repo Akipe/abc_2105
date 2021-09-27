@@ -1,0 +1,37 @@
+// Frontpage of blog with list of articles
+
+.BlogList {
+    display: flex;
+    flex-direction: column;
+
+
+    &-Article {
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: auto auto auto;
+
+
+        &-Menu {
+            &-Actions {
+                display: flex;
+                flex-direction: row-reverse;
+                align-items: center;
+                align-content: flex-end;
+                gap: 10px;
+            }
+        }
+    }
+
+
+    &-Foot {
+        &-Menu {
+            &-BlogListPage {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-items: center;
+                gap: 10px;
+            }
+        }
+    }
+}

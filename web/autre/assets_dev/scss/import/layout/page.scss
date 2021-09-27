@@ -1,5 +1,4 @@
 // Base page
-@import 'debug';
 
 .Page {
     display: grid;
@@ -7,6 +6,8 @@
     grid-template-rows: auto;
 
     padding: 20px 20px;
+
+    border-left: 6px solid rgb(79, 139, 181);
 
 
     &-Head {

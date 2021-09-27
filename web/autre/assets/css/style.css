@@ -228,20 +228,16 @@ a:hover {
   border-bottom-width: 2px;
 }
 
-/* line 15, ../../../Developpement/abc_dev/abc_2105/web/autre/assets_dev/scss/import/layout/debug.scss */
-.Page-Main-Content {
-  background-color: antiquewhite;
-}
-
-/* line 4, ../../../Developpement/abc_dev/abc_2105/web/autre/assets_dev/scss/import/layout/page.scss */
+/* line 3, ../../../Developpement/abc_dev/abc_2105/web/autre/assets_dev/scss/import/layout/page.scss */
 .Page {
   display: grid;
   grid-template-columns: 100%;
   grid-template-rows: auto;
   padding: 20px 20px;
+  border-left: 6px solid #4f8bb5;
 }
 
-/* line 12, ../../../Developpement/abc_dev/abc_2105/web/autre/assets_dev/scss/import/layout/page.scss */
+/* line 13, ../../../Developpement/abc_dev/abc_2105/web/autre/assets_dev/scss/import/layout/page.scss */
 .Page-Head {
   display: grid;
   grid-template-columns: auto;
@@ -249,7 +245,7 @@ a:hover {
   justify-items: center;
 }
 
-/* line 19, ../../../Developpement/abc_dev/abc_2105/web/autre/assets_dev/scss/import/layout/page.scss */
+/* line 20, ../../../Developpement/abc_dev/abc_2105/web/autre/assets_dev/scss/import/layout/page.scss */
 .Page-Head-Profile {
   display: grid;
   grid-template-columns: auto;
@@ -257,12 +253,12 @@ a:hover {
   justify-items: center;
 }
 
-/* line 28, ../../../Developpement/abc_dev/abc_2105/web/autre/assets_dev/scss/import/layout/page.scss */
+/* line 29, ../../../Developpement/abc_dev/abc_2105/web/autre/assets_dev/scss/import/layout/page.scss */
 .Page-Menu {
   border-bottom: 1px dotted #4f8bb5;
 }
 
-/* line 33, ../../../Developpement/abc_dev/abc_2105/web/autre/assets_dev/scss/import/layout/page.scss */
+/* line 34, ../../../Developpement/abc_dev/abc_2105/web/autre/assets_dev/scss/import/layout/page.scss */
 .Page-Menu-Navigation-Site {
   display: flex;
   flex-direction: column;
@@ -270,7 +266,7 @@ a:hover {
   gap: 20px;
 }
 
-/* line 41, ../../../Developpement/abc_dev/abc_2105/web/autre/assets_dev/scss/import/layout/page.scss */
+/* line 42, ../../../Developpement/abc_dev/abc_2105/web/autre/assets_dev/scss/import/layout/page.scss */
 .Page-Menu-Navigation-GeneralLink {
   display: flex;
   flex-wrap: wrap;
@@ -278,7 +274,7 @@ a:hover {
   gap: 10px;
 }
 
-/* line 49, ../../../Developpement/abc_dev/abc_2105/web/autre/assets_dev/scss/import/layout/page.scss */
+/* line 50, ../../../Developpement/abc_dev/abc_2105/web/autre/assets_dev/scss/import/layout/page.scss */
 .Page-Menu-Navigation-SiteLanguage {
   display: flex;
   flex-wrap: wrap;
@@ -286,12 +282,12 @@ a:hover {
   gap: 10px;
 }
 
-/* line 61, ../../../Developpement/abc_dev/abc_2105/web/autre/assets_dev/scss/import/layout/page.scss */
+/* line 62, ../../../Developpement/abc_dev/abc_2105/web/autre/assets_dev/scss/import/layout/page.scss */
 .Page-Main-Head-Title {
   font-size: 4em;
 }
 
-/* line 71, ../../../Developpement/abc_dev/abc_2105/web/autre/assets_dev/scss/import/layout/page.scss */
+/* line 72, ../../../Developpement/abc_dev/abc_2105/web/autre/assets_dev/scss/import/layout/page.scss */
 .Page-Foot-Info-Navigation-AboutLink {
   display: flex;
   flex-wrap: wrap;
@@ -299,12 +295,43 @@ a:hover {
   gap: 0 20px;
 }
 
-/* line 78, ../../../Developpement/abc_dev/abc_2105/web/autre/assets_dev/scss/import/layout/page.scss */
+/* line 79, ../../../Developpement/abc_dev/abc_2105/web/autre/assets_dev/scss/import/layout/page.scss */
 .Page-Foot-Info-Navigation-OtherLink {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 20px;
+}
+
+/* line 3, ../../../Developpement/abc_dev/abc_2105/web/autre/assets_dev/scss/import/layout/bloglist.scss */
+.BlogList {
+  display: flex;
+  flex-direction: column;
+}
+
+/* line 8, ../../../Developpement/abc_dev/abc_2105/web/autre/assets_dev/scss/import/layout/bloglist.scss */
+.BlogList-Article {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: auto auto auto;
+}
+
+/* line 15, ../../../Developpement/abc_dev/abc_2105/web/autre/assets_dev/scss/import/layout/bloglist.scss */
+.BlogList-Article-Menu-Actions {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  align-content: flex-end;
+  gap: 10px;
+}
+
+/* line 28, ../../../Developpement/abc_dev/abc_2105/web/autre/assets_dev/scss/import/layout/bloglist.scss */
+.BlogList-Foot-Menu-BlogListPage {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
 }
 
 /* line 5, ../../../Developpement/abc_dev/abc_2105/web/autre/assets_dev/scss/import/design/page.scss */
@@ -339,6 +366,30 @@ a:hover {
 /* line 50, ../../../Developpement/abc_dev/abc_2105/web/autre/assets_dev/scss/import/design/page.scss */
 .Page-Menu-Navigation-SiteLanguage-Item--active {
   font-weight: 800;
+}
+
+/* line 6, ../../../Developpement/abc_dev/abc_2105/web/autre/assets_dev/scss/import/design/bloglist.scss */
+.BlogList-Article {
+  border-bottom: 1px dotted #4f8bb5;
+}
+
+/* line 11, ../../../Developpement/abc_dev/abc_2105/web/autre/assets_dev/scss/import/design/bloglist.scss */
+.BlogList-Article-Head-Title {
+  font-size: 1.5em;
+}
+
+/* line 16, ../../../Developpement/abc_dev/abc_2105/web/autre/assets_dev/scss/import/design/bloglist.scss */
+.BlogList-Article-Head-Description {
+  font-style: italic;
+  color: #666666;
+}
+
+/* line 23, ../../../Developpement/abc_dev/abc_2105/web/autre/assets_dev/scss/import/design/bloglist.scss */
+.BlogList-Article-Preview {
+  padding-left: 20px;
+  border-left: 1px solid #4f8bb5;
+  font-size: 1.1em;
+  line-height: 1.6em;
 }
 
 /*# sourceMappingURL=style.css.map */

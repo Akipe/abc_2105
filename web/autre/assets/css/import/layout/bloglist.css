@@ -1,0 +1,32 @@
+/* line 3, ../../../Developpement/abc_dev/abc_2105/web/autre/assets_dev/scss/import/layout/bloglist.scss */
+.BlogList {
+  display: flex;
+  flex-direction: column;
+}
+
+/* line 8, ../../../Developpement/abc_dev/abc_2105/web/autre/assets_dev/scss/import/layout/bloglist.scss */
+.BlogList-Article {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: auto auto auto;
+}
+
+/* line 15, ../../../Developpement/abc_dev/abc_2105/web/autre/assets_dev/scss/import/layout/bloglist.scss */
+.BlogList-Article-Menu-Actions {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  align-content: flex-end;
+  gap: 10px;
+}
+
+/* line 28, ../../../Developpement/abc_dev/abc_2105/web/autre/assets_dev/scss/import/layout/bloglist.scss */
+.BlogList-Foot-Menu-BlogListPage {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+/*# sourceMappingURL=bloglist.css.map */
