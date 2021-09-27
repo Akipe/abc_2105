@@ -1,0 +1,87 @@
+// Base page
+
+.Page {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto;
+
+    padding: 20px 20px;
+
+    border-left: 6px solid rgb(79, 139, 181);
+
+
+    &-Head {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+
+        &-Profile {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+    }
+
+
+    &-Menu {
+        border-bottom: 1px dotted rgb(79, 139, 181);
+
+
+        &-Navigation {
+            &-Site {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+            }
+
+
+            &-GeneralLink {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 10px;
+            }
+
+
+            &-SiteLanguage {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 10px;
+            }
+        }
+    }
+
+
+    &-Main {
+        &-Head {
+            &-Title {
+                font-size: 4em;
+            }
+        }
+    }
+
+
+    &-Foot {
+        &-Info {
+            &-Navigation {
+                &-AboutLink {
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    gap: 5px 20px;
+                }
+
+                &-OtherLink {
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    gap: 20px;
+                }
+            }
+        }
+    }
+}

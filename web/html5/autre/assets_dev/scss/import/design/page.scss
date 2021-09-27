@@ -1,0 +1,69 @@
+// Page design
+
+.Page {
+    &-Head {
+        &-Title {
+            color: #4f8bb5;
+        }
+
+
+        &-Profile {
+            &-Image {
+                width: 60px;
+                border-radius: 100%;
+            }
+        }
+    }
+
+
+    &-Menu {
+        &-Navigation {
+            &-Site {
+                font-size: 1.6em;
+
+
+                // &-Item {
+                //     padding-bottom: 8px;
+                //     border-bottom: 2px solid rgba(79, 139, 181, 0);
+                //     margin-top: 10px;
+                // }
+
+                // &-Item:hover {
+                //     padding-bottom: 8px;
+                //     border-bottom: 2px solid rgb(79, 139, 181);
+                //     outline-width: 0;
+                // }
+                
+                &-Item--active a {
+                    outline-width: 0;
+                    border-bottom-color: rgb(79, 139, 181);
+                    border-bottom-style: solid;
+                    border-bottom-width: 2px;
+                }
+            }
+
+
+            &-SiteLanguage {
+                font-size: 0.8em;
+
+
+                &-Item--active {
+                    font-weight: 800;
+                }
+            }
+        }
+    }
+
+
+    &-Foot {
+        &-Info {
+            &-Navigation {
+                &-AboutLink {
+                }
+
+                &-OtherLink {
+                }
+            }
+        }
+    }
+}
