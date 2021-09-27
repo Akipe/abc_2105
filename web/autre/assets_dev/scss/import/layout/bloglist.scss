@@ -6,9 +6,8 @@
 
 
     &-Article {
-        display: grid;
-        grid-template-columns: 100%;
-        grid-template-rows: auto auto auto;
+        display: flex;
+        flex-direction: column;
 
 
         &-Menu {
