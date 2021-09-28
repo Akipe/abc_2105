@@ -53,6 +53,9 @@ document.addEventListener("DOMContentLoaded", function() {
     seconds++;
     time = fixTime(hours, minutes, seconds);
     console.log(`Le temps rentré par l'utilisateur avec l'ajout d'une seconde est : ${time.hours} heures, ${time.minutes} minutes et ${time.seconds} seconds.`);
+
+    // 4
+    exercice4();
 });
 
 
@@ -114,4 +117,25 @@ function fixUnitTime(_quantitiesUnitTime, _nameUnitTime, _maxUnitTime, _nameSupe
         [_nameUnitTime]: _quantitiesUnitTime,
         [_nameSuperiorUnitTime]: superiorUnitTime
     }
+}
+
+// 4
+function exercice4() {
+    let userNumber = 0;
+    userNumber = forceAskNumberBetween1900And2021();
+    console.log(`L'utilisateur a rentré le nombre ${userNumber}`);
+}
+
+function isNumberIsBetween1900And2021(_number) {
+    return _number >= 1900 && _number <= 2021;
+}
+
+function forceAskNumberBetween1900And2021() {
+    let userNumber = 0;
+
+    do {
+        userNumber = parseInt(prompt("Veuillez entrer un nombre entre 1900 et 2021."));
+    } while (!isNumberIsBetween1900And2021(userNumber));
+
+    return userNumber;
 }
