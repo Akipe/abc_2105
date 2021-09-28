@@ -1,5 +1,19 @@
 document.addEventListener("DOMContentLoaded", function() {
     // 1
+    exercice1();
+
+    // 2
+    exercice2();
+
+    // 3
+    exercice3();
+
+    // 4
+    exercice4();
+});
+
+// 1
+function exercice1() {
     const   ageMajeur       = 18;
     let     yearBirthDay    = 0;
     let     currentYear     = 0;
@@ -15,9 +29,10 @@ document.addEventListener("DOMContentLoaded", function() {
     } else {
         console.log("Vous êtes mineur !");
     }
+}
 
-
-    // 2
+// 2
+function exercice2() {
     let name1 = "";
     let name2 = "";
     let name3 = "";
@@ -34,9 +49,27 @@ document.addEventListener("DOMContentLoaded", function() {
     } else {
         console.log("Les nom ne sont pas dans l'ordre alphabétique.")
     }
+}
 
+function isWordsAreAlphabeticOrder(_word1, _word2, _word3) {
+    if (isWordIsBeforeOrEqual(_word1, _word2)) {
+        if (isWordIsBeforeOrEqual(_word2, _word3)) {
+            return true;
+        }
+    }
+    return false;
+}
 
-    // 3
+function isWordIsBeforeOrEqual(_word1, _word2) {
+    if (_word1.localeCompare(_word2, 'en', { sensitivity: 'base' }) <= 0) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+// 3
+function exercice3() {
     let hours = 0;
     let minutes = 0;
     let seconds = 0;
@@ -53,32 +86,8 @@ document.addEventListener("DOMContentLoaded", function() {
     seconds++;
     time = fixTime(hours, minutes, seconds);
     console.log(`Le temps rentré par l'utilisateur avec l'ajout d'une seconde est : ${time.hours} heures, ${time.minutes} minutes et ${time.seconds} seconds.`);
-
-    // 4
-    exercice4();
-});
-
-
-// 2
-function isWordsAreAlphabeticOrder(_word1, _word2, _word3) {
-    if (isWordIsBeforeOrEqual(_word1, _word2)) {
-        if (isWordIsBeforeOrEqual(_word2, _word3)) {
-            return true;
-        }
-    }
-    return false;
 }
 
-// 2
-function isWordIsBeforeOrEqual(_word1, _word2) {
-    if (_word1.localeCompare(_word2, 'en', { sensitivity: 'base' }) <= 0) {
-        return true;
-    } else {
-        return false;
-    }
-}
-
-// 3
 function fixTime(_hours, _minutes, _seconds) {
     let timeCalc;
 
