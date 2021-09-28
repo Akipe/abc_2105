@@ -46,11 +46,13 @@ document.addEventListener("DOMContentLoaded", function() {
     const taxeInPercent = 20.0;
     let priceDutyFree = 0.0;
     let priceWithTaxe = 0.0;
+    let howManyProducts = 0.0;
 
     priceDutyFree = parseFloat(prompt("Entrez le prix hors taxe"));
-    priceWithTaxe = ((priceDutyFree / 100.0) * 20) + priceDutyFree;
+    howManyProducts = parseFloat(prompt("Entrez la quantité de produits à acheter"));
+    priceWithTaxe = (((priceDutyFree / 100.0) * 20) + priceDutyFree) * howManyProducts;
 
-    console.log(`Le prix TTC de ${priceDutyFree}€ est de ${priceWithTaxe}€`);
+    console.log(`Le prix TTC de ${howManyProducts} produits coutant ${priceDutyFree}€ HT est de ${priceWithTaxe}€`);
 
 
     // 5
