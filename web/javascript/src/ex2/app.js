@@ -1,13 +1,15 @@
 document.addEventListener("DOMContentLoaded", function() {
-    exercice1();
+    // exercice1();
 
-    exercice2();
+    // exercice2();
 
-    exercice3();
+    // exercice3();
 
-    exercice4();
+    // exercice4();
 
-    exercice5();
+    // exercice5();
+
+    exercice6();
 });
 
 // 1
@@ -256,3 +258,25 @@ function askUserNumber(_minNumber, _maxNumber) {
     
     return parseInt(userInput);
 }
+
+// 6
+function exercice6() {
+    let userNumber = 0;
+    let factorNumber = 0;
+
+    userNumber = parseInt(prompt("Veuillez entrer un nombre"));
+
+    if (userNumber == 0) {
+        factorNumber = 1;
+    } else {
+        for (let iterator = userNumber; iterator >= 1; iterator--) {
+            if (factorNumber == 0) {
+                factorNumber = iterator;
+            } else {
+                factorNumber = factorNumber * iterator;
+            }
+        }
+    }
+
+    console.log(`Le nombre ${userNumber} a pour factoriel ${factorNumber}`);
+} 
