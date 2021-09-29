@@ -1,13 +1,13 @@
 document.addEventListener("DOMContentLoaded", function() {
-    // exercice1();
+    exercice1();
 
-    // exercice2();
+    exercice2();
 
-    // exercice3();
+    exercice3();
 
-    // exercice4();
+    exercice4();
 
-    // exercice5();
+    exercice5();
 
     exercice6();
 });
