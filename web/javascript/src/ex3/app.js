@@ -9,12 +9,7 @@ function exercice1() {
     let tabOfValue = [];
     let userInput = '';
 
-    do {
-        userInput = prompt("Veuillez entrer une donnée à stocker dans votre tableau (ou une chaine vide pour arréter");
-        if (userInput != "") {
-            tabOfValue.push(userInput);
-        }
-    } while (userInput != "");
+    tabOfValue = promptTab();
 
     console.log(tabOfValue);
 
@@ -73,4 +68,18 @@ function promptInt(_message) {
 
         console.log("Veuillez entrer un nombre entier !");
     } while (true);
+}
+
+function promptTab() {
+    let userInput = "";
+    let tabOfValue = [];
+
+    do {
+        userInput = prompt("Veuillez entrer une donnée à stocker dans votre tableau (ou une chaine vide pour arréter");
+        if (userInput != "") {
+            tabOfValue.push(userInput);
+        }
+    } while (userInput != "");
+
+    return tabOfValue;
 }
