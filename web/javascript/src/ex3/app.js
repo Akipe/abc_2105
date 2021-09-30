@@ -4,6 +4,8 @@ document.addEventListener("DOMContentLoaded", function() {
     exercice2();
 
     exercice3();
+
+    exercice4();
 });
 
 // 1
@@ -82,6 +84,36 @@ function getLowerNumberInArray(_array) {
     }
 
     return currentLowerNumber;
+}
+
+// 4
+
+function exercice4() {
+    let arrayUser = Array(0);
+
+    arrayUser = promptTab();
+
+    console.log(arrayInAscending(arrayUser));
+}
+
+function arrayInAscending(_array) {
+    let temp = 0;
+    let needReCheck = false;
+
+    for (let index = 0; index < _array.length; index++) {
+        if (parseFloat(_array[index]) > parseFloat(_array[index + 1])) {
+            temp = _array[index];
+            _array[index] = _array[index + 1];
+            _array[index + 1] = temp;
+            needReCheck = true;
+        }
+    }
+
+    if (needReCheck) {
+        _array = arrayInAscending(_array);
+    }
+
+    return _array;
 }
 
 // Helper
