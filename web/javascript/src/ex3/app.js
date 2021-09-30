@@ -72,11 +72,11 @@ function getLowerNumberInArray(_array) {
     let currentLowerNumber;
 
     for (let index = 0; index < _array.length; index++) {
-        if (!Number.isNaN(_array[index])) {
+        if (!Number.isNaN(Number.parseFloat(_array[index]))) {
             if (typeof currentLowerNumber === 'undefined') {
                 currentLowerNumber = _array[index];
             } else {
-                if (currentLowerNumber > _array[index]) {
+                if (Number.parseFloat(currentLowerNumber) > Number.parseFloat(_array[index])) {
                     currentLowerNumber = _array[index];
                 }
             }
