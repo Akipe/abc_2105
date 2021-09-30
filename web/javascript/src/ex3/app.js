@@ -49,6 +49,16 @@ function exercice2() {
     }
 }
 
+function isPalindrome(_word) {
+    for (let index = 0, invertIndex = _word.length - 1; index < _word.length; index++) {
+        if (_word[index] != _word[invertIndex]) {
+            return false;
+        }
+        invertIndex--;
+    }
+    return true;
+}
+
 // Helper
 
 function promptInt(_message) {
@@ -63,14 +73,4 @@ function promptInt(_message) {
 
         console.log("Veuillez entrer un nombre entier !");
     } while (true);
-}
-
-function isPalindrome(_word) {
-    for (let index = 0, invertIndex = _word.length - 1; index < _word.length; index++) {
-        if (_word[index] != _word[invertIndex]) {
-            return false;
-        }
-        invertIndex--;
-    }
-    return true;
 }
