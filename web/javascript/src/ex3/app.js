@@ -2,6 +2,8 @@ document.addEventListener("DOMContentLoaded", function() {
     exercice1();
 
     exercice2();
+
+    exercice3();
 });
 
 // 1
@@ -54,16 +56,40 @@ function isPalindrome(_word) {
     return true;
 }
 
+// 3
+function exercice3() {
+    let number = 0;
+    let vectorNumber = 0;
+
+    number = promptInt("Veuillez entrer un nombre pour calculer son vectoriel");
+    vectorNumber = vectorOfNumber4(number);
+
+    console.log(`Le vectoriel de ${number} est ${vectorNumber}`);
+}
+
+function vectorOfNumber(_number) {
+    let numberMinusOne = 0;
+
+    if (_number == 0) {
+        return 1;
+    } else if (_number == 0) {
+        return _number;
+    } else {
+        numberMinusOne = _number - 1;
+        return _number * vectorOfNumber(numberMinusOne);
+    }
+}
+
 // Helper
 
 function promptInt(_message) {
     let userInput = '';
 
     do {
-        userInput = prompt(_message);
+        userInput = parseInt(prompt(_message));
 
         if (Number.isInteger(userInput)) {
-            return parseInt(userInput);
+            return userInput;
         }
 
         console.log("Veuillez entrer un nombre entier !");
