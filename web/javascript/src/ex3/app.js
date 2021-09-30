@@ -58,6 +58,30 @@ function isPalindrome(_word) {
 
 // 3
 function exercice3() {
+    let userArray = Array(0);
+
+    userArray = promptTab();
+
+    console.log(userArray);
+    console.log(`Le nombre le plus petit du tableau est : ${getLowerNumberInArray(userArray)}`);
+}
+
+function getLowerNumberInArray(_array) {
+    let currentLowerNumber;
+
+    for (let index = 0; index < _array.length; index++) {
+        if (!Number.isNaN(_array[index])) {
+            if (typeof currentLowerNumber === 'undefined') {
+                currentLowerNumber = _array[index];
+            } else {
+                if (currentLowerNumber > _array[index]) {
+                    currentLowerNumber = _array[index];
+                }
+            }
+        }
+    }
+
+    return currentLowerNumber;
 }
 
 // Helper
