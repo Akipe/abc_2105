@@ -1,5 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
     exercice1();
+
+    exercice2();
 });
 
 // 1
@@ -34,6 +36,18 @@ function isInArray(_array, _dataToSearch) {
     return false;
 }
 
+// 2
+function exercice2() {
+    let userInput = "";
+
+    userInput = prompt("Veuillez entrer un mot.");
+
+    if (isPalindrome(userInput)) {
+        console.log("C'est un palindrome");
+    } else {
+        console.log("Ce n'est pas un palindrome");
+    }
+}
 
 // Helper
 
@@ -49,4 +63,14 @@ function promptInt(_message) {
 
         console.log("Veuillez entrer un nombre entier !");
     } while (true);
+}
+
+function isPalindrome(_word) {
+    for (let index = 0, invertIndex = _word.length - 1; index < _word.length; index++) {
+        if (_word[index] != _word[invertIndex]) {
+            return false;
+        }
+        invertIndex--;
+    }
+    return true;
 }
