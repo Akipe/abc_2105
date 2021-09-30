@@ -4,6 +4,8 @@ document.addEventListener("DOMContentLoaded", function() {
     exercice2();
 
     exercice3();
+
+    exercice4();
 });
 
 // 1
@@ -102,6 +104,25 @@ function vectorOfNumber(_number) {
     } else {
         numberMinusOne = _number - 1;
         return _number * vectorOfNumber(numberMinusOne);
+    }
+}
+
+// 4
+function exercice4() {
+    howManyFibonnacci = 0;
+    
+    howManyFibonnacci = promptInt("Entrez le nombre d'itération pour la suite Fibonnacci.");0
+
+    console.log(`Le résultat de la suite de Fibonnacci pour ${howManyFibonnacci} itérations est : ${fibonnacci(howManyFibonnacci)}`);
+}
+
+function fibonnacci(_iteration) {
+    if (_iteration == 0) {
+        return 0;
+    } else if (_iteration == 1 || _iteration == 2) {
+        return 1;
+    } else {
+        return fibonnacci(_iteration - 1) + fibonnacci(_iteration - 2);
     }
 }
 
