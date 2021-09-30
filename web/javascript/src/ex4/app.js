@@ -1,6 +1,8 @@
 document.addEventListener("DOMContentLoaded", function() {
     exercice1();
 
+    exercice2();
+
     exercice3();
 });
 
@@ -51,6 +53,32 @@ function arrayInAscending(_array) {
     }
 
     return _array;
+}
+
+// 2
+function exercice2() {
+    let userInput = "";
+
+    userInput = prompt("Entrez un mot à tester");
+
+    if (isPalindrome(userInput)) {
+        console.log("C'est un palindrome !");
+    } else {
+        console.log("Ce n'est pas un palindrome :(");
+    }
+}
+
+function isPalindrome(_word) {
+
+    if (_word.length <= 1) {
+        return true;
+    } else if (_word[0] == _word[_word.length - 1]) {
+        _word = _word.slice(1, _word.length - 1);
+
+        return isPalindrome(_word);
+    } else {
+        return false;
+    }
 }
 
 // 3
