@@ -3,6 +3,7 @@ class Compteur {
     constructor(début, delaiEnMilisecondes) {
         this.compte = début;
         this.spanElement = document.createElement("span");
+        this.spanElement.textContent = début;
 
         setInterval(() => {
             this.compte++;
