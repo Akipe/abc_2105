@@ -13,7 +13,7 @@ class Compteur {
 
 
 
-let span = document.querySelector("body div");
+let span = document.querySelector(".compteur-secondes p span");
 
 let compteSeconde = new Compteur(0, 1000);
 
