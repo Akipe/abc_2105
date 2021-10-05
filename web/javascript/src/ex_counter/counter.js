@@ -43,12 +43,12 @@ setFunkyStyleAnimeted("div", "PageDiv-Animated");
 
 
 function setMinutes(_querySelector) {
-    const milisecondesForOneMinute = 60000;
+    const MILISECONDS_FOR_ONE_MINUTE = 60000;
     let counterMinutes;
     let parentNode;
     let pNode;
 
-    counterMinutes = new Compteur(0, milisecondesForOneMinute);
+    counterMinutes = new Compteur(0, MILISECONDS_FOR_ONE_MINUTE);
     parentNode = document.querySelector(_querySelector);
 
     parentNode.innerHTML = "<p>Temps passé en minutes = <span>0</span></p>";
