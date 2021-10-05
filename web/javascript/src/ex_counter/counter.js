@@ -1,3 +1,21 @@
+document.addEventListener("DOMContentLoaded", function() {
+    let span = document.querySelector(".compteur-secondes p span");
+
+    let compteSeconde = new Compteur(0, 1000);
+
+    span.parentElement.replaceChild(compteSeconde.spanElement, span);
+
+
+    let animations = new Array();
+
+    setMinutes(".empty");
+    animations = setFunkyStyleAnimeted("div", "PageDiv-Animated");
+
+    console.log(animations);
+
+    stopFunkyStyleAnimeted(animations, ".stop");
+});
+
 //Vous n'êtes pas obligés de comprendre la class compteur
 class Compteur {
     constructor(début, delaiEnMilisecondes) {
@@ -16,8 +34,7 @@ class StyleAnimator {
     constructor(_miliseconds, _htmlElement, _cssClassName) {
         this.htmlElement = _htmlElement;
         this.cssClassName = _cssClassName;
-
-        setInterval(() => {
+        this.animation = setInterval(() => {
             if (this.htmlElement.classList.contains(this.cssClassName)) {
                 this.htmlElement.classList.remove(this.cssClassName);
             } else {
@@ -26,20 +43,6 @@ class StyleAnimator {
         }, _miliseconds);
     }
 }
-
-
-let span = document.querySelector(".compteur-secondes p span");
-
-let compteSeconde = new Compteur(0, 1000);
-
-span.parentElement.replaceChild(compteSeconde.spanElement, span);
-
-
-console.log(compteSeconde.compte);
-
-setMinutes(".empty");
-setFunkyStyleAnimeted("div", "PageDiv-Animated");
-
 
 
 function setMinutes(_querySelector) {
@@ -58,12 +61,28 @@ function setMinutes(_querySelector) {
 }
 
 function setFunkyStyleAnimeted(_querySelector, _cssClassName) {
-    const TIME_ANIMATION_MILISECONDS = 20000;
+    const TIME_ANIMATION_MILISECONDS = 1000;
     let nodes;
+    let styleAnimators = new Array();
 
     nodes = document.querySelectorAll(_querySelector);
 
     for (let index = 0; index < nodes.length; index++) {
-        new StyleAnimator(TIME_ANIMATION_MILISECONDS, nodes[index], _cssClassName);
+        styleAnimators.push(new StyleAnimator(TIME_ANIMATION_MILISECONDS, nodes[index], _cssClassName));
+    }
+
+    return styleAnimators;
+}
+
+function stopFunkyStyleAnimeted(_funkyAnimations, _selectorButton) {
+    elementButton = document.querySelector(_selectorButton);
+
+    elementButton.addEventListener("click", stopAnimation.bind(null, _funkyAnimations));
+}
+
+function stopAnimation(_funkyAnimations) {
+    console.log(_funkyAnimations);
+    for (let index = 0; index < _funkyAnimations.length; index++) {
+        clearInterval(_funkyAnimations[index].animation);
     }
 }
