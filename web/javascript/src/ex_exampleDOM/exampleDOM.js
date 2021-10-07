@@ -75,17 +75,30 @@ function addNewSecondaryArticle(_title, _content) {
 }
 
 function constructorNewArticle(_arrayCssClass, _titleLevel, _title, _content) {
+    const CSS_CLASS_COUNTER = "clickCounterOther";
+
     let newArticleElement;
     let lastArticle;
+    let linkElement;
 
     newArticleElement = document.createElement("article");
     _arrayCssClass.forEach(cssClass => {
         newArticleElement.classList.add(cssClass);
     });
     newArticleElement.innerHTML = `<h${_titleLevel}>${_title}</h${_titleLevel}>
-    <p>${_content}</p>`;
+    <p>${_content}</p>
+    <p>Counter secondaire: <span class="${CSS_CLASS_COUNTER}">0</span></p>`;
 
-    newArticleElement.appendChild(constructorArticleLinkWithCounter("Lire l'article"))
+    linkElement = constructorArticleLinkWithCounter("Lire l'article");
+
+    newArticleElement.appendChild(linkElement);
+
+    newArticleElement.addEventListener("click", (event) => {
+        if (event.target != linkElement) {
+            let counterElement = event.currentTarget.querySelector("." + CSS_CLASS_COUNTER);
+            counterElement.textContent++;
+        }
+    });
 
     lastArticle = document.querySelector("main article:last-of-type");
     lastArticle.after(newArticleElement);
@@ -102,7 +115,7 @@ function constructorArticleLinkWithCounter(_buttonContent) {
     newElement.addEventListener("click", (event) => {
         let counterElement = event.currentTarget.querySelector("." + CSS_CLASS_COUNTER);
         counterElement.textContent++;
-    })
+    });
 
     return newElement;
 }
