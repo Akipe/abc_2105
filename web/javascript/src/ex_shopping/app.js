@@ -3,7 +3,8 @@ const CLASS_SHOP_ITEM_LIST                  = ".FormShopping-ItemList";
 const CLASS_SHOP_ITEM_LIST_INPUT            = CLASS_SHOP_ITEM_LIST + " input";
 const CLASS_SHOP_BUTTON_ADD_ITEM            = ".FromShopping-Button-AddItem";
 const CLASS_SHOP_BUTTON_CREATE_PRESENTATION = ".FromShopping-Button-CreatePresentation";
-const CLASS_SHOP_PRESENTATION               = ".PresentationShopping";
+const CLASS_SHOP_PRESENTATION_NO_POINT      = "PresentationShopping";
+const CLASS_SHOP_PRESENTATION               = "." + CLASS_SHOP_PRESENTATION_NO_POINT;
 
 let itemList = Array();
 
@@ -72,7 +73,7 @@ function createShoppingListElements(_itemList) {
     let itemsElement = Array();
 
     masterElement = document.createElement("div");
-    masterElement.classList.add = CLASS_SHOP_PRESENTATION;
+    masterElement.classList.add(CLASS_SHOP_PRESENTATION_NO_POINT);
 
     listElement = document.createElement("ul");
 
@@ -89,5 +90,9 @@ function createShoppingListElements(_itemList) {
 
     masterElement.appendChild(listElement);
 
+    if (document.querySelector(CLASS_SHOP_PRESENTATION)) {
+        document.querySelector(CLASS_SHOP_PRESENTATION).remove();
+    }
+    
     document.querySelector(CLASS_SHOP_FORM).after(masterElement);
 }
