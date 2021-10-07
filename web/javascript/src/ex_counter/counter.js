@@ -61,7 +61,7 @@ function setMinutes(_querySelector) {
 }
 
 function setFunkyStyleAnimeted(_querySelector, _cssClassName) {
-    const TIME_ANIMATION_MILISECONDS = 1000;
+    const TIME_ANIMATION_MILISECONDS = 20000;
     let nodes;
     let styleAnimators = new Array();
 
