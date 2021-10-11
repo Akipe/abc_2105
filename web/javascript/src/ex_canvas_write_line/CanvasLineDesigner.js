@@ -20,6 +20,8 @@ class CanvasLineDesigner {
         this.setLineSize(1);
 
         this.canvasContext.strokeStyle = "red";
+
+        this.generateDesigner();
     }
 
     generateDesigner() {
