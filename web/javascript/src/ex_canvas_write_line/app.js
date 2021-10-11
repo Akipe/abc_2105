@@ -3,4 +3,5 @@ document.addEventListener("DOMContentLoaded", () => {
 
     lineDesigner = new CanvasLineDesigner(canvas);
     lineDesigner.generateDesigner();
+    lineDesigner.setButtonRemoveLastLine("#CLD-RemoveLastLine");
 });

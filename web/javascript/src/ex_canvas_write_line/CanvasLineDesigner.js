@@ -12,6 +12,9 @@ class CanvasLineDesigner {
             y: null
         };
 
+        this.buttons = {
+            removeLastLine: null
+        };
         this.canvasContext.strokeStyle = "red";
         this.canvasContext.lineWidth = 5;
     }
@@ -29,8 +32,7 @@ class CanvasLineDesigner {
                     let realTimeMousePosition;
 
                     realTimeMousePosition = this.getMousePosition(event);
-                    this.clearCanvas();
-                    this.drawAllLines();
+                    this.clearAndRedrawLines();
                     this.canvasContext.beginPath();
                     this.canvasContext.moveTo(clickMousePosition.x, clickMousePosition.y);
                     this.canvasContext.lineTo(realTimeMousePosition.x, realTimeMousePosition.y);
@@ -50,11 +52,19 @@ class CanvasLineDesigner {
                 );
 
                 this.addLineFromMousePosition();
-
-                this.clearCanvas();
-                this.drawAllLines();
+                this.clearAndRedrawLines();
             }
             numberUserClick++;
+        });
+    }
+
+    setButtonRemoveLastLine(_cssElementSelector)
+    {
+        this.buttons.removeLastLine = document.querySelector(_cssElementSelector);
+
+        this.buttons.removeLastLine.addEventListener("click", () => {
+            this.linesTraced.pop();
+            this.clearAndRedrawLines();
         });
     }
 
@@ -118,5 +128,10 @@ class CanvasLineDesigner {
 
     clearCanvas() {
         this.canvasContext.clearRect(0, 0, this.canvasElement.width, this.canvasElement.height);
+    }
+
+    clearAndRedrawLines() {
+        this.clearCanvas();
+        this.drawAllLines();
     }
 }
