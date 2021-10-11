@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
     lineDesigner = new CanvasLineDesigner(canvas);
     lineDesigner.setButtonRemoveLastLine("#CLD-RemoveLastLine");
     lineDesigner.setButtonLineSize("#CLD-LineHeight");
+    lineDesigner.setButtonLineColor("#CLD-ColorLine");
     lineDesigner.setLineSize(1);
-    console.log(lineDesigner.getLineSize());
+    lineDesigner.setLineColor("#ff0000");
 });

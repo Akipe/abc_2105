@@ -13,13 +13,14 @@ class CanvasLineDesigner {
         };
 
         this.buttons = {
+            lineColor: null,
             lineSize: null,
             removeLastLine: null
         };
 
         this.setLineSize(1);
-
-        this.canvasContext.strokeStyle = "red";
+        this.setLineColor("#ff0000");
+        // this.canvasContext.strokeStyle = "red";
 
         this.generateDesigner();
     }
@@ -43,7 +44,8 @@ class CanvasLineDesigner {
                         clickMousePosition.y,
                         realTimeMousePosition.x,
                         realTimeMousePosition.y,
-                        this.getLineSize()
+                        this.getLineSize(),
+                        this.getLineColor()
                     );
             
                     this.setMousePositionFirstClick(
@@ -63,6 +65,16 @@ class CanvasLineDesigner {
                 this.clearAndRedrawLines();
             }
             numberUserClick++;
+        });
+    }
+
+    setButtonLineColor(_cssElementSelector)
+    {
+        this.buttons.lineColor = document.querySelector(_cssElementSelector);
+        this.buttons.lineColor.value = this.getLineSize();
+
+        this.buttons.lineColor.addEventListener("change", () => {
+            this.setLineColor(this.buttons.lineColor.value);
         });
     }
 
@@ -96,6 +108,20 @@ class CanvasLineDesigner {
         this.mousePositionSecondClick.y = _y;
     }
 
+    setLineColor(_lineColor) {
+        this.currentLineColor = _lineColor;
+
+        this.canvasContext.strokeStyle = _lineColor;
+
+        if (this.buttons.lineColor != null) {
+            this.buttons.lineColor.value = _lineColor;
+        }
+    }
+
+    getLineColor() {
+        return this.currentLineColor;
+    }
+
     setLineSize(_lineSize) {
         this.currentLineSize = _lineSize;
 
@@ -116,11 +142,12 @@ class CanvasLineDesigner {
             this.mousePositionFirstClick.y,
             this.mousePositionSecondClick.x,
             this.mousePositionSecondClick.y,
-            this.getLineSize()
+            this.getLineSize(),
+            this.getLineColor(),
         );
     }
 
-    addLine(_firstPointX, _firstPointY, _secondPointX, _secondPointY, _size) {
+    addLine(_firstPointX, _firstPointY, _secondPointX, _secondPointY, _size, _color) {
         this.linesTraced.push({
             path: {
                 firstPoint: {
@@ -132,13 +159,15 @@ class CanvasLineDesigner {
                     y: _secondPointY,
                 },
             },
-            size: _size
+            size: _size,
+            color: _color
         });
     }
 
-    drawLine(_firstPointX, _firstPointY, _secondPointX, _secondPointY, _size) {
+    drawLine(_firstPointX, _firstPointY, _secondPointX, _secondPointY, _size, _color) {
         this.canvasContext.beginPath();
         this.canvasContext.lineWidth = _size;
+        this.canvasContext.strokeStyle = _color;
         this.canvasContext.moveTo(_firstPointX, _firstPointY);
         this.canvasContext.lineTo(_secondPointX, _secondPointY);
         this.canvasContext.stroke();
@@ -151,7 +180,8 @@ class CanvasLineDesigner {
                 line.path.firstPoint.y,
                 line.path.secondPoint.x,
                 line.path.secondPoint.y,
-                line.size
+                line.size,
+                line.color
             );
         });
     }
