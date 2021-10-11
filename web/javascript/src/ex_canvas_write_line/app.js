@@ -22,32 +22,31 @@ function draw() {
         let currentMousePosition;
         
         currentMousePosition = getCanvasMousePosition(canvas, event);
+
+        canvas.addEventListener("mousemove", (event) => {
+            if (numberUserClick % 2 == 1) {
+                let realTimeMousePosition;
         
-        if (numberUserClick % 2 == 0) {
-            canvas.addEventListener("mousemove", (event) => {
-                if (numberUserClick % 2 == 1) {
-                    let updateWhenMouseMovePosition;
-    
-                    ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear all canvas
-                    drawAllLines(ctx, lineTraced);
-    
-                    updateWhenMouseMovePosition = getCanvasMousePosition(canvas, event);
-    
-                    ctx.beginPath();
-                    if (!Number.isNaN(mousePosition.firstClickX) || !Number.isNaN(mousePosition.firstClickY)) {
-                        ctx.moveTo(currentMousePosition.x, currentMousePosition.y);
-                    } else {
-                        ctx.moveTo(mousePosition.firstClickX, mousePosition.firstClickY );
-                    }
-                    
-                    ctx.lineTo(updateWhenMouseMovePosition.x, updateWhenMouseMovePosition.y);
-                    ctx.stroke();
-    
-                    mousePosition.firstClickX = currentMousePosition.x;
-                    mousePosition.firstClickY = currentMousePosition.y;
+                clearCanvas(ctx, canvas);
+                drawAllLines(ctx, lineTraced);
+                realTimeMousePosition = getCanvasMousePosition(canvas, event);
+        
+                ctx.beginPath();
+                if (!Number.isNaN(mousePosition.firstClickX) || !Number.isNaN(mousePosition.firstClickY)) {
+                    ctx.moveTo(currentMousePosition.x, currentMousePosition.y);
+                } else {
+                    ctx.moveTo(mousePosition.firstClickX, mousePosition.firstClickY );
                 }
-            });
-        } else {
+                
+                ctx.lineTo(realTimeMousePosition.x, realTimeMousePosition.y);
+                ctx.stroke();
+        
+                mousePosition.firstClickX = currentMousePosition.x;
+                mousePosition.firstClickY = currentMousePosition.y;
+            }
+        });
+        
+        if (numberUserClick % 2 == 1) {
             mousePosition.secondClickX = currentMousePosition.x;
             mousePosition.secondClickY = currentMousePosition.y;
 
@@ -58,12 +57,9 @@ function draw() {
                 mousePosition.secondClickY
             ));
 
-            ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear all canvas
+            clearCanvas(ctx, canvas);
             drawAllLines(ctx, lineTraced);
         }
-
-        console.log(getCanvasMousePosition(canvas, event));
-
         numberUserClick++;
     });
 }
@@ -115,4 +111,8 @@ function getCanvasMousePosition(_canvas, _event) {
         x: _event.clientX - rectangle.left,
         y: _event.clientY - rectangle.top
     }
+}
+
+function clearCanvas(_ctx, _canvas) {
+    _ctx.clearRect(0, 0, _canvas.width, _canvas.height);
 }
