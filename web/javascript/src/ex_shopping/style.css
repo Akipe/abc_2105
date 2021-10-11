@@ -1,0 +1,8 @@
+body {
+    display: flex;
+}
+
+.FormShopping {
+    display: flex;
+    flex-direction: column;
+}
