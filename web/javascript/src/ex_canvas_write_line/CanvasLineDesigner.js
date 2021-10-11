@@ -13,10 +13,13 @@ class CanvasLineDesigner {
         };
 
         this.buttons = {
+            lineSize: null,
             removeLastLine: null
         };
+
+        this.setLineSize(1);
+
         this.canvasContext.strokeStyle = "red";
-        this.canvasContext.lineWidth = 5;
     }
 
     generateDesigner() {
@@ -33,10 +36,13 @@ class CanvasLineDesigner {
 
                     realTimeMousePosition = this.getMousePosition(event);
                     this.clearAndRedrawLines();
-                    this.canvasContext.beginPath();
-                    this.canvasContext.moveTo(clickMousePosition.x, clickMousePosition.y);
-                    this.canvasContext.lineTo(realTimeMousePosition.x, realTimeMousePosition.y);
-                    this.canvasContext.stroke();
+                    this.drawLine(
+                        clickMousePosition.x,
+                        clickMousePosition.y,
+                        realTimeMousePosition.x,
+                        realTimeMousePosition.y,
+                        this.getLineSize()
+                    );
             
                     this.setMousePositionFirstClick(
                         clickMousePosition.x,
@@ -55,6 +61,16 @@ class CanvasLineDesigner {
                 this.clearAndRedrawLines();
             }
             numberUserClick++;
+        });
+    }
+
+    setButtonLineSize(_cssElementSelector)
+    {
+        this.buttons.lineSize = document.querySelector(_cssElementSelector);
+        this.buttons.lineSize.value = this.getLineSize();
+
+        this.buttons.lineSize.addEventListener("change", () => {
+            this.setLineSize(this.buttons.lineSize.value);
         });
     }
 
@@ -78,16 +94,31 @@ class CanvasLineDesigner {
         this.mousePositionSecondClick.y = _y;
     }
 
+    setLineSize(_lineSize) {
+        this.currentLineSize = _lineSize;
+
+        this.canvasContext.lineWidth = _lineSize;
+
+        if (this.buttons.lineSize != null) {
+            this.buttons.lineSize.value = _lineSize;
+        }
+    }
+
+    getLineSize() {
+        return this.currentLineSize;
+    }
+
     addLineFromMousePosition() {
         this.addLine(
             this.mousePositionFirstClick.x,
             this.mousePositionFirstClick.y,
             this.mousePositionSecondClick.x,
-            this.mousePositionSecondClick.y
+            this.mousePositionSecondClick.y,
+            this.getLineSize()
         );
     }
 
-    addLine(_firstPointX, _firstPointY, _secondPointX, _secondPointY) {
+    addLine(_firstPointX, _firstPointY, _secondPointX, _secondPointY, _size) {
         this.linesTraced.push({
             path: {
                 firstPoint: {
@@ -99,22 +130,27 @@ class CanvasLineDesigner {
                     y: _secondPointY,
                 },
             },
+            size: _size
         });
     }
 
-    drawLinePath(_line) {
+    drawLine(_firstPointX, _firstPointY, _secondPointX, _secondPointY, _size) {
         this.canvasContext.beginPath();
-        this.canvasContext.moveTo(_line.path.firstPoint.x, _line.path.firstPoint.y);
-        this.canvasContext.lineTo(_line.path.secondPoint.x,_line.path.secondPoint.y);
+        this.canvasContext.lineWidth = _size;
+        this.canvasContext.moveTo(_firstPointX, _firstPointY);
+        this.canvasContext.lineTo(_secondPointX, _secondPointY);
         this.canvasContext.stroke();
     }
 
     drawAllLines() {
         this.linesTraced.forEach(line => {
-            this.canvasContext.beginPath();
-            this.canvasContext.moveTo(line.path.firstPoint.x, line.path.firstPoint.y);
-            this.canvasContext.lineTo(line.path.secondPoint.x,line.path.secondPoint.y);
-            this.canvasContext.stroke();
+            this.drawLine(
+                line.path.firstPoint.x,
+                line.path.firstPoint.y,
+                line.path.secondPoint.x,
+                line.path.secondPoint.y,
+                line.size
+            );
         });
     }
 
