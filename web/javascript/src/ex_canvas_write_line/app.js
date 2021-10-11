@@ -7,26 +7,16 @@ function draw() {
     const ctx = canvas.getContext('2d');
 
     let numberUserClick = 0;
-    let arrayLines = Array();
-
-    ctx.strokeStyle = "red";
-    ctx.lineWidth = 5;
-
-    arrayLines = Array();
-
-    // arrayLines.push(generateLineParameters(10, 10, 300, 300));
-    // drawLinePath(ctx, arrayLines[0]);
-    
     let lineTraced = Array();
-    let lineTemparyTraced;
-    let mousePosition;
-
-    mousePosition = {
+    let mousePosition = {
         firstClickX: null,
         firstClickY: null,
         secondClickX: null,
         secondClickY: null
     };
+
+    ctx.strokeStyle = "red";
+    ctx.lineWidth = 5;
 
     canvas.addEventListener("click", (event) => {
         let currentMousePosition;
@@ -39,7 +29,7 @@ function draw() {
                     let updateWhenMouseMovePosition;
     
                     ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear all canvas
-                    drawAllLines(ctx, arrayLines);
+                    drawAllLines(ctx, lineTraced);
     
                     updateWhenMouseMovePosition = getCanvasMousePosition(canvas, event);
     
@@ -61,7 +51,7 @@ function draw() {
             mousePosition.secondClickX = currentMousePosition.x;
             mousePosition.secondClickY = currentMousePosition.y;
 
-            arrayLines.push(generateLineParameters(
+            lineTraced.push(generateLineParameters(
                 mousePosition.firstClickX,
                 mousePosition.firstClickY,
                 mousePosition.secondClickX,
@@ -69,7 +59,7 @@ function draw() {
             ));
 
             ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear all canvas
-            drawAllLines(ctx, arrayLines);
+            drawAllLines(ctx, lineTraced);
         }
 
         console.log(getCanvasMousePosition(canvas, event));
@@ -96,29 +86,18 @@ function generateLineParameters(_firstPointX, _firstPointY, _secondPointX, _seco
 }
 
 function drawLinePath(_context, _line) {
-    let linePoints;
-
-    linePoints = _line.path;
-    // _context.save();
-
     _context.beginPath();
     _context.moveTo(_line.path.firstPoint.x, _line.path.firstPoint.y);
     _context.lineTo(_line.path.secondPoint.x,_line.path.secondPoint.y);
     _context.stroke();
-
-    // _context.restore();
 }
 
 function drawAllLines(_context, _arrayLines) {
     _arrayLines.forEach(line => {
-        // _context.save();
-
         _context.beginPath();
         _context.moveTo(line.path.firstPoint.x, line.path.firstPoint.y);
         _context.lineTo(line.path.secondPoint.x,line.path.secondPoint.y);
         _context.stroke();
-
-        // _context.restore();
     });
 }
 
