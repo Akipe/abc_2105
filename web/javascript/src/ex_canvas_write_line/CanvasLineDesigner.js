@@ -21,58 +21,14 @@ class CanvasLineDesigner {
         };
         this.setLineSize(1);
         this.setLineColor("#ff0000");
-    }
-
-    setButtonDrawLine(_cssElementSelector)
-    {
-        this.buttons.drawLine = document.querySelector(_cssElementSelector);
-
-        this.activateDrawLine();
-    }
-
-    setButtonSelectLine(_cssElementSelector)
-    {
-        this.buttons.selectLine = document.querySelector(_cssElementSelector);
-
-        this.activateSelectLine();
-    }
-
-    activateSelectLine()
-    {
-        this.buttons.selectLine.addEventListener("click", this.selectLineController.bind(this));
-    }
-
-    deactivateSelectLine()
-    {
-        this.buttons.selectLine.removeEventListener("click", this.selectLineController);
-    } 
-
-    selectLineController() {
-        this.deactivateDrawLine();
-    }
-
-    activateDrawLine()
-    {
-        this.buttons.drawLine.addEventListener("click", this.drawLineController.bind(this));
-    }
-
-    deactivateDrawLine()
-    {
-        this.buttons.drawLine.removeEventListener("click", this.drawLineController);
-    }    
-
-    drawLineController(event) {
-        this.deactivateSelectLine();
-
-        let numberUserClick = 0;
-
-        this.canvasElement.addEventListener("click", (event) => {
+        this.numberUserClick = 0
+        this.clickToDrawLine = () => {
             let clickMousePosition;
         
             clickMousePosition = this.getMousePosition(event);
 
             this.canvasElement.addEventListener("mousemove", (event) => {
-                if (numberUserClick % 2 == 1) {
+                if (this.numberUserClick % 2 == 1) {
                     let realTimeMousePosition;
 
                     realTimeMousePosition = this.getMousePosition(event);
@@ -93,7 +49,7 @@ class CanvasLineDesigner {
                 }
             });
             
-            if (numberUserClick % 2 == 1) {
+            if (this.numberUserClick % 2 == 1) {
                 this.setMousePositionSecondClick(
                     clickMousePosition.x,
                     clickMousePosition.y
@@ -102,8 +58,37 @@ class CanvasLineDesigner {
                 this.addLineFromMousePosition();
                 this.clearAndDrawLinesTraced();
             }
-            numberUserClick++;
-        });
+            this.numberUserClick++;
+        };
+    }
+
+    setButtonDrawLine(_cssElementSelector)
+    {
+        this.buttons.drawLine = document.querySelector(_cssElementSelector);
+        this.buttons.drawLine.addEventListener("click", this.activateDrawLine.bind(this));
+    }
+
+    setButtonSelectLine(_cssElementSelector)
+    {
+        this.buttons.selectLine = document.querySelector(_cssElementSelector);
+        this.buttons.selectLine.addEventListener("click", this.activateSelectLine.bind(this));
+    }
+
+    deactivateSelectLine() {
+    }
+
+    activateSelectLine() {
+        this.deactivateDrawLine();
+    }
+
+    deactivateDrawLine()
+    {
+        this.canvasElement.removeEventListener("click", this.clickToDrawLine);
+    }
+
+    activateDrawLine() {
+        this.deactivateSelectLine();
+        this.canvasElement.addEventListener("click", this.clickToDrawLine);
     }
 
     setButtonLineColor(_cssElementSelector)
