@@ -34,12 +34,14 @@ class CanvasPainter {
         this.buttons.selectLine.addEventListener("click", this.activateSelectLine.bind(this));
     }
 
-    activateSelectLine() {
+    activateSelectLine()
+    {
         this.deactivateDrawLine();
         this.canvasElement.addEventListener("click", this.selectLineAction);
     }
 
-    deactivateSelectLine() {
+    deactivateSelectLine()
+    {
         this.canvasElement.removeEventListener("click", this.selectLineAction);
     }
 
@@ -59,7 +61,8 @@ class CanvasPainter {
         this.canvasElement.removeEventListener("click", this.drawLineAction);
     }
 
-    prepareDrawLineAction() {
+    prepareDrawLineAction()
+    {
         this.drawLineAction = (event) => {
             let clickMousePosition;
 
@@ -126,7 +129,8 @@ class CanvasPainter {
         });
     }
 
-    setWriteColor(_color) {
+    setWriteColor(_color)
+    {
         this.writeColor = _color;
 
         this.canvasContext.strokeStyle = _color;
@@ -136,11 +140,13 @@ class CanvasPainter {
         }
     }
 
-    getWriteColor() {
+    getWriteColor()
+    {
         return this.writeColor;
     }
 
-    setWriteThickness(_lineSize) {
+    setWriteThickness(_lineSize)
+    {
         this.writeThickness = _lineSize;
 
         this.canvasContext.lineWidth = _lineSize;
@@ -150,7 +156,8 @@ class CanvasPainter {
         }
     }
 
-    getWriteThickness() {
+    getWriteThickness()
+    {
         return this.writeThickness;
     }
 
@@ -166,7 +173,8 @@ class CanvasPainter {
         );
     }
 
-    getAllLines() {
+    getAllLines()
+    {
         return this.linesTraced;
     }
 
@@ -180,7 +188,8 @@ class CanvasPainter {
         );
     }
 
-    drawLine(_firstPoint, _secondPoint, _color, _thickeness) {
+    drawLine(_firstPoint, _secondPoint, _color, _thickeness)
+    {
         this.canvasContext.beginPath();
         this.canvasContext.lineWidth = _thickeness;
         this.canvasContext.strokeStyle = _color;
@@ -195,13 +204,15 @@ class CanvasPainter {
         this.canvasContext.stroke();
     }
 
-    drawAllLinesTraced() {
+    drawAllLinesTraced()
+    {
         this.linesTraced.forEach(line => {
             this.drawLineFromObject(line);
         });
     }
 
-    getMousePosition(_event) {
+    getMousePosition(_event)
+    {
         let rectangle = this.canvasElement.getBoundingClientRect();
 
         return new CanvasPoint(
@@ -210,11 +221,13 @@ class CanvasPainter {
         );
     }
 
-    clearWorkspace() {
+    clearWorkspace()
+    {
         this.canvasContext.clearRect(0, 0, this.canvasElement.width, this.canvasElement.height);
     }
 
-    clearAndDrawLinesTraced() {
+    clearAndDrawLinesTraced()
+    {
         this.clearWorkspace();
         this.drawAllLinesTraced();
     }
