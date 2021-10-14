@@ -4,14 +4,6 @@ class CanvasPainter {
         this.canvasElement = canvasElement;
         this.canvasContext = this.canvasElement.getContext('2d');
         this.linesTraced = Array();
-        this.mousePositionFirstClick = {
-            x: null,
-            y: null
-        };
-        this.mousePositionSecondClick = {
-            x: null,
-            y: null
-        };
         this.buttons = {
             drawLine: null,
             selectLine: null,
@@ -20,9 +12,11 @@ class CanvasPainter {
             removeLastLine: null
         };
         this.numberUserClick = 0;
+        this.mousePositionFirstClick;
+        this.mousePositionSecondClick;
 
-        this.setLineSize(1);
-        this.setLineColor("#ff0000");
+        this.setWriteThickness(1);
+        this.setWriteColor("#ff0000");
 
         this.prepareDrawLineAction();
         this.prepareSelectLineAction();
@@ -51,17 +45,7 @@ class CanvasPainter {
 
     prepareSelectLineAction() {
         this.selectLineAction = (event) => {
-            // let clickMousePosition;
-            // let line;
-
-            // console.log(this.canvasContext.getImageData(0, 0, this.canvasElement.width, this.canvasElement.height).data);
-
-            // clickMousePosition = this.getMousePosition(event);
-
-            // for (let index = 0; index < this.getAllLines().length; index++) {
-            //     line = this.getAllLines[index];
-            //     if (line
-            // }
+            // ...
         };
     }
 
@@ -78,7 +62,7 @@ class CanvasPainter {
     prepareDrawLineAction() {
         this.drawLineAction = (event) => {
             let clickMousePosition;
-        
+
             clickMousePosition = this.getMousePosition(event);
 
             this.canvasElement.addEventListener("mousemove", (event) => {
@@ -88,28 +72,24 @@ class CanvasPainter {
                     realTimeMousePosition = this.getMousePosition(event);
                     this.clearAndDrawLinesTraced();
                     this.drawLine(
-                        clickMousePosition.x,
-                        clickMousePosition.y,
-                        realTimeMousePosition.x,
-                        realTimeMousePosition.y,
-                        this.getLineColor(),
-                        this.getLineSize()
+                        clickMousePosition,
+                        realTimeMousePosition,
+                        this.getWriteColor(),
+                        this.getWriteThickness()
                     );
             
-                    this.setMousePositionFirstClick(
-                        clickMousePosition.x,
-                        clickMousePosition.y
-                    );
+                    this.mousePositionFirstClick = clickMousePosition;
                 }
             });
             
             if (this.numberUserClick % 2 == 1) {
-                this.setMousePositionSecondClick(
-                    clickMousePosition.x,
-                    clickMousePosition.y
+                this.mousePositionSecondClick = clickMousePosition;
+                this.addLine(
+                    this.mousePositionFirstClick,
+                    this.mousePositionSecondClick,
+                    this.getWriteColor(),
+                    this.getWriteThickness()
                 );
-
-                this.addLineFromMousePosition();
                 this.clearAndDrawLinesTraced();
             }
             this.numberUserClick++;
@@ -119,20 +99,20 @@ class CanvasPainter {
     setButtonLineColor(_cssElementSelector)
     {
         this.buttons.lineColor = document.querySelector(_cssElementSelector);
-        this.buttons.lineColor.value = this.getLineSize();
+        this.buttons.lineColor.value = this.getWriteColor();
 
         this.buttons.lineColor.addEventListener("change", () => {
-            this.setLineColor(this.buttons.lineColor.value);
+            this.setWriteColor(this.buttons.lineColor.value);
         });
     }
 
     setButtonLineSize(_cssElementSelector)
     {
         this.buttons.lineSize = document.querySelector(_cssElementSelector);
-        this.buttons.lineSize.value = this.getLineSize();
+        this.buttons.lineSize.value = this.getWriteThickness();
 
         this.buttons.lineSize.addEventListener("change", () => {
-            this.setLineSize(this.buttons.lineSize.value);
+            this.setWriteThickness(this.buttons.lineSize.value);
         });
     }
 
@@ -146,32 +126,22 @@ class CanvasPainter {
         });
     }
 
-    setMousePositionFirstClick(_x, _y) {
-        this.mousePositionFirstClick.x = _x;
-        this.mousePositionFirstClick.y = _y;
-    }
+    setWriteColor(_color) {
+        this.writeColor = _color;
 
-    setMousePositionSecondClick(_x, _y) {
-        this.mousePositionSecondClick.x = _x;
-        this.mousePositionSecondClick.y = _y;
-    }
-
-    setLineColor(_lineColor) {
-        this.currentLineColor = _lineColor;
-
-        this.canvasContext.strokeStyle = _lineColor;
+        this.canvasContext.strokeStyle = _color;
 
         if (this.buttons.lineColor != null) {
-            this.buttons.lineColor.value = _lineColor;
+            this.buttons.lineColor.value = _color;
         }
     }
 
-    getLineColor() {
-        return this.currentLineColor;
+    getWriteColor() {
+        return this.writeColor;
     }
 
-    setLineSize(_lineSize) {
-        this.currentLineSize = _lineSize;
+    setWriteThickness(_lineSize) {
+        this.writeThickness = _lineSize;
 
         this.canvasContext.lineWidth = _lineSize;
 
@@ -180,28 +150,18 @@ class CanvasPainter {
         }
     }
 
-    getLineSize() {
-        return this.currentLineSize;
+    getWriteThickness() {
+        return this.writeThickness;
     }
 
-    addLineFromMousePosition() {
-        let firstPoint;
-        let secondPoint;
-
-        firstPoint = new CanvasPoint(
-            this.mousePositionFirstClick.x,
-            this.mousePositionFirstClick.y
-        );
-        secondPoint = new CanvasPoint(
-            this.mousePositionSecondClick.x,
-            this.mousePositionSecondClick.y
-        );
+    addLine(_firstPoint, _secondPoint, _color, _thickness)
+    {
         this.linesTraced.push(
             new CanvasLine(
-                firstPoint,
-                secondPoint,
-                this.getLineColor(),
-                this.getLineSize()
+                _firstPoint,
+                _secondPoint,
+                _color,
+                _thickness
             )
         );
     }
@@ -210,45 +170,27 @@ class CanvasPainter {
         return this.linesTraced;
     }
 
-    getFirstPointX(_line) {
-        return _line.path.firstPoint.x;
-    }
-
-    getFirstPointY(_line) {
-        return _line.path.firstPoint.y;
-    }
-
-    getSecondPointX(_line) {
-        return _line.path.secondPoint.x;
-    }
-
-    getSecondPointY(_line) {
-        return _line.path.secondPoint.y;
-    }
-
     drawLineFromObject(_line)
     {
         this.drawLine(
-            _line.getFirstPoint().getCoordinateX(),
-            _line.getFirstPoint().getCoordinateY(),
-            _line.getSecondPoint().getCoordinateX(),
-            _line.getSecondPoint().getCoordinateY(),
+            _line.getFirstPoint(),
+            _line.getSecondPoint(),
             _line.getColor(),
             _line.getThickness()
         );
     }
 
-    drawLine(_lineFirstPtX, _lineFirstPtY, _lineSecondPtX, _lineSecondPtY, _lineColor, _lineThickeness) {
+    drawLine(_firstPoint, _secondPoint, _color, _thickeness) {
         this.canvasContext.beginPath();
-        this.canvasContext.lineWidth = _lineThickeness;
-        this.canvasContext.strokeStyle = _lineColor;
+        this.canvasContext.lineWidth = _thickeness;
+        this.canvasContext.strokeStyle = _color;
         this.canvasContext.moveTo(
-            _lineFirstPtX,
-            _lineFirstPtY
+            _firstPoint.getCoordinateX(),
+            _firstPoint.getCoordinateY()
         );
         this.canvasContext.lineTo(
-            _lineSecondPtX,
-            _lineSecondPtY
+            _secondPoint.getCoordinateX(),
+            _secondPoint.getCoordinateY()
         );
         this.canvasContext.stroke();
     }
@@ -261,18 +203,19 @@ class CanvasPainter {
 
     getMousePosition(_event) {
         let rectangle = this.canvasElement.getBoundingClientRect();
-        return {
-            x: _event.clientX - rectangle.left,
-            y: _event.clientY - rectangle.top
-        }
+
+        return new CanvasPoint(
+            _event.clientX - rectangle.left,
+            _event.clientY - rectangle.top
+        );
     }
 
-    clearCanvas() {
+    clearWorkspace() {
         this.canvasContext.clearRect(0, 0, this.canvasElement.width, this.canvasElement.height);
     }
 
     clearAndDrawLinesTraced() {
-        this.clearCanvas();
+        this.clearWorkspace();
         this.drawAllLinesTraced();
     }
 }
