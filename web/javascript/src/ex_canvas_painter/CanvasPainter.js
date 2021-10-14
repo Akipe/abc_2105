@@ -231,4 +231,33 @@ class CanvasPainter {
         this.clearWorkspace();
         this.drawAllLinesTraced();
     }
+
+    isPointIsOnLine(_point, _line, _averageAllow)
+    {
+        let linefirstPointToPoint;
+        let lineSecondPointToPoint;
+        let distanceTwoLineFromPoint;
+        let distanceTwoLineFromPointAverageMinor;
+        let distanceTwoLineFromPointAverageMajor;
+
+        linefirstPointToPoint = new CanvasLine(
+            _point,
+            _line.getFirstPoint()
+        );
+
+        lineSecondPointToPoint = new CanvasLine(
+            _point,
+            _line.getSecondPoint()
+        )
+
+        distanceTwoLineFromPoint = linefirstPointToPoint.getSize() + lineSecondPointToPoint.getSize();
+        distanceTwoLineFromPointAverageMajor = distanceTwoLineFromPoint + (distanceTwoLineFromPoint * _averageAllow);
+        distanceTwoLineFromPointAverageMinor = distanceTwoLineFromPoint - (distanceTwoLineFromPoint * _averageAllow);
+
+        if (_line.getSize() <= distanceTwoLineFromPointAverageMajor && _line.getSize() >= distanceTwoLineFromPointAverageMinor) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
