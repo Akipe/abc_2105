@@ -1,5 +1,5 @@
 class CanvasLine {
-    constructor(_firstPoint, _secondPoint, _color, _thickness)
+    constructor(_firstPoint, _secondPoint, _color = "#ff0000", _thickness = 1)
     {
         this.setFirstPoint(_firstPoint);
         this.setSecondPoint(_secondPoint);
